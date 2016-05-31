@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using LitJson;
 
 public class Utils : MonoBehaviour {
@@ -16,11 +18,12 @@ public class Utils : MonoBehaviour {
     /* FUNCTIONS
     ---------------------------------------------------------------*/
 
-    // Use this for initialization
+    // Use this to read JSON
     public static JsonData ConvertJson(string loc) {
         jsonString = File.ReadAllText(Application.dataPath + loc);
         data = JsonMapper.ToObject(jsonString);
         return data;
     }
 
+  
 }

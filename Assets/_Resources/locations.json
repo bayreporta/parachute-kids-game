@@ -1,65 +1,125 @@
 {
 	"Locations": 
 	[
-	    {
-	        "location": "Classroom",
-	        "name": "Classroom",
-	        "x": -1.55,
-	        "y": 6.2
-	    },
-	    {
-	        "location": "Counselor",
-	        "name": "Counselor",
-	        "x": -1.84,
-	        "y": 10.11
-	    },
-	    {
-	        "location": "EdCenter",
-	        "name": "Ed Center",
-	        "x": -12.69,
-	        "y": -4.95
-	    },
-	    {
-	        "location": "Cafeteria",
-	        "name": "Cafeteria",
-	        "x": -1.62,
-	        "y": 4.94
-	    },
-	    {
-	        "location": "Home",
-	        "name": "Home",
-	        "x": -1.62,
-	        "y": -4.94
-	    },
-	    {
-	        "location": "TeaHouse",
-	        "name": "Tea House",
-	        "x": 11.14,
-	        "y": -1.32
-	    },
-	    {
-	        "location": "Phone",
-	        "name": "Phone",
-	        "x": -5.17,
-	        "y": -4.86
-	    },
-	    {
-	        "location": "Stadium",
-	        "name": "Stadium",
-	        "x": 2.58,
-	        "y": 10.33
-	    },
-	    {
-	        "location": "KaraokeBar",
-	        "name": "Karaoke Bar",
-	        "x": 15.05,
-	        "y": -5.16
-	    },
-	    {
-	        "location": "BusStop",
-	        "name": "Bus Stop",
-	        "x": -155,
-	        "y": -11.29
-	    }
-	]
+    {
+        "key": "Classroom",
+        "name": "Classroom",
+        "x": -1.55,
+        "y": 6.2,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "Counselor",
+        "name": "Counselor",
+        "x": -1.84,
+        "y": 10.11,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "EdCenter",
+        "name": "Ed Center",
+        "x": -12.69,
+        "y": -4.95,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "Cafeteria",
+        "name": "Cafeteria",
+        "x": -1.62,
+        "y": 4.94,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "Home",
+        "name": "Home",
+        "x": -1.62,
+        "y": -4.94,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "TeaHouse",
+        "name": "Tea House",
+        "x": 11.14,
+        "y": -1.32,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "Phone",
+        "name": "Phone",
+        "x": -5.17,
+        "y": -4.86,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "Stadium",
+        "name": "Stadium",
+        "x": 2.58,
+        "y": 10.33,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "KaraokeBar",
+        "name": "Karaoke Bar",
+        "x": 15.05,
+        "y": -5.16,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "key": "BusStop",
+        "name": "Bus Stop",
+        "x": -155,
+        "y": -11.29,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    }
+]
 }
