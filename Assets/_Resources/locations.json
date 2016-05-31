@@ -52,7 +52,7 @@
     {
         "key": "Home",
         "name": "Home",
-        "x": -1.62,
+        "x": -8,
         "y": -4.94,
         "actone": false,
         "acttwo": false,
@@ -112,7 +112,7 @@
     {
         "key": "BusStop",
         "name": "Bus Stop",
-        "x": -155,
+        "x": -15.5,
         "y": -11.29,
         "actone": false,
         "acttwo": false,

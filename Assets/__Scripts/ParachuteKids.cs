@@ -21,16 +21,16 @@ public class ParachuteKids : MonoBehaviour {
         S = this;
 
         //init game
-        Locations.CreateLocations();
-        Locations.GetLocationDefinitions();
+        Locations.S.CreateLocations();
+        Locations.S.GetLocationDefinitions();
 
         //build location dictionary
         LOC_DEFS = new Dictionary<LocationType, LocationDefinition>();
-        foreach (LocationDefinition loc in Locations.locationDefinitions) {
+        foreach (LocationDefinition loc in Locations.S.locationDefinitions) {
             LOC_DEFS[loc.type] = loc;
         }
 
-        print(LOC_DEFS[LocationType.Classroom].name);
+        print(LOC_DEFS[LocationType.Classroom].xLoc);
     }
 
     
