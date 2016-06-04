@@ -4,7 +4,7 @@
     {
         "key": "Classroom",
         "name": "Classroom",
-        "x": -1.55,
+        "x": 2.55,
         "y": 6.2,
         "actone": false,
         "acttwo": false,
@@ -76,7 +76,7 @@
     {
         "key": "Phone",
         "name": "Phone",
-        "x": -5.17,
+        "x": -4.17,
         "y": -4.86,
         "actone": false,
         "acttwo": false,

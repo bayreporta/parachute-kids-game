@@ -8,32 +8,44 @@ public class ParachuteKids : MonoBehaviour {
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
     static public ParachuteKids S;
+
+    //dictionaries-----------------------//
+
     static public Dictionary<LocationType, LocationDefinition> LOC_DEFS;
+    static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
 
-    //dynamic
+    //dynamic----------------------------//
 
-    //private
+    //private----------------------------//
     private JsonData data;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
-    void Awake () {
+    void Awake() {
         S = this;
 
-        //init game
+        //init game---------------------------//
         Locations.S.CreateLocations();
         Locations.S.GetLocationDefinitions();
 
-        //build location dictionary
+        Challenges.S.GetChallengeDefinitions();
+
+        BuildDictionaries();
+    }
+
+    public void BuildDictionaries() {
+
+        //build location dictionary---------------//
         LOC_DEFS = new Dictionary<LocationType, LocationDefinition>();
         foreach (LocationDefinition loc in Locations.S.locationDefinitions) {
             LOC_DEFS[loc.type] = loc;
         }
 
-        print(LOC_DEFS[LocationType.Classroom].xLoc);
+        //build challenge dictionary---------------//
+        CHAL_DEFS = new Dictionary<ChallengeType, ChallengeDefinition>();
+        foreach (ChallengeDefinition chal in Challenges.S.challengeDefinitions) {
+            CHAL_DEFS[chal.type] = chal;
+        }
     }
 
-    
-
-    
 }

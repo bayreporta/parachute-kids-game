@@ -33,17 +33,15 @@ public class LocationDefinition {
 }
 
 public class Locations : MonoBehaviour {
-    public static Locations S;
+
 
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
-    //dynamic
+    public static Locations S;
     public int totLocations = 10;
     public List<GameObject> locationObjects;
     public JsonData locationData;
-
     public GameObject locationPrefab;
-
     public List<LocationDefinition> locationDefinitions;
     public List<LocationType> locTypes;
 
