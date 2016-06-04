@@ -112,4 +112,14 @@ public class Locations : MonoBehaviour {
             locationDefinitions.Add(loc);
         }
     }
+
+    void OnMouseUp() {
+        //which location did player click
+        string locationPicked = this.gameObject.name;
+
+        //lets grab the challenge
+        Challenges.S.RetrieveChallenge(Player.S.currCharacter, Player.S.currAct, locationPicked);
+
+    }
+
 }

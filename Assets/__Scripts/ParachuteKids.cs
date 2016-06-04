@@ -48,4 +48,11 @@ public class ParachuteKids : MonoBehaviour {
         }
     }
 
+    public ChallengeDefinition GetChallengeDefinition(ChallengeType ct) {
+        if (CHAL_DEFS.ContainsKey(ct)) {
+            return(CHAL_DEFS[ct]);
+        }
+        return (new ChallengeDefinition());
+    }
+
 }
