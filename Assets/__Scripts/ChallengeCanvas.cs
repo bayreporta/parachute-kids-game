@@ -20,9 +20,9 @@ public class ChallengeCanvas : MonoBehaviour {
     public GameObject challengeImage; 
     public GameObject challengeFlavor;
     public Transform challengeFlavorText;
-    public GameObject challengeOptionOne;
+    public Button challengeOptionOne;
     public Transform challengeOptionOneText;
-    public GameObject challengeOptionTwo;
+    public Button challengeOptionTwo;
     public Transform challengeOptionTwoText;
 
 
@@ -51,13 +51,13 @@ public class ChallengeCanvas : MonoBehaviour {
         challengeFlavor = GameObject.Find("ChallengeFlavor");
         challengeFlavorText = challengeFlavor.transform.GetChild(0);
 
-        challengeOptionOne = GameObject.Find("OptionOne");
+        challengeOptionOne = GameObject.Find("OptionOne").GetComponent<Button>();
         challengeOptionOneText = challengeOptionOne.transform.GetChild(0);
 
-        challengeOptionTwo = GameObject.Find("OptionTwo");
+        challengeOptionTwo = GameObject.Find("OptionTwo").GetComponent<Button>();
         challengeOptionTwoText = challengeOptionTwo.transform.GetChild(0);
 
-        challengeCanvas.SetActive(false);
+        challengeModalPanel.SetActive(false);
     }
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
@@ -73,8 +73,21 @@ public class ChallengeCanvas : MonoBehaviour {
         optionOne.text = chal.OptionOneText;
         optionTwo.text = chal.OptionTwoText;
 
+        //add event listeners
+        challengeOptionOne.onClick.RemoveAllListeners();
+        challengeOptionTwo.onClick.RemoveAllListeners();
+        //add specific changes to resources based on button input here (tied to Challenge dictionary)
+        challengeOptionOne.onClick.AddListener(CloseChallengeCanvas);
+        challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
+
         chal.clickedFlag = true;
-        challengeCanvas.SetActive(true);
+        Locations.S.blockLocationClick = true;
+        challengeModalPanel.SetActive(true);
+    }
+
+    public void CloseChallengeCanvas() {
+        challengeModalPanel.SetActive(false);
+        Locations.S.blockLocationClick = false;
     }
 
 

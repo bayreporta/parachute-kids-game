@@ -747,6 +747,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 503463367}
+  - 114: {fileID: 503463368}
   m_Layer: 5
   m_Name: _GUI
   m_TagString: Untagged
@@ -774,6 +775,20 @@ RectTransform:
   m_AnchoredPosition: {x: 544, y: 304}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &503463368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503463366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71aea81f8a503474fab713796cbbeccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wellbeingGUI: {fileID: 0}
+  languageGUI: {fileID: 0}
+  gpaGUI: {fileID: 0}
 --- !u!1 &531753105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1413,7 @@ MonoBehaviour:
   locationObjects: []
   locationPrefab: {fileID: 196026, guid: 3b4764261d808b84e895a836b0535c7e, type: 2}
   locTypes: 
+  blockLocationClick: 0
 --- !u!81 &1546406668
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1502,6 +1518,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currCharacter: JohnDoe
   currAct: 1
+  wellbeing: 0
+  language: 0
+  gpa: 0
 --- !u!114 &1546406676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,16 +1545,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb172f5fbfd33644a58c37d1d4db92b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  challengeCanvas: {fileID: 0}
   canvasElements: 9
+  challengeCanvas: {fileID: 0}
   challengeModalPanel: {fileID: 0}
   challengeQuestionPanel: {fileID: 0}
   challengeAnswerPanel: {fileID: 0}
   challengeTitle: {fileID: 0}
+  challengeTitleText: {fileID: 0}
   challengeImage: {fileID: 0}
   challengeFlavor: {fileID: 0}
+  challengeFlavorText: {fileID: 0}
   challengeOptionOne: {fileID: 0}
+  challengeOptionOneText: {fileID: 0}
   challengeOptionTwo: {fileID: 0}
+  challengeOptionTwoText: {fileID: 0}
 --- !u!1 &1561498918
 GameObject:
   m_ObjectHideFlags: 0

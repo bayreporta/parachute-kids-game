@@ -44,6 +44,7 @@ public class Locations : MonoBehaviour {
     public GameObject locationPrefab;
     public List<LocationDefinition> locationDefinitions;
     public List<LocationType> locTypes;
+    public bool blockLocationClick = false;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -118,7 +119,7 @@ public class Locations : MonoBehaviour {
         string locationPicked = this.gameObject.name;
 
         //lets grab the challenge
-        Challenges.S.RetrieveChallenge(Player.S.currCharacter, Player.S.currAct, locationPicked);
+        if (!blockLocationClick) Challenges.S.RetrieveChallenge(Player.S.currCharacter, Player.S.currAct, locationPicked);
 
     }
 

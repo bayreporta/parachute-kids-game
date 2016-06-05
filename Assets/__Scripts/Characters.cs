@@ -35,8 +35,10 @@ public class Characters : MonoBehaviour {
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
-        S = this;
+        S = this;      
     }
+
+
 
     public void GetCharacterDefinitions() {
         charactersDefinitions = new List<CharacterDefinition>();
@@ -63,5 +65,6 @@ public class Characters : MonoBehaviour {
             charactersDefinitions.Add(chara);
         }
     }
+
 
 }

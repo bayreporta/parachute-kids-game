@@ -31,6 +31,7 @@ public class ChallengeDefinition {
     public string OptionTwoText;
 
 }
+
 public class Challenges : MonoBehaviour {
 
     /* CLASS VARIABLES

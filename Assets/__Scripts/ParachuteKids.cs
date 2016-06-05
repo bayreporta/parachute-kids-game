@@ -31,6 +31,8 @@ public class ParachuteKids : MonoBehaviour {
         Challenges.S.GetChallengeDefinitions();
         Characters.S.GetCharacterDefinitions();
         BuildDictionaries();
+
+        GUI.S.InitGUI(Player.S.currCharacter);
     }
 
     public void BuildDictionaries() {
@@ -52,8 +54,6 @@ public class ParachuteKids : MonoBehaviour {
         foreach (CharacterDefinition chara in Characters.S.charactersDefinitions) {
             CHARS_DEFS[chara.type] = chara;
         }
-
-        print(CHARS_DEFS[CharacterType.JohnDoe].startingGPA);
     }
 
     public ChallengeDefinition GetChallengeDefinition(ChallengeType ct) {
@@ -61,6 +61,13 @@ public class ParachuteKids : MonoBehaviour {
             return(CHAL_DEFS[ct]);
         }
         return (new ChallengeDefinition());
+    }
+
+    public CharacterDefinition GetCharacterDefinition(CharacterType chara) {
+        if (CHARS_DEFS.ContainsKey(chara)) {
+            return (CHARS_DEFS[chara]);
+        }
+        return (new CharacterDefinition());
     }
 
 }
