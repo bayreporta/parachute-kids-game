@@ -10,9 +10,9 @@ public class ParachuteKids : MonoBehaviour {
     static public ParachuteKids S;
 
     //dictionaries-----------------------//
-
     static public Dictionary<LocationType, LocationDefinition> LOC_DEFS;
     static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
+    static public Dictionary<CharacterType, CharacterDefinition> CHARS_DEFS;
 
     //dynamic----------------------------//
 
@@ -26,10 +26,10 @@ public class ParachuteKids : MonoBehaviour {
 
         //init game---------------------------//
         Locations.S.CreateLocations();
+
         Locations.S.GetLocationDefinitions();
-
         Challenges.S.GetChallengeDefinitions();
-
+        Characters.S.GetCharacterDefinitions();
         BuildDictionaries();
     }
 
@@ -46,6 +46,14 @@ public class ParachuteKids : MonoBehaviour {
         foreach (ChallengeDefinition chal in Challenges.S.challengeDefinitions) {
             CHAL_DEFS[chal.type] = chal;
         }
+
+        //build characters dictionary---------------//
+        CHARS_DEFS = new Dictionary<CharacterType, CharacterDefinition>();
+        foreach (CharacterDefinition chara in Characters.S.charactersDefinitions) {
+            CHARS_DEFS[chara.type] = chara;
+        }
+
+        print(CHARS_DEFS[CharacterType.JohnDoe].startingGPA);
     }
 
     public ChallengeDefinition GetChallengeDefinition(ChallengeType ct) {

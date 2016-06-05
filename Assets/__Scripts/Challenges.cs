@@ -80,7 +80,7 @@ public class Challenges : MonoBehaviour {
     }
 
     public void RetrieveChallenge(string chara, int act, string loc) {
-        ChallengeDefinition currChallenge;
+        ChallengeDefinition currChallenge = null;
 
         //use loc, chara, and act to find correct challenge
         switch (chara) {
@@ -126,10 +126,7 @@ public class Challenges : MonoBehaviour {
                 }
                 break;
         }
-
-        //send current data to populate event box function here once created
-
-
+        if (!currChallenge.clickedFlag) { ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge); }
     }
 
 
