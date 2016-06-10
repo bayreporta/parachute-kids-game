@@ -122,7 +122,7 @@ public class Results : MonoBehaviour {
         //probability check
         if (opts.Length > 1) {
             rand = Random.Range(0f, 1f);
-            Debug.Log(rand);
+
             //which result wins
             if (opts[0] == "aa") {
                 if (rand < results[0].resultSuccessChance) { option = "aa"; }
@@ -150,8 +150,7 @@ public class Results : MonoBehaviour {
                 result = results[i];
             }
         }
-        Debug.Log(result.resultTitle);
-        //ChallengeCanvas.S.UpdateResultCanvas(result);
+        ChallengeCanvas.S.UpdateResultCanvas(result);
 
     }
 }

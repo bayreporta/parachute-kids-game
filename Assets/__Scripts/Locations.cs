@@ -24,8 +24,13 @@ public class Locations : MonoBehaviour {
 
     void OnMouseUp() {
         //lets grab the challenge
-        if (clickableLocation) Challenges.S.RetrieveChallenge(Player.S.currCharacter, Player.S.currAct, locationType);
+        if (clickableLocation) {
+            Challenges.S.RetrieveChallenge(Player.S.currCharacter, Player.S.currAct, locationType);
 
+            //restore default location
+            clickableLocation = false;
+            gameObject.GetComponent<Renderer>().material.color = Color.white;
+        }
     }
 
 }

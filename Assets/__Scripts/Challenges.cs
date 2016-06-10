@@ -98,9 +98,6 @@ public class Challenges : MonoBehaviour {
             chal.optionOneResults = challengeData[0][i]["option1results"].ToString();
             chal.optionTwoResults = challengeData[0][i]["option2results"].ToString();
 
-            //send for counting in Acts
-            Acts.S.CountChallengesPerAct(chal);
-
             challengeDefinitions.Add(chal);
         }
     }
@@ -180,7 +177,7 @@ public class Challenges : MonoBehaviour {
         }
     
         //send challenge definition to the Canvas
-        if (!currChallenge.clickedFlag) { ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge); }
+        ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge);
     }
 
     //resolve challenge option

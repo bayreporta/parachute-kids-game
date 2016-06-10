@@ -69,7 +69,12 @@ public class ChallengeCanvas : MonoBehaviour {
         int challengeID = chal.challengeID;
         string[] optionsOne = chal.optionOneResults.Split(',');
         string[] optionsTwo = chal.optionTwoResults.Split(',');
-        
+
+        //turn on all buttons
+        challengeOptionOne.gameObject.SetActive(true);
+        challengeOptionTwo.gameObject.SetActive(true);
+
+
         //grab text
         Text title = challengeTitleText.GetComponent<Text>();
         Text flavor = challengeFlavorText.GetComponent<Text>();
@@ -89,16 +94,29 @@ public class ChallengeCanvas : MonoBehaviour {
         challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne);});
         challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo);});
 
-        //challengeOptionOne.onClick.AddListener(CloseChallengeCanvas);
-        //challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
-
-        chal.clickedFlag = true;
+        //chal.clickedFlag = true;
         //Locations.S.blockLocationClick = true;
         challengeModalPanel.SetActive(true);
     }
 
     public void UpdateResultCanvas(ResultDefinition r) {
+        //grab text
+        Text title = challengeTitleText.GetComponent<Text>();
+        Text flavor = challengeFlavorText.GetComponent<Text>();
+        Text optionTwo = challengeOptionTwoText.GetComponent<Text>();
 
+        //hide first button
+        challengeOptionOne.gameObject.SetActive(false);
+
+        //change text
+        title.text = r.resultTitle;
+        flavor.text = r.resultFlavor;
+        //optionTwo.text = r.resultButton;
+        optionTwo.text = "meow man";
+
+        challengeOptionTwo.onClick.RemoveAllListeners();
+        //update resources
+        challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
     }
 
     public void CloseChallengeCanvas() {

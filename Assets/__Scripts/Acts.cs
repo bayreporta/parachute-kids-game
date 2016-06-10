@@ -7,8 +7,8 @@ public class Acts : MonoBehaviour {
    /* CLASS VARIABLES
    ---------------------------------------------------------------*/
     static public Acts S;
-    public int[] challengesPerAct;
-    public int[] challengesDoneForAct;
+    public int challengesDoneForAct = 0;
+    public int challengeThisAct = 0;
 
     //private----------------------------//
 
@@ -17,35 +17,25 @@ public class Acts : MonoBehaviour {
     ---------------------------------------------------------------*/
     void Awake() {
         S = this;
-
-        //configure arrays
-        challengesPerAct = new int[3];
-        challengesPerAct[0] = 0;
-        challengesPerAct[1] = 0;
-        challengesPerAct[2] = 0;
-
-        challengesDoneForAct = new int[3];
-        challengesDoneForAct[0] = 0;
-        challengesDoneForAct[1] = 0;
-        challengesDoneForAct[2] = 0;
     }
 
-    public void CountChallengesPerAct(ChallengeDefinition chal) {
-        switch (chal.actFlag) {
-            case 1:
-                challengesPerAct[0] += 1;
-                break;
-            case 2:
-                challengesPerAct[1] += 1;
-                break;
-            case 3:
-                challengesPerAct[2] += 1;
-                break;
-        }        
+    void FixedUpdate() {
+        //this is the end of game check based on what Act it is atm
+        if (challengeThisAct == challengesDoneForAct && challengesDoneForAct != 0) {
+            //code to move to next act
+            Player.S.currAct += 1;
+            if (Player.S.currAct > 3) {
+                //end game
+            }
+            else { InitializeAct(Player.S.currAct); }            
+        }
     }
 
+ 
     public void InitializeAct(int act) {
         Color activeLocation = Color.green;
+        challengesDoneForAct = 0;
+        challengeThisAct = 0;
 
         for (int i=0; i < Challenges.S.totChallenges; i++) {
             ChallengeDefinition chal = new ChallengeDefinition();
@@ -54,15 +44,22 @@ public class Acts : MonoBehaviour {
             if (chal.actFlag == act) {
                 Locations go = Locations.locationObjects[chal.locationFlag];
 
+                //in here we need to check prereqs and determine which challenges appear and which do not
+
+                //update GUI
+
                 //location highlight
                 go.GetComponent<Renderer>().material.color = activeLocation;
 
                 //location activate
                 go.clickableLocation = true;
+
+                //add to total active challenges for act
+                challengeThisAct += 1;
             }
 
-        }
-
-        
+        }        
     }
+
+
 }
