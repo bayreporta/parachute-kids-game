@@ -2,11 +2,16 @@
 using System.Collections;
 
 public class GUI : MonoBehaviour {
+
+    /* CLASS VARIABLES
+    ---------------------------------------------------------------*/
     public static GUI S;
     public GUIText wellbeingGUI;
     public GUIText languageGUI;
     public GUIText gpaGUI;
 
+    /* FUNCTIONS
+    ---------------------------------------------------------------*/
     void Awake() {
         S = this;
     }
@@ -31,5 +36,7 @@ public class GUI : MonoBehaviour {
                 break;
         }
     }
+
+    //update GUI function
 
 }

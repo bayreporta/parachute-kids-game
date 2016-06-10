@@ -1186,7 +1186,7 @@ GUIText:
   m_Text: 'GPA: 4.0'
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 70, y: -6}
+  m_PixelOffset: {x: 90, y: -6}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -1391,6 +1391,7 @@ GameObject:
   - 114: {fileID: 1546406675}
   - 114: {fileID: 1546406676}
   - 114: {fileID: 1546406677}
+  - 114: {fileID: 1546406678}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -1559,6 +1560,19 @@ MonoBehaviour:
   challengeOptionOneText: {fileID: 0}
   challengeOptionTwo: {fileID: 0}
   challengeOptionTwoText: {fileID: 0}
+--- !u!114 &1546406678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546406666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f6bf4755e75dd4083c6f03b4a1a528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totResults: 38
+  resultTypes: 
 --- !u!1 &1561498918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1895,7 @@ GUIText:
   m_Text: 'LNG: Proficient'
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 135, y: -6}
+  m_PixelOffset: {x: 150, y: -6}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}

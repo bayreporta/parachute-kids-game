@@ -13,6 +13,7 @@ public class ParachuteKids : MonoBehaviour {
     static public Dictionary<LocationType, LocationDefinition> LOC_DEFS;
     static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
     static public Dictionary<CharacterType, CharacterDefinition> CHARS_DEFS;
+    static public Dictionary<ResultType, ResultDefinition> RES_DEFS;
 
     //dynamic----------------------------//
 
@@ -30,6 +31,7 @@ public class ParachuteKids : MonoBehaviour {
         Locations.S.GetLocationDefinitions();
         Challenges.S.GetChallengeDefinitions();
         Characters.S.GetCharacterDefinitions();
+        Results.S.GetResultDefinitions();
         BuildDictionaries();
 
         GUI.S.InitGUI(Player.S.currCharacter);
@@ -54,6 +56,12 @@ public class ParachuteKids : MonoBehaviour {
         foreach (CharacterDefinition chara in Characters.S.charactersDefinitions) {
             CHARS_DEFS[chara.type] = chara;
         }
+
+        //build results dictionary---------------//
+        RES_DEFS = new Dictionary<ResultType, ResultDefinition>();
+        foreach (ResultDefinition result in Results.S.resultDefinitions) {
+            RES_DEFS[result.type] = result;
+        }
     }
 
     public ChallengeDefinition GetChallengeDefinition(ChallengeType ct) {
@@ -68,6 +76,13 @@ public class ParachuteKids : MonoBehaviour {
             return (CHARS_DEFS[chara]);
         }
         return (new CharacterDefinition());
+    }
+
+    public ResultDefinition GetResultsDefinition(ResultType result) {
+        if (RES_DEFS.ContainsKey(result)) {
+            return (RES_DEFS[result]);
+        }
+        return (new ResultDefinition());
     }
 
 }

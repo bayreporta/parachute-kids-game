@@ -130,5 +130,5 @@ public class Challenges : MonoBehaviour {
         if (!currChallenge.clickedFlag) { ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge); }
     }
 
-
+    //resolve challenge option
 }
