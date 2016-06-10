@@ -27,7 +27,7 @@ public class ChallengeDefinition {
     public ChallengeType type;
     public int challengeID;    
     public string characterFlag;
-    public string locationFlag;
+    public int locationFlag;
     public int actFlag;
     public string title;
     public string flavorText;
@@ -82,7 +82,7 @@ public class Challenges : MonoBehaviour {
 
             chal.type = chalTypes[i];
             chal.characterFlag = challengeData[0][i]["characterflag"].ToString();
-            chal.locationFlag = challengeData[0][i]["locationflag"].ToString();
+            chal.locationFlag = int.Parse(challengeData[0][i]["locationflag"].ToString());
             chal.actFlag = int.Parse(challengeData[0][i]["actflag"].ToString());
             chal.title = challengeData[0][i]["title"].ToString();
             chal.flavorText = challengeData[0][i]["flavortxt"].ToString();
@@ -99,7 +99,7 @@ public class Challenges : MonoBehaviour {
 
     public void RetrieveChallenge(string chara, int act, string loc) {
         ChallengeDefinition currChallenge = null;
-
+        Debug.Log("arrived");
         //use loc, chara, and act to find correct challenge
         switch (chara) {
             case "JohnDoe":

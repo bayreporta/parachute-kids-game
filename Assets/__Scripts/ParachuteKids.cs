@@ -26,26 +26,26 @@ public class ParachuteKids : MonoBehaviour {
         S = this;
 
         //init game---------------------------//
-        Locations.S.CreateLocations();
-
-        Locations.S.GetLocationDefinitions();
+        LocationControl.S.GetLocationDefinitions();
         Challenges.S.GetChallengeDefinitions();
         Characters.S.GetCharacterDefinitions();
         Results.S.GetResultDefinitions();
         BuildDictionaries();
 
+        LocationControl.S.CreateLocations();
+
         GUI.S.InitGUI(Player.S.currCharacter);
     }
 
     void Start() {
-
+        Acts.S.InitializeAct(1);
     }
 
     public void BuildDictionaries() {
 
         //build location dictionary---------------//
         LOC_DEFS = new Dictionary<LocationType, LocationDefinition>();
-        foreach (LocationDefinition loc in Locations.S.locationDefinitions) {
+        foreach (LocationDefinition loc in LocationControl.S.locationDefinitions) {
             LOC_DEFS[loc.type] = loc;
         }
 
@@ -66,6 +66,13 @@ public class ParachuteKids : MonoBehaviour {
         foreach (ResultDefinition result in Results.S.resultDefinitions) {
             RES_DEFS[result.type] = result;
         }
+    }
+
+    public LocationDefinition GetLocationDefinition(LocationType loc) {
+        if (LOC_DEFS.ContainsKey(loc)) {
+            return (LOC_DEFS[loc]);
+        }
+        return (new LocationDefinition());
     }
 
     public ChallengeDefinition GetChallengeDefinition(ChallengeType ct) {

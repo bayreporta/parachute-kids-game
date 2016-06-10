@@ -220,6 +220,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 105047100}
+  - 114: {fileID: 105047101}
   m_Layer: 0
   m_Name: _Locations
   m_TagString: Untagged
@@ -239,6 +240,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &105047101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 105047099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff9f50317003534286afc3ac0841513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationPrefab: {fileID: 196026, guid: 3b4764261d808b84e895a836b0535c7e, type: 2}
+  totLocations: 10
+  locationObjects: []
+  locTypes: 
 --- !u!1001 &134542046
 Prefab:
   m_ObjectHideFlags: 0
@@ -1336,7 +1352,6 @@ GameObject:
   - 124: {fileID: 1546406669}
   - 81: {fileID: 1546406668}
   - 114: {fileID: 1546406673}
-  - 114: {fileID: 1546406667}
   - 114: {fileID: 1546406675}
   - 114: {fileID: 1546406676}
   - 114: {fileID: 1546406677}
@@ -1351,22 +1366,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1546406667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1546406666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61a5e1e06ea093c4ab2eb49cbaa8dc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totLocations: 10
-  locationObjects: []
-  locationPrefab: {fileID: 196026, guid: 3b4764261d808b84e895a836b0535c7e, type: 2}
-  locTypes: 
-  blockLocationClick: 0
 --- !u!81 &1546406668
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1552,6 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   challengesPerAct: 
+  challengesDoneForAct: 
 --- !u!1 &1561498918
 GameObject:
   m_ObjectHideFlags: 0

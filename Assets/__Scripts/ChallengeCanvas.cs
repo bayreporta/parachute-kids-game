@@ -81,13 +81,13 @@ public class ChallengeCanvas : MonoBehaviour {
         challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
 
         chal.clickedFlag = true;
-        Locations.S.blockLocationClick = true;
+        //Locations.S.blockLocationClick = true;
         challengeModalPanel.SetActive(true);
     }
 
     public void CloseChallengeCanvas() {
         challengeModalPanel.SetActive(false);
-        Locations.S.blockLocationClick = false;
+        //Locations.S.blockLocationClick = false;
     }
 
 
