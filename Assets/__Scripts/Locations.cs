@@ -44,7 +44,7 @@ public class Locations : MonoBehaviour {
     public GameObject locationPrefab;
     public List<LocationDefinition> locationDefinitions;
     public List<LocationType> locTypes;
-    public bool blockLocationClick = false;
+    public bool blockLocationClick = true;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/

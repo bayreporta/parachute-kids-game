@@ -9,6 +9,7 @@ public class GUI : MonoBehaviour {
     public GUIText wellbeingGUI;
     public GUIText languageGUI;
     public GUIText gpaGUI;
+    public GUIText actGUI;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -20,9 +21,11 @@ public class GUI : MonoBehaviour {
         GameObject wellbeingGO = GameObject.Find("GUI_Wellbeing");
         GameObject gpaGO = GameObject.Find("GUI_GPA");
         GameObject languageGO = GameObject.Find("GUI_Language");
+        GameObject actGO = GameObject.Find("GUI_Act");
         wellbeingGUI = wellbeingGO.GetComponent<GUIText>();
         languageGUI = languageGO.GetComponent<GUIText>();
         gpaGUI = gpaGO.GetComponent<GUIText>();
+        actGUI = actGO.GetComponent<GUIText>();
 
         //init GUI based on character
         switch (chara) {

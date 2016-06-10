@@ -10,25 +10,39 @@ public enum ChallengeType {
     JohnDoe_Act1_EdCenter,
     JohnDoe_Act1_Cafeteria,
     JohnDoe_Act1_Home,
-    JohnDoe_Act1_TeaHouse,
-    JohnDoe_Act1_Phone,
-    JohnDoe_Act1_Stadium,
-    JohnDoe_Act1_KaraokeBar,
-    JohnDoe_Act1_BusStop
+    JohnDoe_Act2_EdCenter,
+    JohnDoe_Act2_Cafeteria,
+    JohnDoe_Act2_Home,
+    JohnDoe_Act2_TeaHouse,
+    JohnDoe_Act2_Phone,
+    JohnDoe_Act3_Classroom,
+    JohnDoe_Act3_Counselor,
+    JohnDoe_Act3_Home,
+    JohnDoe_Act3_Stadium,
+    JohnDoe_Act3_KaraokeBar,
+    JohnDoe_Act3_BusStop
 }
 
 public class ChallengeDefinition {
     public ChallengeType type;
-    public bool clickedFlag = false;
-    public bool allowedFlag = true;
+    public int challengeID;    
     public string characterFlag;
     public string locationFlag;
     public int actFlag;
     public string title;
     public string flavorText;
-    public string FlavorImage;
-    public string OptionOneText;
-    public string OptionTwoText;
+    public string flavorImage;
+    public string optionOneText;
+    public string optionTwoText;
+    public string optionOneResults;
+    public string optionTwoResults;
+    public int prereqChallenge;
+    public string prereqResult;
+    public int prereqWellbeing;
+    public int prereqLanguage;
+    public float prereqGPA;
+    public bool clickedFlag = false;    
+    public bool allowedFlag = false;
 
 }
 
@@ -37,7 +51,7 @@ public class Challenges : MonoBehaviour {
     /* CLASS VARIABLES
    ---------------------------------------------------------------*/
     static public Challenges S;
-    public int totChallenges = 10;
+    public int totChallenges = 16;
     public JsonData challengeData;
     public List<ChallengeDefinition> challengeDefinitions;
     public List<ChallengeType> chalTypes;
@@ -72,9 +86,12 @@ public class Challenges : MonoBehaviour {
             chal.actFlag = int.Parse(challengeData[0][i]["actflag"].ToString());
             chal.title = challengeData[0][i]["title"].ToString();
             chal.flavorText = challengeData[0][i]["flavortxt"].ToString();
-            chal.FlavorImage = challengeData[0][i]["flavorimg"].ToString();
-            chal.OptionOneText = challengeData[0][i]["option1txt"].ToString();
-            chal.OptionTwoText = challengeData[0][i]["option2txt"].ToString();
+            chal.flavorImage = challengeData[0][i]["flavorimg"].ToString();
+            chal.optionOneText = challengeData[0][i]["option1txt"].ToString();
+            chal.optionTwoText = challengeData[0][i]["option2txt"].ToString();
+
+            //send for counting in Acts
+            Acts.S.CountChallengesPerAct(chal);
 
             challengeDefinitions.Add(chal);
         }
@@ -103,21 +120,47 @@ public class Challenges : MonoBehaviour {
                                 break;
                             case "Home":
                                 currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_Home);
+                                break;                            
+                        }
+                        break;
+                    case 2:
+                        switch (loc) {
+                            case "Phone":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act2_Phone);
                                 break;
                             case "TeaHouse":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_TeaHouse);
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act2_TeaHouse);
                                 break;
-                            case "Phone":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_Phone);
+                            case "EdCenter":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act2_EdCenter);
+                                break;
+                            case "Cafeteria":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act2_Cafeteria);
+                                break;
+                            case "Home":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act2_Home);
+                                break;
+                        }
+                        break;
+                    case 3:
+                        switch (loc) {
+                            case "Classroom":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_Classroom);
+                                break;
+                            case "Counselor":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_Counselor);
                                 break;
                             case "Stadium":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_Stadium);
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_Stadium);
                                 break;
                             case "KaraokeBar":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_KaraokeBar);
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_KaraokeBar);
+                                break;
+                            case "Home":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_Home);
                                 break;
                             case "BusStop":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_BusStop);
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_BusStop);
                                 break;
                         }
                         break;
@@ -127,6 +170,7 @@ public class Challenges : MonoBehaviour {
                 }
                 break;
         }
+        //send challenge definition to the Canvas
         if (!currChallenge.clickedFlag) { ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge); }
     }
 

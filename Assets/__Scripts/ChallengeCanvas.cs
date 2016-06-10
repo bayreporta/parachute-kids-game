@@ -70,13 +70,13 @@ public class ChallengeCanvas : MonoBehaviour {
         //change text
         title.text = chal.title;
         flavor.text = chal.flavorText;
-        optionOne.text = chal.OptionOneText;
-        optionTwo.text = chal.OptionTwoText;
+        optionOne.text = chal.optionOneText;
+        optionTwo.text = chal.optionTwoText;
 
         //add event listeners
         challengeOptionOne.onClick.RemoveAllListeners();
         challengeOptionTwo.onClick.RemoveAllListeners();
-        //add specific changes to resources based on button input here (tied to Challenge dictionary)
+
         challengeOptionOne.onClick.AddListener(CloseChallengeCanvas);
         challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
 

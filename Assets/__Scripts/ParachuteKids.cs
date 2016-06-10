@@ -37,6 +37,10 @@ public class ParachuteKids : MonoBehaviour {
         GUI.S.InitGUI(Player.S.currCharacter);
     }
 
+    void Start() {
+
+    }
+
     public void BuildDictionaries() {
 
         //build location dictionary---------------//

@@ -89,7 +89,6 @@ public class Results : MonoBehaviour {
         //build challenge data from json
         for (int i = 0; i < Results.S.totResults; i++) {
             ResultDefinition result = new ResultDefinition();
-            Debug.Log(resultTypes[i]);
             result.type = resultTypes[i];
             result.resultID = resultData[0][i]["id"].ToString();
             result.challengeFlag = int.Parse(resultData[0][i]["challengeflag"].ToString());
