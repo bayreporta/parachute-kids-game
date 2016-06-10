@@ -38,9 +38,9 @@ public class ChallengeDefinition {
     public string optionTwoResults;
     public int prereqChallenge;
     public string prereqResult;
-    public int prereqWellbeing;
-    public int prereqLanguage;
-    public float prereqGPA;
+    public string prereqWellbeing;
+    public string prereqLanguage;
+    public string prereqGPA;
     public bool clickedFlag = false;    
     public bool allowedFlag = false;
 
@@ -81,6 +81,12 @@ public class Challenges : MonoBehaviour {
             ChallengeDefinition chal = new ChallengeDefinition();
 
             chal.type = chalTypes[i];
+            chal.prereqChallenge = int.Parse(challengeData[0][i]["prereqchallenge"].ToString()); 
+            chal.prereqResult = challengeData[0][i]["prereqresult"].ToString();
+            chal.prereqWellbeing = challengeData[0][i]["prereqwellbeing"].ToString(); 
+            chal.prereqLanguage = challengeData[0][i]["prereqlanguage"].ToString(); 
+            chal.prereqGPA = challengeData[0][i]["prereqgpa"].ToString();
+            chal.challengeID = int.Parse(challengeData[0][i]["id"].ToString());
             chal.characterFlag = challengeData[0][i]["characterflag"].ToString();
             chal.locationFlag = int.Parse(challengeData[0][i]["locationflag"].ToString());
             chal.actFlag = int.Parse(challengeData[0][i]["actflag"].ToString());
@@ -89,6 +95,8 @@ public class Challenges : MonoBehaviour {
             chal.flavorImage = challengeData[0][i]["flavorimg"].ToString();
             chal.optionOneText = challengeData[0][i]["option1txt"].ToString();
             chal.optionTwoText = challengeData[0][i]["option2txt"].ToString();
+            chal.optionOneResults = challengeData[0][i]["option1results"].ToString();
+            chal.optionTwoResults = challengeData[0][i]["option2results"].ToString();
 
             //send for counting in Acts
             Acts.S.CountChallengesPerAct(chal);
@@ -99,7 +107,7 @@ public class Challenges : MonoBehaviour {
 
     public void RetrieveChallenge(string chara, int act, string loc) {
         ChallengeDefinition currChallenge = null;
-        Debug.Log("arrived");
+                     
         //use loc, chara, and act to find correct challenge
         switch (chara) {
             case "JohnDoe":
@@ -170,6 +178,7 @@ public class Challenges : MonoBehaviour {
                 }
                 break;
         }
+    
         //send challenge definition to the Canvas
         if (!currChallenge.clickedFlag) { ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge); }
     }

@@ -52,12 +52,15 @@ public class Acts : MonoBehaviour {
             chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)i);
 
             if (chal.actFlag == act) {
-                //grab the location definition
-                Locations.locationObjects[chal.locationFlag].GetComponent<Renderer>().material.color = activeLocation;
+                Locations go = Locations.locationObjects[chal.locationFlag];
 
+                //location highlight
+                go.GetComponent<Renderer>().material.color = activeLocation;
+
+                //location activate
+                go.clickableLocation = true;
             }
 
-            //Debug.Log(chal.type);
         }
 
         

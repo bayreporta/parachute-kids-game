@@ -25,6 +25,10 @@ public class ChallengeCanvas : MonoBehaviour {
     public Button challengeOptionTwo;
     public Transform challengeOptionTwoText;
 
+    int challengeID;
+    string[] optionsOne;
+    string[] optionsTwo;
+
 
 
     /* FUNCTIONS
@@ -61,6 +65,11 @@ public class ChallengeCanvas : MonoBehaviour {
     }
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
+        //grab vital data
+        int challengeID = chal.challengeID;
+        string[] optionsOne = chal.optionOneResults.Split(',');
+        string[] optionsTwo = chal.optionTwoResults.Split(',');
+        
         //grab text
         Text title = challengeTitleText.GetComponent<Text>();
         Text flavor = challengeFlavorText.GetComponent<Text>();
@@ -77,12 +86,19 @@ public class ChallengeCanvas : MonoBehaviour {
         challengeOptionOne.onClick.RemoveAllListeners();
         challengeOptionTwo.onClick.RemoveAllListeners();
 
-        challengeOptionOne.onClick.AddListener(CloseChallengeCanvas);
-        challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
+        challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne);});
+        challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo);});
+
+        //challengeOptionOne.onClick.AddListener(CloseChallengeCanvas);
+        //challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
 
         chal.clickedFlag = true;
         //Locations.S.blockLocationClick = true;
         challengeModalPanel.SetActive(true);
+    }
+
+    public void UpdateResultCanvas(ResultDefinition r) {
+
     }
 
     public void CloseChallengeCanvas() {

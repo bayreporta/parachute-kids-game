@@ -24,6 +24,5 @@ public class Utils : MonoBehaviour {
         data = JsonMapper.ToObject(jsonString);
         return data;
     }
-
-  
+ 
 }
