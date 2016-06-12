@@ -15,7 +15,13 @@ public class Resources : MonoBehaviour {
         S = this;
     }
 
-    //update player stats
+    public void UpdateResources(ResultDefinition r) {
+        Player.S.wellbeing += r.resultWellbeing;
+        Player.S.language += r.resultLanguage;
+        Player.S.gpa += r.resultGPA;
+
+        GUI.S.UpdateGUI(Player.S.wellbeing, Player.S.language, Player.S.gpa, r.resultWellbeing, r.resultLanguage,r.resultGPA);
+    }
 
     //check wellbeing level
 

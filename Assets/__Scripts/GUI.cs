@@ -11,6 +11,11 @@ public class GUI : MonoBehaviour {
     public GUIText gpaGUI;
     public GUIText actGUI;
 
+    GameObject wellbeingGO;
+    GameObject gpaGO;
+    GameObject languageGO;
+    GameObject actGO;
+
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
@@ -18,10 +23,10 @@ public class GUI : MonoBehaviour {
     }
 
     public void InitGUI(string chara) {
-        GameObject wellbeingGO = GameObject.Find("GUI_Wellbeing");
-        GameObject gpaGO = GameObject.Find("GUI_GPA");
-        GameObject languageGO = GameObject.Find("GUI_Language");
-        GameObject actGO = GameObject.Find("GUI_Act");
+        wellbeingGO = GameObject.Find("GUI_Wellbeing");
+        gpaGO = GameObject.Find("GUI_GPA");
+        languageGO = GameObject.Find("GUI_Language");
+        actGO = GameObject.Find("GUI_Act");
         wellbeingGUI = wellbeingGO.GetComponent<GUIText>();
         languageGUI = languageGO.GetComponent<GUIText>();
         gpaGUI = gpaGO.GetComponent<GUIText>();
@@ -32,7 +37,7 @@ public class GUI : MonoBehaviour {
             case "JohnDoe":
                 wellbeingGUI.text = "Wellbeing " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing.ToString();
                 languageGUI.text = "Language " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingLanguage.ToString();
-                gpaGUI.text = "GPA " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA.ToString();
+                gpaGUI.text = "GPA " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA.ToString() + ".00";
                 Player.S.wellbeing = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing;
                 Player.S.language = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingLanguage;
                 Player.S.gpa = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA;
@@ -40,6 +45,24 @@ public class GUI : MonoBehaviour {
         }
     }
 
-    //update GUI function
+    public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {
+        //update GUI colors based on whether they went up or down in value
+        ChangeGUIColor(wellbeingGUI, wbR);
+        ChangeGUIColor(languageGUI, langR);
+        ChangeGUIColor(gpaGUI, gpaR);
 
+        wellbeingGUI.text = "Wellbeing " + wb.ToString();
+        gpaGUI.text = "GPA " + gpa.ToString();
+        languageGUI.text = "Language " + lang.ToString();
+    }
+
+    public void ChangeGUIColor(GUIText gui, float i) {
+        //reset GUI up/down indicators
+        gui.color = Color.white;
+
+        //figure out which color
+        if (i < 0) {gui.color = Color.red;} 
+        else if (i > 0) {gui.color = Color.green;}
+        
+    }
 }

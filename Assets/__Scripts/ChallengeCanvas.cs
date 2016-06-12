@@ -115,7 +115,7 @@ public class ChallengeCanvas : MonoBehaviour {
         optionTwo.text = "meow man";
 
         challengeOptionTwo.onClick.RemoveAllListeners();
-        //update resources
+        challengeOptionTwo.onClick.AddListener(delegate { Resources.S.UpdateResources(r); });
         challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
     }
 
