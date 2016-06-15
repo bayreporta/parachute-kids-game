@@ -120,6 +120,7 @@ public class ChallengeCanvas : MonoBehaviour {
     }
 
     public void CloseChallengeCanvas() {
+        Acts.S.challengesDoneForAct += 1;
         challengeModalPanel.SetActive(false);
         //Locations.S.blockLocationClick = false;
     }

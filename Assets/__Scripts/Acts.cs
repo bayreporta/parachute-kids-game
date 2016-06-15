@@ -22,10 +22,13 @@ public class Acts : MonoBehaviour {
     void FixedUpdate() {
         //this is the end of game check based on what Act it is atm
         if (challengeThisAct == challengesDoneForAct && challengesDoneForAct != 0) {
+            Debug.Log("Hit");
             //code to move to next act
             Player.S.currAct += 1;
             if (Player.S.currAct > 3) {
-                //end game
+                challengesDoneForAct = 0;
+                challengeThisAct = 0;
+                //end game code
             }
             else { InitializeAct(Player.S.currAct); }            
         }
@@ -36,6 +39,7 @@ public class Acts : MonoBehaviour {
         Color activeLocation = Color.green;
         challengesDoneForAct = 0;
         challengeThisAct = 0;
+        Debug.Log(act);
 
         for (int i=0; i < Challenges.S.totChallenges; i++) {
             ChallengeDefinition chal = new ChallengeDefinition();
@@ -47,6 +51,7 @@ public class Acts : MonoBehaviour {
                 //in here we need to check prereqs and determine which challenges appear and which do not
 
                 //update GUI
+                GUI.S.ChangeActGUI(act);                   
 
                 //location highlight
                 go.GetComponent<Renderer>().material.color = activeLocation;
@@ -58,7 +63,8 @@ public class Acts : MonoBehaviour {
                 challengeThisAct += 1;
             }
 
-        }        
+        }
+        Debug.Log(challengeThisAct);      
     }
 
 

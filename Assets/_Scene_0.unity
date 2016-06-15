@@ -373,6 +373,10 @@ Prefab:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11482414, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
+      propertyPath: m_MinHeight
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
   m_IsPrefabParent: 0
@@ -672,7 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: -1
+  m_MinHeight: 40
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -863,7 +867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: -1
+  m_MinHeight: 40
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
@@ -1337,7 +1341,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_Spacing: 7
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
 --- !u!1 &1546406666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1839,22 @@ Prefab:
     - target: {fileID: 11458052, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482414, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
+      propertyPath: m_MinHeight
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482414, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
+      propertyPath: m_FlexibleHeight
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482414, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
+      propertyPath: m_PreferredHeight
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146568, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}

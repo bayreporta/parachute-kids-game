@@ -65,4 +65,8 @@ public class GUI : MonoBehaviour {
         else if (i > 0) {gui.color = Color.green;}
         
     }
+
+    public void ChangeActGUI(int act) {
+        actGUI.text = "Act " + act.ToString();
+    }
 }
