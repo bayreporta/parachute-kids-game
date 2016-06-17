@@ -5,22 +5,22 @@ using System.Collections.Generic;
 using LitJson;
 
 public enum ChallengeType {
-    JohnDoe_Act1_Classroom,
-    JohnDoe_Act1_Counselor,
-    JohnDoe_Act1_EdCenter,
-    JohnDoe_Act1_Cafeteria,
-    JohnDoe_Act1_Home,
-    JohnDoe_Act2_EdCenter,
-    JohnDoe_Act2_Cafeteria,
-    JohnDoe_Act2_Home,
-    JohnDoe_Act2_TeaHouse,
-    JohnDoe_Act2_Phone,
-    JohnDoe_Act3_Classroom,
-    JohnDoe_Act3_Counselor,
-    JohnDoe_Act3_Home,
-    JohnDoe_Act3_Stadium,
-    JohnDoe_Act3_KaraokeBar,
-    JohnDoe_Act3_BusStop
+    JohnDoe_Act0_Classroom,
+JohnDoe_Act1_Cafeteria,
+JohnDoe_Act1_Counselor,
+JohnDoe_Act1_EdCenter,
+JohnDoe_Act1_Home,
+JohnDoe_Act2_Cafeteria,
+JohnDoe_Act2_EdCenter,
+JohnDoe_Act2_Home,
+JohnDoe_Act2_Phone,
+JohnDoe_Act2_TeaHouse,
+JohnDoe_Act3_BusStop,
+JohnDoe_Act3_Counselor,
+JohnDoe_Act3_Home,
+JohnDoe_Act3_KaraokeBar,
+JohnDoe_Act3_Stadium,
+JohnDoe_Act4_Classroom
 }
 
 public class ChallengeDefinition {
@@ -109,11 +109,15 @@ public class Challenges : MonoBehaviour {
         switch (chara) {
             case "JohnDoe":
                 switch (act) {
-                    case 1:
+                    case 0:
                         switch (loc) {
                             case "Classroom":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_Classroom);
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act0_Classroom);
                                 break;
+                        }
+                        break;
+                    case 1:
+                        switch (loc) {                            
                             case "Counselor":
                                 currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act1_Counselor);
                                 break;
@@ -148,10 +152,7 @@ public class Challenges : MonoBehaviour {
                         }
                         break;
                     case 3:
-                        switch (loc) {
-                            case "Classroom":
-                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_Classroom);
-                                break;
+                        switch (loc) {                            
                             case "Counselor":
                                 currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act3_Counselor);
                                 break;
@@ -169,6 +170,13 @@ public class Challenges : MonoBehaviour {
                                 break;
                         }
                         break;
+                    case 4:
+                        switch (loc) {
+                            case "Classroom":
+                                currChallenge = ParachuteKids.S.GetChallengeDefinition(ChallengeType.JohnDoe_Act4_Classroom);
+                                break;
+                        }
+                        break;
                     default:
                         print("not found");
                         break;
@@ -178,7 +186,6 @@ public class Challenges : MonoBehaviour {
     
         //send challenge definition to the Canvas
         ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge);
-    }
+    }    
 
-    //resolve challenge option
 }

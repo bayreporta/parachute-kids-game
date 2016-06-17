@@ -67,6 +67,9 @@ public class GUI : MonoBehaviour {
     }
 
     public void ChangeActGUI(int act) {
+        if (act == 0) { act = 1; }
+        else if (act == 4) { act = 3; }
+
         actGUI.text = "Act " + act.ToString();
     }
 }

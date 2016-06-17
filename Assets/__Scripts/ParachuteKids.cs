@@ -38,7 +38,7 @@ public class ParachuteKids : MonoBehaviour {
     }
 
     void Start() {
-        Acts.S.InitializeAct(1);
+        Acts.S.InitializeAct(0);
     }
 
     public void BuildDictionaries() {

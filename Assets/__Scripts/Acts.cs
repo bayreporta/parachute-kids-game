@@ -25,7 +25,7 @@ public class Acts : MonoBehaviour {
             Debug.Log("Hit");
             //code to move to next act
             Player.S.currAct += 1;
-            if (Player.S.currAct > 3) {
+            if (Player.S.currAct > 4) {
                 challengesDoneForAct = 0;
                 challengeThisAct = 0;
                 //end game code
@@ -39,7 +39,6 @@ public class Acts : MonoBehaviour {
         Color activeLocation = Color.green;
         challengesDoneForAct = 0;
         challengeThisAct = 0;
-        Debug.Log(act);
 
         for (int i=0; i < Challenges.S.totChallenges; i++) {
             ChallengeDefinition chal = new ChallengeDefinition();
@@ -64,7 +63,6 @@ public class Acts : MonoBehaviour {
             }
 
         }
-        Debug.Log(challengeThisAct);      
     }
 
 

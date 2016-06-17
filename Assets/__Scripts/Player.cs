@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 
     //current game variables----------------------------//
     public string currCharacter = "JohnDoe";
-    public int currAct = 1;
+    public int currAct = 0;
     public int wellbeing;
     public int language;
     public float gpa;

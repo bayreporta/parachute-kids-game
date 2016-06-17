@@ -4,44 +4,44 @@ using System.Collections.Generic;
 using LitJson;
 
 public enum ResultType {
-JohnDoe_Act1_Classroom_Result_AA,
-JohnDoe_Act1_Classroom_Result_AB,
+    JohnDoe_Act0_Classroom_Result_AA,
+JohnDoe_Act0_Classroom_Result_AB,
+JohnDoe_Act1_Cafeteria_Result_A,
+JohnDoe_Act1_Cafeteria_Result_BA,
+JohnDoe_Act1_Cafeteria_Result_BB,
 JohnDoe_Act1_Counselor_Result_AA,
 JohnDoe_Act1_Counselor_Result_AB,
 JohnDoe_Act1_Counselor_Result_BA,
 JohnDoe_Act1_Counselor_Result_BB,
 JohnDoe_Act1_EdCenter_Result_A,
 JohnDoe_Act1_EdCenter_Result_B,
-JohnDoe_Act1_Cafeteria_Result_A,
-JohnDoe_Act1_Cafeteria_Result_BA,
-JohnDoe_Act1_Cafeteria_Result_BB,
 JohnDoe_Act1_Home_Result_A,
 JohnDoe_Act1_Home_Result_B,
-JohnDoe_Act2_EdCenter_Result_A,
-JohnDoe_Act2_EdCenter_Result_B,
 JohnDoe_Act2_Cafeteria_Result_A,
 JohnDoe_Act2_Cafeteria_Result_BA,
 JohnDoe_Act2_Cafeteria_Result_BB,
-JohnDoe_Act2_Home_Result_AA,
-JohnDoe_Act2_Home_Result_AB,
+JohnDoe_Act2_EdCenter_Result_A,
+JohnDoe_Act2_EdCenter_Result_B,
+JohnDoe_Act2_Home_Result_A,
 JohnDoe_Act2_Home_Result_B,
-JohnDoe_Act2_TeaHouse_Result_A,
-JohnDoe_Act2_TeaHouse_Result_B,
+JohnDoe_Act2_Home_Result_C,
 JohnDoe_Act2_Phone_Result_A,
 JohnDoe_Act2_Phone_Result_B,
-JohnDoe_Act3_Stadium_Result_A,
-JohnDoe_Act3_Stadium_Result_B,
+JohnDoe_Act2_TeaHouse_Result_A,
+JohnDoe_Act2_TeaHouse_Result_B,
+JohnDoe_Act3_BusStop_Result_A,
+JohnDoe_Act3_BusStop_Result_B,
 JohnDoe_Act3_Counselor_Result_A,
 JohnDoe_Act3_Counselor_Result_BA,
 JohnDoe_Act3_Counselor_Result_BB,
-JohnDoe_Act3_KaraokeBar_Result_A,
-JohnDoe_Act3_KaraokeBar_Result_B,
 JohnDoe_Act3_Home_Result_A,
 JohnDoe_Act3_Home_Result_B,
-JohnDoe_Act3_BusStop_Result_A,
-JohnDoe_Act3_BusStop_Result_B,
-JohnDoe_Act3_Classroom_Result_A,
-JohnDoe_Act3_Classroom_Result_B
+JohnDoe_Act3_KaraokeBar_Result_A,
+JohnDoe_Act3_KaraokeBar_Result_B,
+JohnDoe_Act3_Stadium_Result_A,
+JohnDoe_Act3_Stadium_Result_B,
+JohnDoe_Act4_Classroom_Result_A,
+JohnDoe_Act4_Classroom_Result_B
 }
 
 public class ResultDefinition {
@@ -69,6 +69,7 @@ public class Results : MonoBehaviour {
     public JsonData resultData;
     public List<ResultDefinition> resultDefinitions;
     public List<ResultType> resultTypes;
+    
 
 
     /* FUNCTIONS
@@ -141,6 +142,11 @@ public class Results : MonoBehaviour {
         } 
         else {option = opts[0];}
 
+        //check prereqs for results
+        bool prereqChk = false;
+        prereqChk = ResultPrereqCheck(chal, 1);
+        if (prereqChk == true) option = "c";
+
         //match option to the correct result
         for (int i=0; i < results.Count; i++) {
             
@@ -150,7 +156,32 @@ public class Results : MonoBehaviour {
                 result = results[i];
             }
         }
+       
+        result.resultPicked = true;
         ChallengeCanvas.S.UpdateResultCanvas(result);
 
+    }
+
+
+    public bool ResultPrereqCheck(int chal, int context) {
+        bool ret = false;
+
+        switch (context) {
+            case 0:
+                if (chal == 10) {
+                    ResultDefinition result = ParachuteKids.S.GetResultsDefinition((ResultType)6); //looking for Act 1 EdCenter Tutor pick
+                    if (result.resultPicked == false) ret = true;
+                }
+                break;
+            case 1:
+                if (chal == 7) {
+                    Debug.Log("Hit");
+                    ResultDefinition result = ParachuteKids.S.GetResultsDefinition((ResultType)11); //looking for Act 1 Home pay attention
+                    if (result.resultPicked == false) ret = true;
+                }
+                break;           
+        }
+        
+        return ret;
     }
 }

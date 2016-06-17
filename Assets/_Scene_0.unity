@@ -826,7 +826,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option one description
+  m_Text: ' scsacsac sacsacsac sacsacsac sacsacsac csacsac'
 --- !u!222 &531753108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1210,8 +1210,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 1, y: 0}
+  m_SizeDelta: {x: 477, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448090441
 MonoBehaviour:
@@ -1234,18 +1234,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 24
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 50
+    m_MinSize: 20
+    m_MaxSize: 24
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Challenge Title
+  m_Text: Placed in ESL, native language discouraged
 --- !u!222 &1448090442
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currCharacter: JohnDoe
-  currAct: 1
+  currAct: 0
   wellbeing: 0
   language: 0
   gpa: 0
@@ -1822,7 +1822,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11458052, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
       propertyPath: m_Text
-      value: Option one description
+      value: ' scsacsac sacsacsac sacsacsac sacsacsac csacsac'
       objectReference: {fileID: 0}
     - target: {fileID: 11458052, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
       propertyPath: m_FontData.m_BestFit
@@ -1855,6 +1855,10 @@ Prefab:
     - target: {fileID: 146568, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458052, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 625e107f96f5f2c46b7574bff373b7e8, type: 2}

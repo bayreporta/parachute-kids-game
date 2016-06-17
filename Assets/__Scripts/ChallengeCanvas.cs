@@ -28,6 +28,7 @@ public class ChallengeCanvas : MonoBehaviour {
     int challengeID;
     string[] optionsOne;
     string[] optionsTwo;
+    private readonly ChallengeType JohnDoe_Act3_BusStop;
 
 
 
@@ -65,6 +66,8 @@ public class ChallengeCanvas : MonoBehaviour {
     }
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
+        bool hideOption;
+
         //grab vital data
         int challengeID = chal.challengeID;
         string[] optionsOne = chal.optionOneResults.Split(',');
@@ -90,12 +93,15 @@ public class ChallengeCanvas : MonoBehaviour {
         //add event listeners
         challengeOptionOne.onClick.RemoveAllListeners();
         challengeOptionTwo.onClick.RemoveAllListeners();
+        challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne); });
 
-        challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne);});
-        challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo);});
+        //check prereqs for challenge and options
+        hideOption = Results.S.ResultPrereqCheck(chal.challengeID, 0);
 
-        //chal.clickedFlag = true;
-        //Locations.S.blockLocationClick = true;
+        //check to see if second button is hidden
+        if (chal.optionTwoText == "none" || hideOption == true) { challengeOptionTwo.gameObject.SetActive(false); }
+        else {challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo); }); }
+
         challengeModalPanel.SetActive(true);
     }
 
@@ -107,12 +113,12 @@ public class ChallengeCanvas : MonoBehaviour {
 
         //hide first button
         challengeOptionOne.gameObject.SetActive(false);
+        challengeOptionTwo.gameObject.SetActive(true);
 
         //change text
         title.text = r.resultTitle;
         flavor.text = r.resultFlavor;
-        //optionTwo.text = r.resultButton;
-        optionTwo.text = "meow man";
+        optionTwo.text = "Continue.";
 
         challengeOptionTwo.onClick.RemoveAllListeners();
         challengeOptionTwo.onClick.AddListener(delegate { Resources.S.UpdateResources(r); });
