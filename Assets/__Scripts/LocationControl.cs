@@ -119,6 +119,28 @@ public class LocationControl : MonoBehaviour {
         }
     }
 
-    
+    public void ActivateLocation() {
+        if (Player.S.wellbeing > 30) {
+            ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)10);
+
+            if (chal.clickedFlag == false) {
+                Locations go = Locations.locationObjects[9];
+                go.clickableLocation = true;
+                go.GetComponent<Renderer>().material.color = Color.green;
+            }
+            
+        }
+
+        if (Player.S.language >= 40) {
+            ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)11);
+
+            if (chal.clickedFlag == false) {
+                Locations go = Locations.locationObjects[1];
+                go.clickableLocation = true;
+                go.GetComponent<Renderer>().material.color = Color.green;
+            }
+
+        }
+    }
 
 }

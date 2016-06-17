@@ -61,9 +61,11 @@ public class Acts : MonoBehaviour {
                 challengeThisAct += 1;
 
                 //check if wellbeing is low enough for run away
-                if (Player.S.currAct == 3 && Player.S.wellbeing > 30 && chal.challengeID == 10) {
-                    go.clickableLocation = false;
-                    go.GetComponent<Renderer>().material.color = Color.white;
+                if (Player.S.currAct == 3) {
+                    if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language >= 40) {
+                        go.clickableLocation = false;
+                        go.GetComponent<Renderer>().material.color = Color.white;
+                    }                    
                 }
             }
         }

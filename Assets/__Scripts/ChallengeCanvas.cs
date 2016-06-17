@@ -102,6 +102,7 @@ public class ChallengeCanvas : MonoBehaviour {
         if (chal.optionTwoText == "none" || hideOption == true) { challengeOptionTwo.gameObject.SetActive(false); }
         else {challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo); }); }
 
+        chal.clickedFlag = true;
         challengeModalPanel.SetActive(true);
     }
 
@@ -127,7 +128,7 @@ public class ChallengeCanvas : MonoBehaviour {
 
     public void CloseChallengeCanvas() {
         //check if wellbeing is low enough for run away
-        if (Player.S.currAct == 3) Challenges.S.BusStopCheck();
+        if (Player.S.currAct == 3) LocationControl.S.ActivateLocation();
 
         Acts.S.challengesDoneForAct += 1;
         challengeModalPanel.SetActive(false);
