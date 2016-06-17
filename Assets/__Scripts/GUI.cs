@@ -51,9 +51,13 @@ public class GUI : MonoBehaviour {
         ChangeGUIColor(languageGUI, langR);
         ChangeGUIColor(gpaGUI, gpaR);
 
-        wellbeingGUI.text = "Wellbeing " + wb.ToString();
-        gpaGUI.text = "GPA " + gpa.ToString();
-        languageGUI.text = "Language " + lang.ToString();
+        wellbeingGUI.text = "Wellbeing: " + wb.ToString();
+
+        //convert language number into text indicator
+        languageGUI.text = "Language: " + ConvertLanguageValue(lang);
+
+        //Convert gpa value
+        gpaGUI.text = "GPA: " + ConvertGPAValue(gpa);
     }
 
     public void ChangeGUIColor(GUIText gui, float i) {
@@ -71,5 +75,31 @@ public class GUI : MonoBehaviour {
         else if (act == 4) { act = 3; }
 
         actGUI.text = "Act " + act.ToString();
+    }
+
+    public string ConvertLanguageValue(int val) {
+        string ret = "";
+
+        if (val < 10) { ret = "ESL Level 1"; }
+        if (val < 20 && val >= 10) { ret = "ESL Level 2"; }
+        if (val < 30 && val >= 20) { ret = "ESL Level 3"; }
+        if (val < 40 && val >= 30) { ret = "ESL Level 4"; }
+        if (val < 50 && val >= 40) { ret = "ESL Level 5"; }
+        if (val == 50 ) { ret = "Proficient"; }
+
+        return ret;
+    }
+
+    public string ConvertGPAValue(float gpa) {
+        string ret = "";
+        
+        if (gpa == 0) { ret = "0.0"; }
+        else if (gpa == 1) { ret = "1.0"; }
+        else if (gpa == 2) { ret = "2.0"; }
+        else if (gpa == 3) { ret = "3.0"; }
+        else if (gpa == 4) { ret = "4.0"; }
+        else { ret = gpa.ToString(); }
+
+        return ret;
     }
 }

@@ -226,8 +226,8 @@
         "flavorimg": "location or gameobj",
         "option1txt": "Regular Classes",
         "option2txt": "AP Classes",
-        "option1results": "a",
-        "option2results": "ba,bb"
+        "option1results": "aa,ab",
+        "option2results": "b"
     },
     {
         "id": 12,

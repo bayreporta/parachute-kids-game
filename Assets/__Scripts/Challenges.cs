@@ -188,4 +188,7 @@ public class Challenges : MonoBehaviour {
         ChallengeCanvas.S.UpdateChallengeCanvas(currChallenge);
     }    
 
+    public void BusStopCheck() {
+
+    }
 }

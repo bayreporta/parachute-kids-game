@@ -22,7 +22,6 @@ public class Acts : MonoBehaviour {
     void FixedUpdate() {
         //this is the end of game check based on what Act it is atm
         if (challengeThisAct == challengesDoneForAct && challengesDoneForAct != 0) {
-            Debug.Log("Hit");
             //code to move to next act
             Player.S.currAct += 1;
             if (Player.S.currAct > 4) {
@@ -60,9 +59,15 @@ public class Acts : MonoBehaviour {
 
                 //add to total active challenges for act
                 challengeThisAct += 1;
-            }
 
+                //check if wellbeing is low enough for run away
+                if (Player.S.currAct == 3 && Player.S.wellbeing > 30 && chal.challengeID == 10) {
+                    go.clickableLocation = false;
+                    go.GetComponent<Renderer>().material.color = Color.white;
+                }
+            }
         }
+        
     }
 
 

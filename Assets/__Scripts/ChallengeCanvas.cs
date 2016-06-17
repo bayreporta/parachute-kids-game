@@ -126,6 +126,9 @@ public class ChallengeCanvas : MonoBehaviour {
     }
 
     public void CloseChallengeCanvas() {
+        //check if wellbeing is low enough for run away
+        if (Player.S.currAct == 3) Challenges.S.BusStopCheck();
+
         Acts.S.challengesDoneForAct += 1;
         challengeModalPanel.SetActive(false);
         //Locations.S.blockLocationClick = false;

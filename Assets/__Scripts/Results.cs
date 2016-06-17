@@ -31,9 +31,9 @@ JohnDoe_Act2_TeaHouse_Result_A,
 JohnDoe_Act2_TeaHouse_Result_B,
 JohnDoe_Act3_BusStop_Result_A,
 JohnDoe_Act3_BusStop_Result_B,
-JohnDoe_Act3_Counselor_Result_A,
-JohnDoe_Act3_Counselor_Result_BA,
-JohnDoe_Act3_Counselor_Result_BB,
+JohnDoe_Act3_Counselor_Result_AA,
+JohnDoe_Act3_Counselor_Result_AB,
+JohnDoe_Act3_Counselor_Result_B,
 JohnDoe_Act3_Home_Result_A,
 JohnDoe_Act3_Home_Result_B,
 JohnDoe_Act3_KaraokeBar_Result_A,
@@ -156,7 +156,8 @@ public class Results : MonoBehaviour {
                 result = results[i];
             }
         }
-       
+        Debug.Log(chal + ": " + result.resultID);
+        Debug.Log(chal + ": " + results.Count);
         result.resultPicked = true;
         ChallengeCanvas.S.UpdateResultCanvas(result);
 

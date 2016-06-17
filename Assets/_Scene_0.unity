@@ -1960,7 +1960,7 @@ GUIText:
   m_Text: Act 1
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 250, y: -6}
+  m_PixelOffset: {x: 300, y: -6}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
