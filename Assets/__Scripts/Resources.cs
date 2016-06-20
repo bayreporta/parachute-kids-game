@@ -5,9 +5,7 @@ public class Resources : MonoBehaviour {
 
     /* CLASS VARIABLES
    ---------------------------------------------------------------*/
-    public static Resources S;
-
-    
+    public static Resources S;    
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -16,6 +14,7 @@ public class Resources : MonoBehaviour {
     }
 
     public void UpdateResources(ResultDefinition r) {
+      
         //update resources
         Player.S.wellbeing += r.resultWellbeing;
         Player.S.language += r.resultLanguage;

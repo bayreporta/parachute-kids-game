@@ -86,6 +86,7 @@
     <Compile Include="Assets\__Scripts\Challenges.cs" />
     <Compile Include="Assets\__Scripts\Characters.cs" />
     <Compile Include="Assets\__Scripts\GUI.cs" />
+    <Compile Include="Assets\__Scripts\GeneralCanvas.cs" />
     <Compile Include="Assets\__Scripts\LocationControl.cs" />
     <Compile Include="Assets\__Scripts\Locations.cs" />
     <Compile Include="Assets\__Scripts\ParachuteKids.cs" />

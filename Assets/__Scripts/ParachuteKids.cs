@@ -23,7 +23,7 @@ public class ParachuteKids : MonoBehaviour {
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
-        S = this;
+        S = this;      
 
         //init game---------------------------//
         LocationControl.S.GetLocationDefinitions();
@@ -34,11 +34,15 @@ public class ParachuteKids : MonoBehaviour {
 
         LocationControl.S.CreateLocations();
 
+        //init gui and canvas
         GUI.S.InitGUI(Player.S.currCharacter);
+        ChallengeCanvas.S.FindChallengeCanvasElems();
+        GeneralCanvas.S.FindGeneralCanvasElems();
+
     }
 
     void Start() {
-        Acts.S.InitializeAct(0);
+        Acts.S.InitializeAct(Player.S.currAct);
     }
 
     public void BuildDictionaries() {

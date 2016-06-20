@@ -12,6 +12,7 @@ public class ChallengeCanvas : MonoBehaviour {
     //all Challenge Canvas elems
     public int canvasElements = 9;
     public GameObject challengeCanvas;
+    public CanvasGroup challengeGroup; 
     public GameObject challengeModalPanel; 
     public GameObject challengeQuestionPanel; 
     public GameObject challengeAnswerPanel; 
@@ -35,15 +36,14 @@ public class ChallengeCanvas : MonoBehaviour {
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
-        S = this;
-
-        FindChallengeCanvasElems();        
+        S = this;               
     }
 
 
-   void FindChallengeCanvasElems() {
+   public void FindChallengeCanvasElems() {
         //grab Challenge Canvas GO and deactivate it. Also grab children
         challengeCanvas = GameObject.Find("_ChallengeCanvas");
+        challengeGroup = challengeCanvas.GetComponent<CanvasGroup>();
         challengeModalPanel = GameObject.Find("ModalPanel");
         challengeQuestionPanel = GameObject.Find("QuestionPanel");
         challengeAnswerPanel = GameObject.Find("AnswerPanel");
@@ -61,8 +61,7 @@ public class ChallengeCanvas : MonoBehaviour {
 
         challengeOptionTwo = GameObject.Find("OptionTwo").GetComponent<Button>();
         challengeOptionTwoText = challengeOptionTwo.transform.GetChild(0);
-
-        challengeModalPanel.SetActive(false);
+   
     }
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
@@ -102,8 +101,12 @@ public class ChallengeCanvas : MonoBehaviour {
         if (chal.optionTwoText == "none" || hideOption == true) { challengeOptionTwo.gameObject.SetActive(false); }
         else {challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo); }); }
 
+        Debug.Log("WB: " + Player.S.wellbeing);
+        Debug.Log("LG: " + Player.S.language);
+        Debug.Log("GPA: " + Player.S.gpa);
+
         chal.clickedFlag = true;
-        challengeModalPanel.SetActive(true);
+        StartCoroutine(TransitionChallengeCanvas(1));
     }
 
     public void UpdateResultCanvas(ResultDefinition r) {
@@ -131,9 +134,32 @@ public class ChallengeCanvas : MonoBehaviour {
         if (Player.S.currAct == 3) LocationControl.S.ActivateLocation();
 
         Acts.S.challengesDoneForAct += 1;
-        challengeModalPanel.SetActive(false);
-        //Locations.S.blockLocationClick = false;
+
+        //hide and disable canvas
+        StartCoroutine(TransitionChallengeCanvas(0));
+
+        //check if act is finished
+        Acts.S.CheckActStatus();
+
     }
 
+    public IEnumerator TransitionChallengeCanvas(int i) {
+        switch (i) {
+            case 0:
+                while (challengeGroup.alpha > 0) {
+                    challengeGroup.alpha -= Time.deltaTime * 2;
+                    yield return null;
+                }
+                challengeGroup.interactable = false;
+                break;
+            case 1:
+                while (challengeGroup.alpha < 1) {
+                    challengeGroup.alpha += Time.deltaTime * 2;
+                    yield return null;
+                }
+                challengeGroup.interactable = true;
+                break;
+        }
+    }
 
 }

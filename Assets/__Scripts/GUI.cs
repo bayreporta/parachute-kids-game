@@ -6,6 +6,7 @@ public class GUI : MonoBehaviour {
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
     public static GUI S;
+    public GameObject GUIControl;
     public GUIText wellbeingGUI;
     public GUIText languageGUI;
     public GUIText gpaGUI;
@@ -23,6 +24,7 @@ public class GUI : MonoBehaviour {
     }
 
     public void InitGUI(string chara) {
+        GUIControl = GameObject.Find("_GUI");
         wellbeingGO = GameObject.Find("GUI_Wellbeing");
         gpaGO = GameObject.Find("GUI_GPA");
         languageGO = GameObject.Find("GUI_Language");
@@ -32,7 +34,7 @@ public class GUI : MonoBehaviour {
         gpaGUI = gpaGO.GetComponent<GUIText>();
         actGUI = actGO.GetComponent<GUIText>();
 
-        //init GUI based on character
+        /*init GUI based on character
         switch (chara) {
             case "JohnDoe":
                 wellbeingGUI.text = "Wellbeing " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing.ToString();
@@ -42,7 +44,13 @@ public class GUI : MonoBehaviour {
                 Player.S.language = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingLanguage;
                 Player.S.gpa = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA;
                 break;
-        }
+        }*/
+
+        //initialize GUI text
+        wellbeingGUI.text = "Wellbeing: " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing.ToString();
+        languageGUI.text = "Language: Test Pending";
+        gpaGUI.text = "GPA: " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA.ToString() + ".00";
+
     }
 
     public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {

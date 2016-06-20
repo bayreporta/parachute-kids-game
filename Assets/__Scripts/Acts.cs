@@ -19,7 +19,7 @@ public class Acts : MonoBehaviour {
         S = this;
     }
 
-    void FixedUpdate() {
+    public void CheckActStatus() {
         //this is the end of game check based on what Act it is atm
         if (challengeThisAct == challengesDoneForAct && challengesDoneForAct != 0) {
             //code to move to next act
@@ -69,8 +69,18 @@ public class Acts : MonoBehaviour {
                 }
             }
         }
-        
+
+       
+       if (Player.S.currAct == 2 || Player.S.currAct == 3) {
+            GeneralCanvas.S.UpdateActCanvas(Player.S.currAct); //update canvas text
+            StartCoroutine(GeneralCanvas.S.TransitionActCanvas(1)); //transition canvas in
+        }
+
+        //start Act Canvas transition
+        Invoke("FireActTransition", 3f);
     }
 
-
+    public void FireActTransition() {
+        StartCoroutine(GeneralCanvas.S.TransitionActCanvas(0));
+    }
 }
