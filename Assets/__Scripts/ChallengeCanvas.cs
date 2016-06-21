@@ -61,7 +61,8 @@ public class ChallengeCanvas : MonoBehaviour {
 
         challengeOptionTwo = GameObject.Find("OptionTwo").GetComponent<Button>();
         challengeOptionTwoText = challengeOptionTwo.transform.GetChild(0);
-   
+
+        challengeCanvas.SetActive(false);
     }
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
@@ -92,7 +93,7 @@ public class ChallengeCanvas : MonoBehaviour {
         //add event listeners
         challengeOptionOne.onClick.RemoveAllListeners();
         challengeOptionTwo.onClick.RemoveAllListeners();
-        challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne); });
+        if (chal.challengeID != 15) challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne); });
 
         //check prereqs for challenge and options
         hideOption = Results.S.ResultPrereqCheck(chal.challengeID, 0);
@@ -101,12 +102,16 @@ public class ChallengeCanvas : MonoBehaviour {
         if (chal.optionTwoText == "none" || hideOption == true) { challengeOptionTwo.gameObject.SetActive(false); }
         else {challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo); }); }
 
-        Debug.Log("WB: " + Player.S.wellbeing);
-        Debug.Log("LG: " + Player.S.language);
-        Debug.Log("GPA: " + Player.S.gpa);
-
+        //activate canvas
         chal.clickedFlag = true;
+        challengeCanvas.SetActive(true);
         StartCoroutine(TransitionChallengeCanvas(1));
+
+        //special SAT check
+        if (chal.challengeID == 15) {
+            EndGame.S.ProcessSATScores();
+            challengeOptionOne.onClick.AddListener(delegate { EndGame.S.FinalResults(); });
+        }
     }
 
     public void UpdateResultCanvas(ResultDefinition r) {
@@ -151,8 +156,9 @@ public class ChallengeCanvas : MonoBehaviour {
                     yield return null;
                 }
                 challengeGroup.interactable = false;
+                challengeCanvas.SetActive(false);
                 break;
-            case 1:
+            case 1:                
                 while (challengeGroup.alpha < 1) {
                     challengeGroup.alpha += Time.deltaTime * 2;
                     yield return null;

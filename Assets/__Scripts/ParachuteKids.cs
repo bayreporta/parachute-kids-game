@@ -14,6 +14,7 @@ public class ParachuteKids : MonoBehaviour {
     static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
     static public Dictionary<CharacterType, CharacterDefinition> CHARS_DEFS;
     static public Dictionary<ResultType, ResultDefinition> RES_DEFS;
+    static public Dictionary<CollegeType, CollegeDefinition> COL_DEFS;
 
     //dynamic----------------------------//
 
@@ -29,6 +30,7 @@ public class ParachuteKids : MonoBehaviour {
         LocationControl.S.GetLocationDefinitions();
         Challenges.S.GetChallengeDefinitions();
         Characters.S.GetCharacterDefinitions();
+        EndGame.S.GetCollegeDefinitions();
         Results.S.GetResultDefinitions();
         BuildDictionaries();
 
@@ -38,7 +40,7 @@ public class ParachuteKids : MonoBehaviour {
         GUI.S.InitGUI(Player.S.currCharacter);
         ChallengeCanvas.S.FindChallengeCanvasElems();
         GeneralCanvas.S.FindGeneralCanvasElems();
-
+        CollegeCanvas.S.FindCollegeCanvasElems();
     }
 
     void Start() {
@@ -70,6 +72,12 @@ public class ParachuteKids : MonoBehaviour {
         foreach (ResultDefinition result in Results.S.resultDefinitions) {
             RES_DEFS[result.type] = result;
         }
+
+        //build colleges dictionary---------------//
+        COL_DEFS = new Dictionary<CollegeType, CollegeDefinition>();
+        foreach (CollegeDefinition c in EndGame.S.collegeDefinitions) {
+            COL_DEFS[c.type] = c;
+        }
     }
 
     public LocationDefinition GetLocationDefinition(LocationType loc) {
@@ -98,6 +106,13 @@ public class ParachuteKids : MonoBehaviour {
             return (RES_DEFS[result]);
         }
         return (new ResultDefinition());
+    }
+
+    public CollegeDefinition GetCollegeDefinition(CollegeType college) {
+        if (COL_DEFS.ContainsKey(college)) {
+            return (COL_DEFS[college]);
+        }
+        return (new CollegeDefinition());
     }
 
 }

@@ -21,7 +21,21 @@ public class GeneralCanvas : MonoBehaviour {
     public Transform generalActText;
     public Transform generalActContext;
 
+    public GameObject generalResultsPanel;
+    public GameObject readingResults;
+    public GameObject mathResults;
+    public GameObject writingResults;
+    public GameObject totalResults;
+    public Transform readingResultsText;
+    public Transform mathResultsText;
+    public Transform writingResultsText;
+    public Transform totalResultsText;
+    public Button resultsButton;
 
+
+
+    /* FUNCTIONS
+    ---------------------------------------------------------------*/
     void Awake () {
         S = this;
 	}
@@ -34,6 +48,7 @@ public class GeneralCanvas : MonoBehaviour {
                     yield return null;
                 }
                 generalGroup.interactable = false;
+                generalCanvas.SetActive(false);
                 break;
             case 1:
                 while (generalGroup.alpha < 1) {
@@ -57,6 +72,19 @@ public class GeneralCanvas : MonoBehaviour {
         generalActContextObject = GameObject.Find("ActContext");
         generalActContext = generalActContextObject.transform.GetChild(0);
 
+        generalResultsPanel = GameObject.Find("ResultsPanel");
+        readingResults = GameObject.Find("ReadingResults");
+        mathResults = GameObject.Find("MathResults");
+        writingResults = GameObject.Find("WritingResults");
+        totalResults = GameObject.Find("TotalResults");
+        readingResultsText = readingResults.transform.GetChild(0);
+        mathResultsText = mathResults.transform.GetChild(0);
+        writingResultsText = writingResults.transform.GetChild(0);
+        totalResultsText = totalResults.transform.GetChild(0);
+        resultsButton = GameObject.Find("ResultsButton").GetComponent<Button>();
+
+        generalResultsPanel.SetActive(false);
+
         //temp make active
         generalGroup.alpha = 1;
         generalGroup.interactable = false;
@@ -77,6 +105,26 @@ public class GeneralCanvas : MonoBehaviour {
                 actContext.text = "Senior Year";
                 break;
         }
+    }
+
+    public void UpdateSATResultsPanel() {
+        Text readingScore = readingResultsText.GetComponent<Text>();
+        Text mathScore = mathResultsText.GetComponent<Text>();
+        Text writingScore = writingResultsText.GetComponent<Text>();
+        Text totalScore = totalResultsText.GetComponent<Text>();
+
+        //activate Results panel
+        generalCanvas.SetActive(true);
+        generalActPanel.SetActive(false);
+        generalResultsPanel.SetActive(true);
+        StartCoroutine(TransitionActCanvas(1));
+
+        //update panel
+        readingScore.text = "Critical Reading: " + EndGame.S.readingSATScore;
+        mathScore.text = "Math: " + EndGame.S.mathSATScore;
+        writingScore.text = "Writing: " + EndGame.S.writingSATScore;
+        totalScore.text = "Total Score: " + (EndGame.S.readingSATScore + EndGame.S.mathSATScore + EndGame.S.writingSATScore);
+
     }
 
 }
