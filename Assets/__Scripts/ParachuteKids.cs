@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 using LitJson;
@@ -113,6 +116,31 @@ public class ParachuteKids : MonoBehaviour {
             return (COL_DEFS[college]);
         }
         return (new CollegeDefinition());
+    }
+
+    public void GameOver(int ending) {
+        //toggle elems on canvas
+        GeneralCanvas.S.resultsFlavor.SetActive(true);
+        GeneralCanvas.S.readingResults.SetActive(false);
+        GeneralCanvas.S.mathResults.SetActive(false);
+        GeneralCanvas.S.writingResults.SetActive(false);
+        GeneralCanvas.S.totalResults.SetActive(false);
+        GeneralCanvas.S.collegeResults.SetActive(false);
+
+        //modify canvas
+        Text flavorText = GeneralCanvas.S.resultsFlavorText.GetComponent<Text>();
+        Text titleText = GeneralCanvas.S.resultsTitleText.GetComponent<Text>();
+        Text buttonText = GeneralCanvas.S.resultsButtonText.GetComponent<Text>();
+        titleText.text = "Game End Screen";
+        buttonText.text = "Play again";
+
+        GeneralCanvas.S.resultsButton.onClick.RemoveAllListeners();
+        GeneralCanvas.S.resultsButton.onClick.AddListener(delegate { ParachuteKids.S.ResetGame(); });
+    }
+
+    public void ResetGame() {
+        Locations.locationObjects = null;
+        SceneManager.LoadScene("_Scene_0");
     }
 
 }

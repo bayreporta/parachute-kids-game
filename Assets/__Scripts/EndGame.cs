@@ -14,6 +14,7 @@ UCIrvine
 public class CollegeDefinition {
     public CollegeType type;
     public string name;
+    public bool admitted = false;
     public float gpaReq;
     public int id;
     public int readingReq;
@@ -99,14 +100,50 @@ public class EndGame : MonoBehaviour {
         writingSATScore = rand;
     }
 
+    public bool DetermineCollegeAdmittance() {
+        CollegeDefinition college = ParachuteKids.S.GetCollegeDefinition((CollegeType)Player.S.collegeChoice);
+        float rand = 0f;
+        bool ret = false;     
+
+        switch (college.name) {
+            case "UC Berkeley":
+            case "UC Irvine":
+                if (Player.S.gpa >= college.gpaReq) rand += .25f;
+                if (EndGame.S.readingSATScore >= college.readingReq) rand += .25f;
+                if (EndGame.S.mathSATScore >= college.mathReq) rand += .25f;
+                if (EndGame.S.writingSATScore >= college.writingReq) rand += .25f;
+
+                //did you get in?
+                if (UnityEngine.Random.Range(0f, 1f) <= rand) ret = true;
+                break;
+            case "CSU Long Beach":
+                float score = (Player.S.gpa * 800) + (EndGame.S.readingSATScore + EndGame.S.mathSATScore);
+
+                if (score >= 4000) { rand = 1f; }
+                else if (score >= 3600) { rand = .5f; }
+                else if (score >= 3200) { rand = .25f; }
+                else { rand = 0f; }
+
+                //did you get in?
+                if (UnityEngine.Random.Range(0f, 1f) <= rand) ret = true;
+                break;
+            case "Pasadena City College":
+                ret = true;
+                break;
+        }
+        return ret;
+    }
+
     public void FinalResults() {
+        int ending = -1;
+
         //disable challenge canvas
         ChallengeCanvas.S.challengeCanvas.SetActive(true);
         StartCoroutine(ChallengeCanvas.S.TransitionChallengeCanvas(0));
 
         //turn on results panel
-        GeneralCanvas.S.UpdateSATResultsPanel();
-
+       GeneralCanvas.S.UpdateSATResultsPanel();
+        
     }
 
 }

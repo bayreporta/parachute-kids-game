@@ -16,6 +16,7 @@ public class Locations : MonoBehaviour {
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
+        Debug.Log(locationObjects);
         if (locationObjects == null) {
             locationObjects = new List<Locations>();
         }
