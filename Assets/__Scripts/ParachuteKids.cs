@@ -135,11 +135,25 @@ public class ParachuteKids : MonoBehaviour {
         buttonText.text = "Play again";
 
         GeneralCanvas.S.resultsButton.onClick.RemoveAllListeners();
-        GeneralCanvas.S.resultsButton.onClick.AddListener(delegate { ParachuteKids.S.ResetGame(); });
+        GeneralCanvas.S.resultsButton.onClick.AddListener(delegate { ResetGame(); });
     }
 
     public void ResetGame() {
         Locations.locationObjects = null;
+
+		//reset character
+		Player.S.currAct = 0;
+		Player.S.gpa = 2.0f;
+		Player.S.wellbeing = 50;
+		Player.S.language = 0;
+		Player.S.collegeChoice = -1;
+
+		//reset canvases
+		GeneralCanvas.S.generalCanvas.SetActive(false);
+		GeneralCanvas.S.generalActPanel.SetActive(true);
+		GeneralCanvas.S.generalResultsPanel.SetActive(false);
+
+		//restart scene
         SceneManager.LoadScene("_Scene_0");
     }
 

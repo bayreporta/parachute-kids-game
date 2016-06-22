@@ -4309,7 +4309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currCharacter: JohnDoe
-  currAct: 4
+  currAct: 0
   wellbeing: 50
   language: 0
   gpa: 2

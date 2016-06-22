@@ -27,15 +27,25 @@ public class Resources : MonoBehaviour {
         if (Player.S.language > 50) { Player.S.language = 50; } 
         else if (Player.S.language < 0) { Player.S.language = 0; }
 
-        if (Player.S.gpa > 4f) { Player.S.gpa = 4.0f; } 
+        if (Player.S.gpa > 5f) { Player.S.gpa = 5.0f; } 
         else if (Player.S.gpa < 0f) { Player.S.gpa = 0.0f; }
 
         //update GUI
         GUI.S.UpdateGUI(Player.S.wellbeing, Player.S.language, Player.S.gpa, r.resultWellbeing, r.resultLanguage,r.resultGPA);
-    }
+    
+		//wellbeing fail check
+		if (Player.S.wellbeing == 0) {
+			
+			//activate Results panel
+			GeneralCanvas.S.generalCanvas.SetActive(true);
+			GeneralCanvas.S.generalActPanel.SetActive(false);
+			GeneralCanvas.S.generalResultsPanel.SetActive(true);
+			StartCoroutine(GeneralCanvas.S.TransitionActCanvas(1));
 
-    //check wellbeing level
-
-    //check gpa and language level
+			//fire game over
+			ParachuteKids.S.GameOver (-1);	
+		}
+	}
+			
 
 }

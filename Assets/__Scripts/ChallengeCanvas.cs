@@ -130,8 +130,8 @@ public class ChallengeCanvas : MonoBehaviour {
         optionTwo.text = "Continue.";
 
         challengeOptionTwo.onClick.RemoveAllListeners();
+		challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
         challengeOptionTwo.onClick.AddListener(delegate { Resources.S.UpdateResources(r); });
-        challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
     }
 
     public void CloseChallengeCanvas() {
