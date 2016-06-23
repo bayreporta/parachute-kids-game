@@ -43,7 +43,7 @@ public class Characters : MonoBehaviour {
     public void GetCharacterDefinitions() {
         charactersDefinitions = new List<CharacterDefinition>();
         charactersTypes = new List<CharacterType>();
-        characterData = Utils.ConvertJson("/_Resources/characters.json");
+        characterData = Utils.S.ConvertJson("characters.json");
 
         //grab all values from ChallengeType enum
         foreach (CharacterType c in System.Enum.GetValues(typeof(CharacterType))) {

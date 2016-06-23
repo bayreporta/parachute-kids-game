@@ -69,7 +69,7 @@ public class Challenges : MonoBehaviour {
     public void GetChallengeDefinitions() {
         challengeDefinitions = new List<ChallengeDefinition>();
         chalTypes = new List<ChallengeType>();
-        challengeData = Utils.ConvertJson("/_Resources/challenges.json");
+        challengeData = Utils.S.ConvertJson("challenges.json");
 
         //grab all values from ChallengeType enum
         foreach (ChallengeType c in System.Enum.GetValues(typeof(ChallengeType))) {

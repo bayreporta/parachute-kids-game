@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{A01C489A-021C-CDA0-FFD2-BE663A5E4B97}") = "parachute-kids-game", "Assembly-CSharp.csproj", "{CADA8183-0CF8-8443-427F-74163CFDD399}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parachute-kids-game.CSharp", "parachute-kids-game.CSharp.csproj", "{BEDEE600-1312-2744-BDA5-0FAD348F6007}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CADA8183-0CF8-8443-427F-74163CFDD399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CADA8183-0CF8-8443-427F-74163CFDD399}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CADA8183-0CF8-8443-427F-74163CFDD399}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CADA8183-0CF8-8443-427F-74163CFDD399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

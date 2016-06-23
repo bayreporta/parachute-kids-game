@@ -54,7 +54,7 @@ public class LocationControl : MonoBehaviour {
     public void GetLocationDefinitions() {
         locationDefinitions = new List<LocationDefinition>();
         locTypes = new List<LocationType>();
-        locationData = Utils.ConvertJson("/_Resources/locations.json");
+        locationData = Utils.S.ConvertJson("locations.json");
 
         //grab all values from LocationType enum
         foreach (LocationType l in System.Enum.GetValues(typeof(LocationType))) {
@@ -120,7 +120,7 @@ public class LocationControl : MonoBehaviour {
     }
 
     public void ActivateLocation() {
-        if (Player.S.wellbeing > 30) {
+        if (Player.S.wellbeing <= 30) {
             ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)10);
 
             if (chal.clickedFlag == false) {

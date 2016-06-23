@@ -81,7 +81,7 @@ public class Results : MonoBehaviour {
     public void GetResultDefinitions() {
         resultDefinitions = new List<ResultDefinition>();
         resultTypes = new List<ResultType>();
-        resultData = Utils.ConvertJson("/_Resources/results.json");
+        resultData = Utils.S.ConvertJson("results.json");
 
         //grab all values from ChallengeType enum
         foreach (ResultType r in System.Enum.GetValues(typeof(ResultType))) {

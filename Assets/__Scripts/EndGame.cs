@@ -52,7 +52,7 @@ public class EndGame : MonoBehaviour {
     public void GetCollegeDefinitions() {
         collegeDefinitions = new List<CollegeDefinition>();
         collegeTypes = new List<CollegeType>();
-        collegeData = Utils.ConvertJson("/_Resources/colleges.json");
+        collegeData = Utils.S.ConvertJson("colleges.json");
 
         //grab all values from College types enum
         foreach (CollegeType c in System.Enum.GetValues(typeof(CollegeType))) {
