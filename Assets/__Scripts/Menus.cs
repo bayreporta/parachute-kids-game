@@ -18,10 +18,10 @@ public class Menus : MonoBehaviour {
 
         //initalize menus
         ConfigureTitleMenu();
-    }	
+    }
 
     public void ConfigureTitleMenu() {
-        titleCanvas = GameObject.Find("TitleCanvas");
+        titleCanvas = GameObject.Find("_TitleCanvas");
         titleGroup = titleCanvas.GetComponent<CanvasGroup>();
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         aboutButton = GameObject.Find("AboutButton").GetComponent<Button>();
@@ -34,7 +34,7 @@ public class Menus : MonoBehaviour {
 
         //initalize button events
         playButton.onClick.AddListener(delegate { StartCoroutine(TransitionToPlay()); });
-        
+
     }
 
     public IEnumerator TransitionToPlay() {
@@ -44,19 +44,21 @@ public class Menus : MonoBehaviour {
         }
         titleGroup.interactable = false;
         titleCanvas.SetActive(false);
+
+        ParachuteKids.S.StartGame();
     }
 
-   /* public IEnumerator TransitionToAbout() {
-        while (titleGroup.alpha > 0) {
-            titleGroup.alpha -= Time.deltaTime * 2;
-            yield return null;
-        }
-    }
+    /* public IEnumerator TransitionToAbout() {
+         while (titleGroup.alpha > 0) {
+             titleGroup.alpha -= Time.deltaTime * 2;
+             yield return null;
+         }
+     }
 
-    public IEnumerator TransitionToCredits() {
-        while (titleGroup.alpha > 0) {
-            titleGroup.alpha -= Time.deltaTime * 2;
-            yield return null;
-        }
-    }*/
+     public IEnumerator TransitionToCredits() {
+         while (titleGroup.alpha > 0) {
+             titleGroup.alpha -= Time.deltaTime * 2;
+             yield return null;
+         }
+     }*/
 }

@@ -107,10 +107,7 @@ public class GeneralCanvas : MonoBehaviour {
         resultsFlavor.SetActive(false);
         generalResultsPanel.SetActive(false);
 
-        //temp make active
-        generalGroup.alpha = 1;
-        generalGroup.interactable = false;
-
+        generalCanvas.SetActive(false);
     }
 
     public void UpdateActCanvas(int act) {
@@ -118,6 +115,11 @@ public class GeneralCanvas : MonoBehaviour {
         Text actContext = generalActContext.GetComponent<Text>();
 
         switch (act) {
+            case 0:
+            case 1:
+                actText.text = "ACT 1";
+                actContext.text = "Junior Year, Fall Semester";
+                break;
             case 2:
                 actText.text = "ACT 2";
                 actContext.text = "Junior Year, Spring Semester";

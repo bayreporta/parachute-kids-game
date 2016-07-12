@@ -11,7 +11,7 @@ public class ParachuteKids : MonoBehaviour {
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
     static public ParachuteKids S;
-    
+
     //dictionaries-----------------------//
     static public Dictionary<LocationType, LocationDefinition> LOC_DEFS;
     static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
@@ -26,8 +26,8 @@ public class ParachuteKids : MonoBehaviour {
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
-  
-    public void StartGame() {
+    void Awake() {
+        S = this;      
 
         //init game---------------------------//
         LocationControl.S.GetLocationDefinitions();
@@ -35,18 +35,44 @@ public class ParachuteKids : MonoBehaviour {
         Characters.S.GetCharacterDefinitions();
         EndGame.S.GetCollegeDefinitions();
         Results.S.GetResultDefinitions();
-        BuildDictionaries();
-
-        LocationControl.S.CreateLocations();
+        BuildDictionaries();        
 
         //init gui and canvas
         GUI.S.InitGUI(Player.S.currCharacter);
         ChallengeCanvas.S.FindChallengeCanvasElems();
         GeneralCanvas.S.FindGeneralCanvasElems();
         CollegeCanvas.S.FindCollegeCanvasElems();
+    }
 
-        //initalize game
+   
+    public void StartGame() {        
+        Locations.locationObjects = null;
+
+        //reset character
+        Player.S.currAct = 0;
+        Player.S.gpa = 2.0f;
+        Player.S.wellbeing = 50;
+        Player.S.language = 0;
+        Player.S.collegeChoice = -1;
+
+        //reset general canvases        
+        GeneralCanvas.S.generalCanvas.SetActive(true);
+        GeneralCanvas.S.generalGroup.alpha = 1;
+        GeneralCanvas.S.generalResultsPanel.SetActive(false);
+        GeneralCanvas.S.generalActPanel.SetActive(true);
+        GeneralCanvas.S.UpdateActCanvas(1);
+
+        //reset other canvases
+        ChallengeCanvas.S.challengeCanvas.SetActive(false);
+        ChallengeCanvas.S.challengeGroup.alpha = 0;
+        CollegeCanvas.S.collegeCanvas.SetActive(false);
+        CollegeCanvas.S.collegeGroup.alpha = 0;
+
+        //initialize game
+        LocationControl.S.CreateLocations();
         Acts.S.InitializeAct(Player.S.currAct);
+        Invoke("StartCoroutine(GeneralCanvas.S.TransitionActCanvas(0))", 1f);
+
     }
 
     public void BuildDictionaries() {

@@ -34,23 +34,12 @@ public class GUI : MonoBehaviour {
         gpaGUI = gpaGO.GetComponent<GUIText>();
         actGUI = actGO.GetComponent<GUIText>();
 
-        /*init GUI based on character
-        switch (chara) {
-            case "JohnDoe":
-                wellbeingGUI.text = "Wellbeing " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing.ToString();
-                languageGUI.text = "Language " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingLanguage.ToString();
-                gpaGUI.text = "GPA " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA.ToString() + ".00";
-                Player.S.wellbeing = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing;
-                Player.S.language = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingLanguage;
-                Player.S.gpa = ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA;
-                break;
-        }*/
-
         //initialize GUI text
         wellbeingGUI.text = "Wellbeing: " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing.ToString();
         languageGUI.text = "Language: Test Pending";
         gpaGUI.text = "GPA: " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA.ToString() + ".00";
 
+        GUIControl.SetActive(false);
     }
 
     public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {
