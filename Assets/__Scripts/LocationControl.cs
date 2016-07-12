@@ -126,7 +126,7 @@ public class LocationControl : MonoBehaviour {
         if (Player.S.wellbeing <= 30) {
             ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)10);
 
-			if (chal.clickedFlag == false && Locations.locationObjects[9].clickableLocation == false) {
+            if (chal.clickedFlag == false) {
                 Locations go = Locations.locationObjects[9];
                 go.clickableLocation = true;
 				Acts.S.challengeThisAct += 1;
@@ -135,7 +135,7 @@ public class LocationControl : MonoBehaviour {
             
         }
 
-		if (Player.S.language >= 40) {
+        if (Player.S.language >= 40) {
             ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)11);
 
             if (chal.clickedFlag == false) {
