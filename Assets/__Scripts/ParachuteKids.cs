@@ -11,7 +11,7 @@ public class ParachuteKids : MonoBehaviour {
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
     static public ParachuteKids S;
-
+    
     //dictionaries-----------------------//
     static public Dictionary<LocationType, LocationDefinition> LOC_DEFS;
     static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
@@ -26,8 +26,8 @@ public class ParachuteKids : MonoBehaviour {
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
-    void Awake() {
-        S = this;      
+  
+    public void StartGame() {
 
         //init game---------------------------//
         LocationControl.S.GetLocationDefinitions();
@@ -44,9 +44,8 @@ public class ParachuteKids : MonoBehaviour {
         ChallengeCanvas.S.FindChallengeCanvasElems();
         GeneralCanvas.S.FindGeneralCanvasElems();
         CollegeCanvas.S.FindCollegeCanvasElems();
-    }
 
-    void Start() {
+        //initalize game
         Acts.S.InitializeAct(Player.S.currAct);
     }
 
