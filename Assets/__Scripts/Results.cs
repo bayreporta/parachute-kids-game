@@ -67,6 +67,7 @@ public class Results : MonoBehaviour {
     public static Results S;
     public int totResults = 38; //manually entered atm
     public JsonData resultData;
+    public TextAsset resultJson;
     public List<ResultDefinition> resultDefinitions;
     public List<ResultType> resultTypes;
     
@@ -79,9 +80,11 @@ public class Results : MonoBehaviour {
     }
 
     public void GetResultDefinitions() {
+        resultData = new JsonData();
+
         resultDefinitions = new List<ResultDefinition>();
         resultTypes = new List<ResultType>();
-        resultData = Utils.S.ConvertJson("results.json");
+        resultData = Utils.S.ConvertJson(resultJson);
 
         //grab all values from ChallengeType enum
         foreach (ResultType r in System.Enum.GetValues(typeof(ResultType))) {

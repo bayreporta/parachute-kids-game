@@ -1,0 +1,135 @@
+{
+	"Locations": 
+	[
+    {
+        "id": 0,
+        "locationtype": "Classroom",
+        "name": "Classroom",
+        "x": 2.55,
+        "y": 6.2,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 1,
+        "locationtype": "Counselor",
+        "name": "Counselor",
+        "x": -1.84,
+        "y": 10.11,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 2,
+        "locationtype": "EdCenter",
+        "name": "Ed Center",
+        "x": -12.69,
+        "y": -4.95,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 3,
+        "locationtype": "Cafeteria",
+        "name": "Cafeteria",
+        "x": -1.62,
+        "y": 4.94,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 4,
+        "locationtype": "Home",
+        "name": "Home",
+        "x": -8,
+        "y": -4.94,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 5,
+        "locationtype": "TeaHouse",
+        "name": "Tea House",
+        "x": 11.14,
+        "y": -1.32,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 6,
+        "locationtype": "Phone",
+        "name": "Phone",
+        "x": -4.17,
+        "y": -4.86,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 7,
+        "locationtype": "Stadium",
+        "name": "Stadium",
+        "x": 2.58,
+        "y": 10.33,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 8,
+        "locationtype": "KaraokeBar",
+        "name": "Karaoke Bar",
+        "x": 15.05,
+        "y": -5.16,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    },
+    {
+        "id": 9,
+        "locationtype": "BusStop",
+        "name": "Bus Stop",
+        "x": -15.5,
+        "y": -11.29,
+        "actone": false,
+        "acttwo": false,
+        "actthree": false,
+        "actonechallenge": "null",
+        "acttwochallenge": "null",
+        "actthreechallenge": "null"
+    }
+]
+}

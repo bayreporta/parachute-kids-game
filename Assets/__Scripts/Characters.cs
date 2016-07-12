@@ -26,6 +26,7 @@ public class Characters : MonoBehaviour {
     static public Characters S;
     public int totCharacters = 2;
     public JsonData characterData;
+    public TextAsset characterJson;
     public List<CharacterDefinition> charactersDefinitions;
     public List<CharacterType> charactersTypes;
 
@@ -41,9 +42,11 @@ public class Characters : MonoBehaviour {
 
 
     public void GetCharacterDefinitions() {
+        characterData = new JsonData();
+
         charactersDefinitions = new List<CharacterDefinition>();
         charactersTypes = new List<CharacterType>();
-        characterData = Utils.S.ConvertJson("characters.json");
+        characterData = Utils.S.ConvertJson(characterJson);
 
         //grab all values from ChallengeType enum
         foreach (CharacterType c in System.Enum.GetValues(typeof(CharacterType))) {

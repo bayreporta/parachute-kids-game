@@ -53,6 +53,7 @@ public class Challenges : MonoBehaviour {
     static public Challenges S;
     public int totChallenges = 16;
     public JsonData challengeData;
+    public TextAsset challengesJson;
     public List<ChallengeDefinition> challengeDefinitions;
     public List<ChallengeType> chalTypes;
 
@@ -67,9 +68,11 @@ public class Challenges : MonoBehaviour {
     }
 
     public void GetChallengeDefinitions() {
+        challengeData = new JsonData();
+
         challengeDefinitions = new List<ChallengeDefinition>();
         chalTypes = new List<ChallengeType>();
-        challengeData = Utils.S.ConvertJson("challenges.json");
+        challengeData = Utils.S.ConvertJson(challengesJson);
 
         //grab all values from ChallengeType enum
         foreach (ChallengeType c in System.Enum.GetValues(typeof(ChallengeType))) {

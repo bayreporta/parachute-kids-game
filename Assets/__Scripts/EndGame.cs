@@ -29,6 +29,7 @@ public class EndGame : MonoBehaviour {
     public static EndGame S;
     public int totColleges = 4;
     public JsonData collegeData;
+    public TextAsset collegeJson;
     public List<CollegeDefinition> collegeDefinitions;
     public List<CollegeType> collegeTypes;
 
@@ -52,7 +53,7 @@ public class EndGame : MonoBehaviour {
     public void GetCollegeDefinitions() {
         collegeDefinitions = new List<CollegeDefinition>();
         collegeTypes = new List<CollegeType>();
-        collegeData = Utils.S.ConvertJson("colleges.json");
+        collegeData = Utils.S.ConvertJson(collegeJson);
 
         //grab all values from College types enum
         foreach (CollegeType c in System.Enum.GetValues(typeof(CollegeType))) {

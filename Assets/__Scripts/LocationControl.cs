@@ -42,6 +42,7 @@ public class LocationControl : MonoBehaviour {
     public GameObject locationPrefab;
     public int totLocations = 10;
     public JsonData locationData;
+    public TextAsset locationJson;
     public List<LocationDefinition> locationDefinitions;
     public List<LocationType> locTypes;
 
@@ -52,9 +53,11 @@ public class LocationControl : MonoBehaviour {
     }
 
     public void GetLocationDefinitions() {
+        locationData = new JsonData();
+
         locationDefinitions = new List<LocationDefinition>();
         locTypes = new List<LocationType>();
-        locationData = Utils.S.ConvertJson("locations.json");
+        locationData = Utils.S.ConvertJson(locationJson);
 
         //grab all values from LocationType enum
         foreach (LocationType l in System.Enum.GetValues(typeof(LocationType))) {

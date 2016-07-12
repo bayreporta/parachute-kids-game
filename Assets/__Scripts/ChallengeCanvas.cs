@@ -18,7 +18,6 @@ public class ChallengeCanvas : MonoBehaviour {
     public GameObject challengeAnswerPanel; 
     public GameObject challengeTitle;
     public Transform challengeTitleText;
-    public GameObject challengeImage; 
     public GameObject challengeFlavor;
     public Transform challengeFlavorText;
     public Button challengeOptionOne;
@@ -31,6 +30,9 @@ public class ChallengeCanvas : MonoBehaviour {
     string[] optionsTwo;
     private readonly ChallengeType JohnDoe_Act3_BusStop;
 
+    //challenge images
+    public RawImage challengeImage;
+    public Texture testMe;
 
 
     /* FUNCTIONS
@@ -51,7 +53,7 @@ public class ChallengeCanvas : MonoBehaviour {
         challengeTitle = GameObject.Find("ChallengeTitle");
         challengeTitleText = challengeTitle.transform.GetChild(0);
 
-        challengeImage = GameObject.Find("ChallengeImage");
+        challengeImage = GameObject.Find("ChallengeImage").GetComponentInChildren<RawImage>();
 
         challengeFlavor = GameObject.Find("ChallengeFlavor");
         challengeFlavorText = challengeFlavor.transform.GetChild(0);

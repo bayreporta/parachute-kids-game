@@ -26,24 +26,13 @@ public class Utils : MonoBehaviour {
     }
 
     // Use this to read JSON
-    public JsonData ConvertJson(string loc) {
-        string appPath = Application.streamingAssetsPath;
-        //filePath = System.String.Concat("//games.bayreporta.com/hr-test/StreamingAssets/", loc);
-        filePath = System.String.Concat(appPath,"/", loc);
-        //result = System.IO.File.ReadAllText(filePath);
-        StartCoroutine(Example());
-        data = JsonMapper.ToObject(result);
+    public JsonData ConvertJson(TextAsset json) {
+        data = new JsonData();
+        data = JsonMapper.ToObject(json.text);
         return data;
     }
 
-    IEnumerator Example() {
-        if (filePath.Contains("://")) {
-            WWW www = new WWW(filePath);
-            yield return www;
-            result = www.text;
-        } else
-            result = System.IO.File.ReadAllText(filePath);
-    }
+   
 
 
 }
