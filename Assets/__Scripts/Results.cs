@@ -159,8 +159,6 @@ public class Results : MonoBehaviour {
                 result = results[i];
             }
         }
-        Debug.Log(chal + ": " + result.resultID);
-        Debug.Log(chal + ": " + results.Count);
         result.resultPicked = true;
         ChallengeCanvas.S.UpdateResultCanvas(result);
 
@@ -179,7 +177,6 @@ public class Results : MonoBehaviour {
                 break;
             case 1:
                 if (chal == 7) {
-                    Debug.Log("Hit");
                     ResultDefinition result = ParachuteKids.S.GetResultsDefinition((ResultType)11); //looking for Act 1 Home pay attention
                     if (result.resultPicked == false) ret = true;
                 }

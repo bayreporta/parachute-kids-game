@@ -4307,6 +4307,7 @@ GameObject:
   - 114: {fileID: 1546406667}
   - 114: {fileID: 1546406677}
   - 114: {fileID: 1546406681}
+  - 114: {fileID: 1546406682}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -4528,6 +4529,35 @@ MonoBehaviour:
   filePath: 
   result: 
   jsonString: 
+--- !u!114 &1546406682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546406666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2263577db9ab4ddc8a51e5c72a8fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  S: {fileID: 0}
+  challengeImages:
+  - {fileID: 2800000, guid: 768d8973bc5d6444489a82cc6412181a, type: 3}
+  - {fileID: 0}
+  - {fileID: 2800000, guid: 6b1b958a65023420a8626e69af6548b2, type: 3}
+  - {fileID: 0}
+  - {fileID: 2800000, guid: 370a1f115fdbd48fd854a778c512554a, type: 3}
+  - {fileID: 2800000, guid: 9ba633837a1344ed9a344ccba251d933, type: 3}
+  - {fileID: 2800000, guid: 47211dab82bb94ebb934ae4b307e41aa, type: 3}
+  - {fileID: 2800000, guid: c1face12cb1f54a0f922bcba81fecf7b, type: 3}
+  - {fileID: 2800000, guid: 05fe8d8c0f1f64f4eb0b3ce1f56995ee, type: 3}
+  - {fileID: 2800000, guid: c89b5596f41eb45d282ea0547b489802, type: 3}
+  - {fileID: 0}
+  - {fileID: 2800000, guid: 1249aaaffd4cf41c38d15f3c4aafb68a, type: 3}
+  - {fileID: 2800000, guid: fbb38d93b8200486785fe0ecbf7c2adf, type: 3}
+  - {fileID: 2800000, guid: 1a3ba2aaa2d074f898284ca91f67bddc, type: 3}
+  - {fileID: 2800000, guid: 68a1a53aec6cb462492636df95c81ac7, type: 3}
+  - {fileID: 2800000, guid: ade850705c8be448dad087440f731810, type: 3}
 --- !u!1 &1561498918
 GameObject:
   m_ObjectHideFlags: 0

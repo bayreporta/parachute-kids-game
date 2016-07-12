@@ -32,7 +32,6 @@ public class ChallengeCanvas : MonoBehaviour {
 
     //challenge images
     public RawImage challengeImage;
-    public Texture testMe;
 
 
     /* FUNCTIONS
@@ -70,6 +69,8 @@ public class ChallengeCanvas : MonoBehaviour {
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
         bool hideOption;
 
+		Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
+
         //grab vital data
         int challengeID = chal.challengeID;
         string[] optionsOne = chal.optionOneResults.Split(',');
@@ -91,6 +92,9 @@ public class ChallengeCanvas : MonoBehaviour {
         flavor.text = chal.flavorText;
         optionOne.text = chal.optionOneText;
         optionTwo.text = chal.optionTwoText;
+
+		//change image
+		challengeImage.texture = ArtAssets.S.challengeImages[chal.challengeID];
 
         //add event listeners
         challengeOptionOne.onClick.RemoveAllListeners();

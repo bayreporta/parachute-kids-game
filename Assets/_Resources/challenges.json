@@ -130,7 +130,7 @@
         "flavortxt": "Your tutor at the education center tells you about a summer language program he took at Pasadena City College when he was young and still learning English. He says the program really helped him understand the language. You’re also feeling a bit homesick, as you haven’t seen your family in China for almost a year now.",
         "flavorimg": "location or gameobj",
         "option1txt": "Take the summer program",
-        "option2txt": "Visit family in Taiwan instead",
+        "option2txt": "Visit family in China instead",
         "option1results": "a",
         "option2results": "b"
     },

@@ -129,6 +129,7 @@ public class LocationControl : MonoBehaviour {
             if (chal.clickedFlag == false) {
                 Locations go = Locations.locationObjects[9];
                 go.clickableLocation = true;
+				Acts.S.challengeThisAct += 1;
                 go.GetComponent<Renderer>().material.color = Color.green;
             }
             
@@ -140,6 +141,7 @@ public class LocationControl : MonoBehaviour {
             if (chal.clickedFlag == false) {
                 Locations go = Locations.locationObjects[1];
                 go.clickableLocation = true;
+				Acts.S.challengeThisAct += 1;
                 go.GetComponent<Renderer>().material.color = Color.green;
             }
 

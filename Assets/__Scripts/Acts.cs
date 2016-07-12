@@ -60,10 +60,12 @@ public class Acts : MonoBehaviour {
                 //add to total active challenges for act
                 challengeThisAct += 1;
 
-                //check if wellbeing is low enough for run away
+                //Act 3 special
                 if (Player.S.currAct == 3) {
+					//adjust gamespace and variables based on whether certain challenges are omitted off the bat
                     if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language >= 40) {
                         go.clickableLocation = false;
+						challengeThisAct -= 1;
                         go.GetComponent<Renderer>().material.color = Color.white;
                     }                    
                 }
