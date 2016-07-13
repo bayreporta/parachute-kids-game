@@ -64,6 +64,10 @@ public class Acts : MonoBehaviour {
                 if (Player.S.currAct == 3) {
 					//adjust gamespace and variables based on whether certain challenges are omitted off the bat
                     if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language >= 40) {
+                        //disable challenge
+                        if (chal.challengeID == 10) chal.allowedFlag = false;
+                        if (chal.challengeID == 11) chal.allowedFlag = false;
+
                         go.clickableLocation = false;
 						challengeThisAct -= 1;
                         go.GetComponent<Renderer>().material.color = Color.white;

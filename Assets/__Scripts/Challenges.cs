@@ -42,7 +42,7 @@ public class ChallengeDefinition {
     public string prereqLanguage;
     public string prereqGPA;
     public bool clickedFlag = false;    
-    public bool allowedFlag = false;
+    public bool allowedFlag = true;
 
 }
 

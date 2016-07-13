@@ -126,23 +126,46 @@ public class LocationControl : MonoBehaviour {
         if (Player.S.wellbeing <= 30) {
             ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)10);
 
-			if (chal.clickedFlag == false && Locations.locationObjects[9].clickableLocation == false) {
+			if (chal.clickedFlag == false && chal.allowedFlag == false) {
                 Locations go = Locations.locationObjects[9];
+                chal.allowedFlag = true;
                 go.clickableLocation = true;
 				Acts.S.challengeThisAct += 1;
                 go.GetComponent<Renderer>().material.color = Color.green;
+            }            
+        } else {
+            ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)10);
+
+            if (chal.clickedFlag == false && chal.allowedFlag == true) {
+                Locations go = Locations.locationObjects[1];
+                chal.allowedFlag = false;
+                go.clickableLocation = false;
+                Acts.S.challengeThisAct -= 1;
+                go.GetComponent<Renderer>().material.color = Color.white;
             }
-            
+
         }
 
-		if (Player.S.language >= 40) {
+        if (Player.S.language >= 40) {
             ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)11);
 
             if (chal.clickedFlag == false) {
                 Locations go = Locations.locationObjects[1];
+                chal.allowedFlag = true;
                 go.clickableLocation = true;
 				Acts.S.challengeThisAct += 1;
                 go.GetComponent<Renderer>().material.color = Color.green;
+            }
+
+        } else {
+            ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)11);
+
+            if (chal.clickedFlag == false && chal.allowedFlag == true) {
+                Locations go = Locations.locationObjects[1];
+                chal.allowedFlag = false;
+                go.clickableLocation = false;
+                Acts.S.challengeThisAct -= 1;
+                go.GetComponent<Renderer>().material.color = Color.white;
             }
 
         }
