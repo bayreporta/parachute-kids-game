@@ -71,6 +71,7 @@ public class ParachuteKids : MonoBehaviour {
         CollegeCanvas.S.collegeGroup.alpha = 0;
 
         //initialize game
+        ArtAssets.S.tileContainer.SetActive(true);
         LocationControl.S.CreateLocations();
         Acts.S.InitializeAct(Player.S.currAct);
         Invoke("StartCoroutine(GeneralCanvas.S.TransitionActCanvas(0))", 1f);

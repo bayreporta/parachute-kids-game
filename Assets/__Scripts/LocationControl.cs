@@ -104,7 +104,7 @@ public class LocationControl : MonoBehaviour {
             Vector3 pos;
             pos.x = loc.xLoc;
             pos.y = loc.yLoc;
-            pos.z = 0;
+            pos.z = -10;
             go.transform.position = pos;
 
             //scale of go
