@@ -49,7 +49,7 @@ public class Acts : MonoBehaviour {
                 //in here we need to check prereqs and determine which challenges appear and which do not
 
                 //update GUI
-                GUI.S.ChangeActGUI(act);                   
+                GUIControl.S.ChangeActGUI(act);                   
 
                 //location highlight
                 go.GetComponent<Renderer>().material.color = activeLocation;

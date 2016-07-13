@@ -21,13 +21,14 @@ public class ParachuteKids : MonoBehaviour {
 
     //dynamic----------------------------//
 
+
     //private----------------------------//
     private JsonData data;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
-        S = this;      
+        S = this;
 
         //init game---------------------------//
         LocationControl.S.GetLocationDefinitions();
@@ -38,12 +39,13 @@ public class ParachuteKids : MonoBehaviour {
         BuildDictionaries();        
 
         //init gui and canvas
-        GUI.S.InitGUI(Player.S.currCharacter);
+        GUIControl.S.InitGUI(Player.S.currCharacter);
         ChallengeCanvas.S.FindChallengeCanvasElems();
         GeneralCanvas.S.FindGeneralCanvasElems();
         CollegeCanvas.S.FindCollegeCanvasElems();
     }
 
+    
    
     public void StartGame() {        
         Locations.locationObjects = null;

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Locations
+  - Tiles
   layers:
   - Default
   - TransparentFX

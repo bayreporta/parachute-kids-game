@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using SVGImporter;
+using System;
 
 public class Resources : MonoBehaviour {
 
@@ -31,7 +33,7 @@ public class Resources : MonoBehaviour {
         else if (Player.S.gpa < 0f) { Player.S.gpa = 0.0f; }
 
         //update GUI
-        GUI.S.UpdateGUI(Player.S.wellbeing, Player.S.language, Player.S.gpa, r.resultWellbeing, r.resultLanguage,r.resultGPA);
+        GUIControl.S.UpdateGUI(Player.S.wellbeing, Player.S.language, Player.S.gpa, r.resultWellbeing, r.resultLanguage,r.resultGPA);
     
 		//wellbeing fail check
 		if (Player.S.wellbeing == 0) {
@@ -46,6 +48,8 @@ public class Resources : MonoBehaviour {
 			ParachuteKids.S.GameOver (-1);	
 		}
 	}
-			
 
+    public static SVGImage[] FindObjectsOfTypeAll<T>() {
+        throw new NotImplementedException();
+    }
 }

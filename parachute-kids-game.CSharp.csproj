@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -72,6 +66,120 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SVG Importer\Plugins\Clipper\SVGClipPath.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Clipper\clipper.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Animation\SVGFrameAnimator.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Animation\SVGLegacyAnimator.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Data\QuadTree.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Data\SVGDepthTree.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Data\SVGImporterSettings.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Data\SVGLineData.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Fills\CCGradient.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Fills\SVGFill.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\CSS\CSSParser.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\RenderingEngine\SVGConicalGradientBrush.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\RenderingEngine\SVGGraphics.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\RenderingEngine\SVGLinearGradientBrush.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\RenderingEngine\SVGRadialGradientBrush.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicShapes\SVGCircleElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicShapes\SVGEllipseElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicShapes\SVGLineElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicShapes\SVGPolygonElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicShapes\SVGPolylineElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicShapes\SVGRectElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicTypes\SVGColor.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicTypes\SVGLength.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicTypes\SVGPaintable.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicTypes\SVGParentable.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\BasicTypes\SVGTransformable.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Coordinate_Transform_Units\SVGMatrix.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Coordinate_Transform_Units\SVGTransform.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Coordinate_Transform_Units\SVGTransformList.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\DocumentStructure\SVGDocument.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\DocumentStructure\SVGElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\GradientsNPatterns\SVGConicalGradientElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\GradientsNPatterns\SVGGradientElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\GradientsNPatterns\SVGLinearGradientElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\GradientsNPatterns\SVGRadialGradientElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\GradientsNPatterns\SVGStopElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Others\SVGClipPathElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\Interfaces\ISVGDrawable.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathElement.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSeg.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegArcAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegArcRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegClosePath.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoCubic.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoCubicAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoCubicRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoCubicSmoothAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoCubicSmoothRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoQuadratic.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoQuadraticAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoQuadraticRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoQuadraticSmoothAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegCurvetoQuadraticSmoothRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegLinetoAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegLinetoHorizontalAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegLinetoHorizontalRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegLinetoRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegLinetoVerticalAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegLinetoVerticalRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegList.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegMovetoAbs.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Paths\SVGPathSegMovetoRel.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\DOMException.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\LiteStack.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\SVGColorExtractor.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\SVGException.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\SVGLengthConvertor.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\SVGStringExtractor.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\SVG\DOM\Utilities\SVGViewport.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\XML Parser\AttributeList.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\XML Parser\SVGParser.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Implementation\XML Parser\SmallXmlParser.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Interfaces\ISVGModify.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Interfaces\ISVGRenderer.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Interfaces\ISVGShape.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Math\SVGBezier.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Math\SVGBounds.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Math\SVGGeom.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Math\SVGMath.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGCombineMesh.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGGeomUtils.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGLineUtils.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGMesh.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGMeshCutter.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGMeshUtils.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Mesh\SVGSimplePath.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\Modifiers\SVGUVModifier.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGAsset.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGAssetImport.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGAtlas.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGCollider2D.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGDocumentAsset.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGImage.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGPath.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGRenderTexture.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGRenderer.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGSorter.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Core\SVGStrokeRenderer.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Debug\SVGDebug.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Debug\SVGDebugMesh.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Debug\SVGDebugPoints.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\Dict.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\Geom.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\Mesh.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\MeshUtils.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\PriorityHeap.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\PriorityQueue.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\Sweep.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\LibTessDotNet\Tess.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Utils\FileSizeFormatProvider.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Utils\SVGArrayUtils.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Utils\SVGShader.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Utils\SVGTransform2D.cs" />
+    <Compile Include="Assets\SVG Importer\Plugins\Utils\SVGUtils.cs" />
     <Compile Include="Assets\__Scripts\Acts.cs" />
     <Compile Include="Assets\__Scripts\ArtAssets.cs" />
     <Compile Include="Assets\__Scripts\ChallengeCanvas.cs" />
@@ -79,7 +187,7 @@
     <Compile Include="Assets\__Scripts\Characters.cs" />
     <Compile Include="Assets\__Scripts\CollegeCanvas.cs" />
     <Compile Include="Assets\__Scripts\EndGame.cs" />
-    <Compile Include="Assets\__Scripts\GUI.cs" />
+    <Compile Include="Assets\__Scripts\GUIControl.cs" />
     <Compile Include="Assets\__Scripts\GeneralCanvas.cs" />
     <Compile Include="Assets\__Scripts\LocationControl.cs" />
     <Compile Include="Assets\__Scripts\Locations.cs" />
@@ -89,6 +197,26 @@
     <Compile Include="Assets\__Scripts\Resources.cs" />
     <Compile Include="Assets\__Scripts\Results.cs" />
     <Compile Include="Assets\__Scripts\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\SVG Importer\Plugins\LibTessDotNet\LibTessDotNet-LICENSE.txt" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Gradient Fill\GradientColorAdditive.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Gradient Fill\GradientColorAlphaBlended.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Gradient Fill\GradientColorMultiply.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Gradient Fill\GradientColorOpaque.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Solid Fill\SolidColorAdditive.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Solid Fill\SolidColorAlphaBlended.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Solid Fill\SolidColorDiffuseAlphaBlended.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Solid Fill\SolidColorDiffuseOpaque.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Solid Fill\SolidColorMultiply.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Solid Fill\SolidColorOpaque.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Standard\StandardSVG.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Standard\StandardSpecularSVG.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\Standard\UnitySVG.cginc" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UI.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UILegacy.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UIMask.shader" />
+    <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UIMaskLegacy.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

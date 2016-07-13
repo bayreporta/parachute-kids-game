@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parachute-kids-game.CSharp", "parachute-kids-game.CSharp.csproj", "{BEDEE600-1312-2744-BDA5-0FAD348F6007}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parachute-kids-game.CSharp.Editor", "parachute-kids-game.CSharp.Editor.csproj", "{BDC6B391-88C4-4E70-FF7D-169F0A7F451C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEDEE600-1312-2744-BDA5-0FAD348F6007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC6B391-88C4-4E70-FF7D-169F0A7F451C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC6B391-88C4-4E70-FF7D-169F0A7F451C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC6B391-88C4-4E70-FF7D-169F0A7F451C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC6B391-88C4-4E70-FF7D-169F0A7F451C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
