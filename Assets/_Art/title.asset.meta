@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: bfa304a6694c3f841a5561e1d60a9dc9
+timeCreated: 1468521897
+licenseType: Free
+NativeFormatImporter:
+  userData: "<svg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\"
+    viewBox=\"0 0 404.9 40.5\">\r\n  <defs>\r\n    <style>\r\n      .cls-1 {\r\n        fill:
+    #f7f7f7;\r\n        stroke: #000;\r\n        stroke-miterlimit: 10;\r\n        stroke-width:
+    2px;\r\n      }\r\n    </style>\r\n  </defs>\r\n  <title>title</title>\r\n  <g>\r\n
+    \   <path class=\"cls-1\" d=\"M6.7,46.2V7.9H28.1v4.8h4.8V27.9H29.5v5.8L14.7,34V46.2h-8ZM24.9,15.8H14.7V26.1H24.9V15.8Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M58.2,20.1v4.5h5V46.1H42.5V41.6H37.4V30.5H55.7V28H42.5V20.1H58.2ZM55.7,35.4H45v2.7H55.7V35.4Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M92.9,20.1v4.5H98v9.1H90.4V28H80.1V46.2h-8v-26H92.9Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M125.5,20.1v4.5h5V46.1H109.8V41.6h-5.1V30.5H123V28H109.8V20.1h15.7ZM123,35.4H112.3v2.7H123V35.4Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M165.5,20.1V28H147.2V38.2h18.3v7.9H144.7V41.6h-5.1v-17h5.1V20.1h20.8Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M182.3,7.8V20.1h12.9v4.5h5V46.2h-7.6V28H182.3V46.2h-7.9V7.8h7.9Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M213.8,46.2V41.6h-5.1V20.1h7.6V38.2h10.4V20.1h7.9V46H213.8Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M251.7,19.8h12.5v7.9H251.7V38.1H264v8H249.1V41.6H244V14h7.6v5.8Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M277.7,46.1V41.6h-5.1v-17h5.1V20.1h15.6v4.5h5.1V35.5H280.2v2.7h13.2v7.9H277.7Zm2.5-15.5h10.6V28.1H280.2v2.5Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M332.4,8V46H311.6V41.6h-5v-17h5V20h12.9V8h7.9Zm-7.9,20H314.2V38.2h10.3V28Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M375.1,7.9V46.2h-8V7.9h8Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n    <path class=\"cls-1\" d=\"M404.5,20.1v4.5h5.1V46.2H402V28H391.7V46.2h-8v-26h20.8Z\"
+    transform=\"translate(-5.7 -6.8)\"/>\r\n  </g>\r\n</svg>\r\n"
+  assetBundleName: 
+  assetBundleVariant: 

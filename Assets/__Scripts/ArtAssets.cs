@@ -14,13 +14,19 @@ public class ArtAssets : MonoBehaviour {
     Vector3 topRight;
 
     //tile vars
-    public GameObject tileContainer;   
+    public GameObject tileContainer;
+    public GameObject gameTitle;
+    public GameObject titleBackground;
 
 	//challenge images
 	public List<Texture> challengeImages;
 
     void Awake() {
         S = this;
+
+        //title screen
+        gameTitle = GameObject.Find("GameTitle");
+        titleBackground = GameObject.Find("TitleBackground");
 
         //tiles
         tileContainer = GameObject.Find("_Tiles");

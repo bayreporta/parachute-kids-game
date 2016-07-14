@@ -33,17 +33,23 @@ public class Menus : MonoBehaviour {
         creditsButton.onClick.RemoveAllListeners();
 
         //initalize button events
-        playButton.onClick.AddListener(delegate { StartCoroutine(TransitionToPlay()); });
+        playButton.onClick.AddListener(TitleTransition);
 
     }
 
-    public IEnumerator TransitionToPlay() {
-        while (titleGroup.alpha > 0) {
-            titleGroup.alpha -= Time.deltaTime * 2;
-            yield return null;
-        }
-        titleGroup.interactable = false;
+    public void TitleTransition() {
+        //transition title animation
+        AnimationControl.S.planeController.SetBool("PlayPressed", true);
         titleCanvas.SetActive(false);
+        Invoke("TransitionToPlay", 1.3f);
+    }
+
+    public void TransitionToPlay() {     
+
+        //transition and kill title
+        ArtAssets.S.gameTitle.SetActive(false);
+        ArtAssets.S.titleBackground.SetActive(false);
+        titleGroup.interactable = false;
 
         ParachuteKids.S.StartGame();
     }

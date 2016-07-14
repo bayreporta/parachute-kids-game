@@ -181,6 +181,7 @@
     <Compile Include="Assets\SVG Importer\Plugins\Utils\SVGTransform2D.cs" />
     <Compile Include="Assets\SVG Importer\Plugins\Utils\SVGUtils.cs" />
     <Compile Include="Assets\__Scripts\Acts.cs" />
+    <Compile Include="Assets\__Scripts\AnimationControl.cs" />
     <Compile Include="Assets\__Scripts\ArtAssets.cs" />
     <Compile Include="Assets\__Scripts\ChallengeCanvas.cs" />
     <Compile Include="Assets\__Scripts\Challenges.cs" />
