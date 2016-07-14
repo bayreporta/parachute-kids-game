@@ -69,7 +69,7 @@ public class ChallengeCanvas : MonoBehaviour {
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
         bool hideOption;
 
-		Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
+		//Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
 
         //grab vital data
         int challengeID = chal.challengeID;

@@ -51,7 +51,9 @@ public class Menus : MonoBehaviour {
         ArtAssets.S.titleBackground.SetActive(false);
         titleGroup.interactable = false;
 
-        ParachuteKids.S.StartGame();
+        //load intro
+        Intro.S.introCanvas.SetActive(true);
+        StartCoroutine(Intro.S.TransitionIntroCanvas(1));
     }
 
     /* public IEnumerator TransitionToAbout() {

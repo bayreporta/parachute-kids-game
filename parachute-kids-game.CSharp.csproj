@@ -190,6 +190,7 @@
     <Compile Include="Assets\__Scripts\EndGame.cs" />
     <Compile Include="Assets\__Scripts\GUIControl.cs" />
     <Compile Include="Assets\__Scripts\GeneralCanvas.cs" />
+    <Compile Include="Assets\__Scripts\Intro.cs" />
     <Compile Include="Assets\__Scripts\LocationControl.cs" />
     <Compile Include="Assets\__Scripts\Locations.cs" />
     <Compile Include="Assets\__Scripts\Menus.cs" />
