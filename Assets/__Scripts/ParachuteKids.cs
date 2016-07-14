@@ -39,10 +39,10 @@ public class ParachuteKids : MonoBehaviour {
         BuildDictionaries();        
 
         //init gui and canvas
-        GUIControl.S.InitGUI(Player.S.currCharacter);
         ChallengeCanvas.S.FindChallengeCanvasElems();
         GeneralCanvas.S.FindGeneralCanvasElems();
         CollegeCanvas.S.FindCollegeCanvasElems();
+        GUIControl.S.GUICanvas.SetActive(false);
     }
 
     public void StartGame() {        
@@ -78,6 +78,7 @@ public class ParachuteKids : MonoBehaviour {
         ChallengeCanvas.S.challengeGroup.alpha = 0;
         CollegeCanvas.S.collegeCanvas.SetActive(false);
         CollegeCanvas.S.collegeGroup.alpha = 0;
+        GUIControl.S.InitGUI();
 
         //initialize game
         ArtAssets.S.tileContainer.SetActive(true);

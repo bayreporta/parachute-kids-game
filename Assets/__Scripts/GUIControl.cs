@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GUIControl : MonoBehaviour {
@@ -6,16 +7,13 @@ public class GUIControl : MonoBehaviour {
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
     public static GUIControl S;
-    public GameObject GUIBucket;
-    public GUIText wellbeingGUI;
-    public GUIText languageGUI;
-    public GUIText gpaGUI;
-    public GUIText actGUI;
 
-    GameObject wellbeingGO;
-    GameObject gpaGO;
-    GameObject languageGO;
-    GameObject actGO;
+    //GUI Elements
+    public GameObject GUICanvas;
+    public Text wellbeingVal;
+    public Text languageVal;
+    public Text gpaVal;
+    public GameObject wellbeingWarning;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -23,56 +21,44 @@ public class GUIControl : MonoBehaviour {
         S = this;
     }
 
-    public void InitGUI(string chara) {
-        GUIBucket = GameObject.Find("_GUI");
-        wellbeingGO = GameObject.Find("GUI_Wellbeing");
-        gpaGO = GameObject.Find("GUI_GPA");
-        languageGO = GameObject.Find("GUI_Language");
-        actGO = GameObject.Find("GUI_Act");
-        wellbeingGUI = wellbeingGO.GetComponent<GUIText>();
-        languageGUI = languageGO.GetComponent<GUIText>();
-        gpaGUI = gpaGO.GetComponent<GUIText>();
-        actGUI = actGO.GetComponent<GUIText>();
-
-        //initialize GUI text
-        wellbeingGUI.text = "Wellbeing: " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingWellbeing.ToString();
-        languageGUI.text = "Language: Test Pending";
-        gpaGUI.text = "GPA: " + ParachuteKids.S.GetCharacterDefinition(CharacterType.JohnDoe).startingGPA.ToString() + ".00";
-
-        GUIBucket.SetActive(false);
+    public void InitGUI() {
+        GUICanvas.SetActive(true);
+        wellbeingVal.text = "50%";
+        languageVal.text = "Pending";
+        gpaVal.text = "2.0";
+        wellbeingWarning.SetActive(false);        
     }
-
+    
     public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {
         //update GUI colors based on whether they went up or down in value
-        ChangeGUIColor(wellbeingGUI, wbR);
-        ChangeGUIColor(languageGUI, langR);
-        ChangeGUIColor(gpaGUI, gpaR);
+        ChangeGUIColor(wellbeingVal, wbR);
+        ChangeGUIColor(languageVal, langR);
+        ChangeGUIColor(gpaVal, gpaR);
 
-        wellbeingGUI.text = "Wellbeing: " + wb.ToString();
+        wellbeingVal.text = wb.ToString();
 
         //convert language number into text indicator
-        languageGUI.text = "Language: " + ConvertLanguageValue(lang);
+        languageVal.text = ConvertLanguageValue(lang);
 
         //Convert gpa value
-        gpaGUI.text = "GPA: " + ConvertGPAValue(gpa);
+        gpaVal.text = ConvertGPAValue(gpa);
     }
 
-    public void ChangeGUIColor(GUIText gui, float i) {
+    public void ChangeGUIColor(Text gui, float i) {
         //reset GUI up/down indicators
         gui.color = Color.white;
 
         //figure out which color
         if (i < 0) {gui.color = Color.red;} 
-        else if (i > 0) {gui.color = Color.green;}
-        
+        else if (i > 0) {gui.color = Color.green;}        
     }
 
-    public void ChangeActGUI(int act) {
+    /*public void ChangeActGUI(int act) {
         if (act == 0) { act = 1; }
         else if (act == 4) { act = 3; }
 
         actGUI.text = "Act " + act.ToString();
-    }
+    }*/
 
     public string ConvertLanguageValue(int val) {
         string ret = "";

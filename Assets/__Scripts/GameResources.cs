@@ -3,11 +3,11 @@ using System.Collections;
 using SVGImporter;
 using System;
 
-public class Resources : MonoBehaviour {
+public class GameResources : MonoBehaviour {
 
     /* CLASS VARIABLES
    ---------------------------------------------------------------*/
-    public static Resources S;    
+    public static GameResources S;    
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -47,9 +47,10 @@ public class Resources : MonoBehaviour {
 			//fire game over
 			ParachuteKids.S.GameOver (-1);	
 		}
-	}
 
-    public static SVGImage[] FindObjectsOfTypeAll<T>() {
-        throw new NotImplementedException();
+        //GUI warning regarding wellbeing
+        if (Player.S.wellbeing <= 30) GUIControl.S.wellbeingWarning.gameObject.SetActive(true);
+        else GUIControl.S.wellbeingWarning.gameObject.SetActive(true);
+
     }
 }

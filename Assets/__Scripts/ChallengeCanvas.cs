@@ -137,7 +137,7 @@ public class ChallengeCanvas : MonoBehaviour {
 
         challengeOptionTwo.onClick.RemoveAllListeners();
 		challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
-        challengeOptionTwo.onClick.AddListener(delegate { Resources.S.UpdateResources(r); });
+        challengeOptionTwo.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
     }
 
     public void CloseChallengeCanvas() {

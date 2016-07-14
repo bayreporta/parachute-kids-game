@@ -189,6 +189,7 @@
     <Compile Include="Assets\__Scripts\CollegeCanvas.cs" />
     <Compile Include="Assets\__Scripts\EndGame.cs" />
     <Compile Include="Assets\__Scripts\GUIControl.cs" />
+    <Compile Include="Assets\__Scripts\GameResources.cs" />
     <Compile Include="Assets\__Scripts\GeneralCanvas.cs" />
     <Compile Include="Assets\__Scripts\Intro.cs" />
     <Compile Include="Assets\__Scripts\LocationControl.cs" />
@@ -196,7 +197,6 @@
     <Compile Include="Assets\__Scripts\Menus.cs" />
     <Compile Include="Assets\__Scripts\ParachuteKids.cs" />
     <Compile Include="Assets\__Scripts\Player.cs" />
-    <Compile Include="Assets\__Scripts\Resources.cs" />
     <Compile Include="Assets\__Scripts\Results.cs" />
     <Compile Include="Assets\__Scripts\Utils.cs" />
   </ItemGroup>
@@ -219,6 +219,7 @@
     <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UILegacy.shader" />
     <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UIMask.shader" />
     <None Include="Assets\SVG Importer\Plugins\Shaders\Resources\UI\UIMaskLegacy.shader" />
+    <None Include="Assets\SVG Importer\changelog.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
