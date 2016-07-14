@@ -27,13 +27,11 @@ public class Acts : MonoBehaviour {
             if (Player.S.currAct > 4) {
                 challengesDoneForAct = 0;
                 challengeThisAct = 0;
-                //end game code
             }
             else { InitializeAct(Player.S.currAct); }            
         }
     }
 
- 
     public void InitializeAct(int act) {
         Color activeLocation = Color.green;
         challengesDoneForAct = 0;
@@ -53,6 +51,7 @@ public class Acts : MonoBehaviour {
 
                 //location highlight
                 go.GetComponent<Renderer>().material.color = activeLocation;
+                Debug.Log(go.name);
 
                 //location activate
                 go.clickableLocation = true;

@@ -20,7 +20,7 @@ public class ParachuteKids : MonoBehaviour {
     static public Dictionary<CollegeType, CollegeDefinition> COL_DEFS;
 
     //dynamic----------------------------//
-
+    public bool firstRun = true;
 
     //private----------------------------//
     private JsonData data;
@@ -45,13 +45,10 @@ public class ParachuteKids : MonoBehaviour {
         CollegeCanvas.S.FindCollegeCanvasElems();
     }
 
-    
-   
     public void StartGame() {        
         Locations.locationObjects = null;
-
-        //reset character
-        Player.S.currAct = 0;
+        
+        //reset character        
         Player.S.gpa = 2.0f;
         Player.S.wellbeing = 50;
         Player.S.language = 0;
@@ -64,6 +61,18 @@ public class ParachuteKids : MonoBehaviour {
         GeneralCanvas.S.generalActPanel.SetActive(true);
         GeneralCanvas.S.UpdateActCanvas(1);
 
+        //reset Challenges
+        for (int i = 0; i < Challenges.S.totChallenges; i++) {
+            ChallengeDefinition chal = GetChallengeDefinition((ChallengeType)i);
+            chal.allowedFlag = true;
+            chal.clickedFlag = false;
+        }
+
+        //reset acts
+        Player.S.currAct = 0;
+        Acts.S.challengeThisAct = 0;
+        Acts.S.challengesDoneForAct = 0;
+
         //reset other canvases
         ChallengeCanvas.S.challengeCanvas.SetActive(false);
         ChallengeCanvas.S.challengeGroup.alpha = 0;
@@ -72,7 +81,10 @@ public class ParachuteKids : MonoBehaviour {
 
         //initialize game
         ArtAssets.S.tileContainer.SetActive(true);
-        LocationControl.S.CreateLocations();
+        if (firstRun == true) {
+            firstRun = false;
+            LocationControl.S.CreateLocations();
+        }        
         Acts.S.InitializeAct(Player.S.currAct);
         Invoke("StartCoroutine(GeneralCanvas.S.TransitionActCanvas(0))", 1f);
 
@@ -163,26 +175,9 @@ public class ParachuteKids : MonoBehaviour {
         buttonText.text = "Play again";
 
         GeneralCanvas.S.resultsButton.onClick.RemoveAllListeners();
-        GeneralCanvas.S.resultsButton.onClick.AddListener(delegate { ResetGame(); });
+        GeneralCanvas.S.resultsButton.onClick.AddListener(delegate { StartGame(); });
     }
 
-    public void ResetGame() {
-        Locations.locationObjects = null;
-
-		//reset character
-		Player.S.currAct = 0;
-		Player.S.gpa = 2.0f;
-		Player.S.wellbeing = 50;
-		Player.S.language = 0;
-		Player.S.collegeChoice = -1;
-
-		//reset canvases
-		GeneralCanvas.S.generalCanvas.SetActive(false);
-		GeneralCanvas.S.generalActPanel.SetActive(true);
-		GeneralCanvas.S.generalResultsPanel.SetActive(false);
-
-		//restart scene
-        SceneManager.LoadScene("_Scene_0");
-    }
+  
 
 }

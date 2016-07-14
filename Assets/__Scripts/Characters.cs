@@ -39,8 +39,6 @@ public class Characters : MonoBehaviour {
         S = this;      
     }
 
-
-
     public void GetCharacterDefinitions() {
         characterData = new JsonData();
 

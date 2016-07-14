@@ -40,6 +40,7 @@ public class LocationControl : MonoBehaviour {
     ---------------------------------------------------------------*/
     public static LocationControl S;
     public GameObject locationPrefab;
+    public GameObject locationParent;
     public int totLocations = 10;
     public JsonData locationData;
     public TextAsset locationJson;
@@ -88,7 +89,7 @@ public class LocationControl : MonoBehaviour {
     }
 
     public void CreateLocations() {
-        GameObject locationParent = GameObject.Find("_Locations");
+        locationParent = GameObject.Find("_Locations");
 
         //create locations
         for (int i=0; i < LocationControl.S.totLocations; i++) {

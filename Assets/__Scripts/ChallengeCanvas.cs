@@ -41,7 +41,7 @@ public class ChallengeCanvas : MonoBehaviour {
     }
 
 
-   public void FindChallengeCanvasElems() {
+    public void FindChallengeCanvasElems() {
         //grab Challenge Canvas GO and deactivate it. Also grab children
         challengeCanvas = GameObject.Find("_ChallengeCanvas");
         challengeGroup = challengeCanvas.GetComponent<CanvasGroup>();

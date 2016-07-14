@@ -164,7 +164,6 @@ public class Results : MonoBehaviour {
 
     }
 
-
     public bool ResultPrereqCheck(int chal, int context) {
         bool ret = false;
 
