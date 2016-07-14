@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using SVGImporter;
 using UnityEngine.Events;
 using System.Collections;
 
@@ -30,8 +31,7 @@ public class ChallengeCanvas : MonoBehaviour {
     string[] optionsTwo;
     private readonly ChallengeType JohnDoe_Act3_BusStop;
 
-    //challenge images
-    public RawImage challengeImage;
+
 
 
     /* FUNCTIONS
@@ -51,8 +51,6 @@ public class ChallengeCanvas : MonoBehaviour {
 
         challengeTitle = GameObject.Find("ChallengeTitle");
         challengeTitleText = challengeTitle.transform.GetChild(0);
-
-        challengeImage = GameObject.Find("ChallengeImage").GetComponentInChildren<RawImage>();
 
         challengeFlavor = GameObject.Find("ChallengeFlavor");
         challengeFlavorText = challengeFlavor.transform.GetChild(0);
@@ -93,8 +91,9 @@ public class ChallengeCanvas : MonoBehaviour {
         optionOne.text = chal.optionOneText;
         optionTwo.text = chal.optionTwoText;
 
-		//change image
-		challengeImage.texture = ArtAssets.S.challengeImages[chal.challengeID];
+        //change image
+        for (int i=0; i < Challenges.S.totChallenges; i++) { ArtAssets.S.challengeImages[chal.challengeID].SetActive(false); }
+        ArtAssets.S.challengeImages[chal.challengeID].SetActive(true);
 
         //add event listeners
         challengeOptionOne.onClick.RemoveAllListeners();

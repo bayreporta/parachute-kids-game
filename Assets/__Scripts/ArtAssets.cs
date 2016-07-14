@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using SVGImporter;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,7 +20,7 @@ public class ArtAssets : MonoBehaviour {
     public GameObject titleBackground;
 
 	//challenge images
-	public List<Texture> challengeImages;
+    public List<GameObject> challengeImages;
 
     void Awake() {
         S = this;

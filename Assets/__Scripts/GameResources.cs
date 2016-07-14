@@ -49,8 +49,11 @@ public class GameResources : MonoBehaviour {
 		}
 
         //GUI warning regarding wellbeing
-        if (Player.S.wellbeing <= 30) GUIControl.S.wellbeingWarning.gameObject.SetActive(true);
-        else GUIControl.S.wellbeingWarning.gameObject.SetActive(true);
+        if (Player.S.wellbeing <= 30) {
+            GUIControl.S.wellbeingWarning.gameObject.SetActive(true);
+        } else {
+            GUIControl.S.wellbeingWarning.gameObject.SetActive(false);
+        }
 
     }
 }
