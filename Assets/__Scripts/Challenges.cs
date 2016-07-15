@@ -107,7 +107,6 @@ public class Challenges : MonoBehaviour {
 
     public void RetrieveChallenge(string chara, int act, string loc) {
         ChallengeDefinition currChallenge = null;
-        Debug.Log(loc);             
         //use loc, chara, and act to find correct challenge
         switch (chara) {
             case "JohnDoe":

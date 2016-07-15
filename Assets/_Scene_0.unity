@@ -6239,7 +6239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a5e1e06ea093c4ab2eb49cbaa8dc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationType: 
+  locationType: BusStop
   clickableLocation: 0
 --- !u!65 &867287929
 BoxCollider:
@@ -8865,7 +8865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a5e1e06ea093c4ab2eb49cbaa8dc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationType: KaraokeBar
+  locationType: Stadium
   clickableLocation: 0
 --- !u!65 &1378332086
 BoxCollider:
@@ -9205,7 +9205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a5e1e06ea093c4ab2eb49cbaa8dc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationType: BusStop
+  locationType: KaraokeBar
   clickableLocation: 0
 --- !u!65 &1409929848
 BoxCollider:
@@ -13025,7 +13025,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
 --- !u!114 &2054853558

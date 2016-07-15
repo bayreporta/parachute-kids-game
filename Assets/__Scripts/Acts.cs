@@ -56,10 +56,12 @@ public class Acts : MonoBehaviour {
                 //add to total active challenges for act
                 challengeThisAct += 1;
 
+                Debug.Log("challenge: " + i + " for location " + go.name);
+
                 //Act 3 special
                 if (Player.S.currAct == 3) {
 					//adjust gamespace and variables based on whether certain challenges are omitted off the bat
-                    if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language >= 40) {
+                    if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language < 40) {
                         //disable challenge
                         if (chal.challengeID == 10) chal.allowedFlag = false;
                         if (chal.challengeID == 11) chal.allowedFlag = false;
