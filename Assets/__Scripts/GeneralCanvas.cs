@@ -62,10 +62,11 @@ public class GeneralCanvas : MonoBehaviour {
                 generalCanvas.SetActive(false);
                 break;
             case 1:
-                while (generalGroup.alpha < 1) {
+                /*while (generalGroup.alpha < 1) {
                     generalGroup.alpha += Time.deltaTime / 1;
                     yield return null;
-                }
+                }*/
+                generalGroup.alpha = 1;
                 generalGroup.interactable = true;
                 break;
         }

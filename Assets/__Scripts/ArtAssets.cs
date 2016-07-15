@@ -15,7 +15,7 @@ public class ArtAssets : MonoBehaviour {
     Vector3 topRight;
 
     //tile vars
-    public GameObject tileContainer;
+    public GameObject worldContainer;
     public GameObject gameTitle;
     public GameObject titleBackground;
 
@@ -30,8 +30,8 @@ public class ArtAssets : MonoBehaviour {
         titleBackground = GameObject.Find("TitleBackground");
 
         //tiles
-        tileContainer = GameObject.Find("_Tiles");
-        tileContainer.SetActive(false);
+        worldContainer = GameObject.Find("_World");
+        worldContainer.SetActive(false);
 
         //grab screen dims
         CalculateScreenDimensions();

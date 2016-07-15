@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AnimationControl : MonoBehaviour {
 
@@ -10,6 +11,10 @@ public class AnimationControl : MonoBehaviour {
     public AnimationClip planeHover;
     public AnimationClip planeTitleOff;
 
+    //world animations
+    public Animator locationController;
+    public List<Animator> locationAnimators;
+    
     void Awake() {
         S = this;
         ConfigureAnimations();
@@ -18,6 +23,7 @@ public class AnimationControl : MonoBehaviour {
     public void ConfigureAnimations() {
         //title screen
         planeController = GameObject.Find("Plane").GetComponent<Animator>();
+
     }
 
 

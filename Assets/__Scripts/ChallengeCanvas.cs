@@ -92,7 +92,7 @@ public class ChallengeCanvas : MonoBehaviour {
         optionTwo.text = chal.optionTwoText;
 
         //change image
-        for (int i=0; i < Challenges.S.totChallenges; i++) { ArtAssets.S.challengeImages[chal.challengeID].SetActive(false); }
+        for (int i=0; i < Challenges.S.totChallenges; i++) { ArtAssets.S.challengeImages[i].SetActive(false); }
         ArtAssets.S.challengeImages[chal.challengeID].SetActive(true);
 
         //add event listeners

@@ -13,7 +13,6 @@ public class ParachuteKids : MonoBehaviour {
     static public ParachuteKids S;
 
     //dictionaries-----------------------//
-    static public Dictionary<LocationType, LocationDefinition> LOC_DEFS;
     static public Dictionary<ChallengeType, ChallengeDefinition> CHAL_DEFS;
     static public Dictionary<CharacterType, CharacterDefinition> CHARS_DEFS;
     static public Dictionary<ResultType, ResultDefinition> RES_DEFS;
@@ -31,7 +30,6 @@ public class ParachuteKids : MonoBehaviour {
         S = this;
 
         //init game---------------------------//
-        LocationControl.S.GetLocationDefinitions();
         Challenges.S.GetChallengeDefinitions();
         Characters.S.GetCharacterDefinitions();
         EndGame.S.GetCollegeDefinitions();
@@ -80,23 +78,13 @@ public class ParachuteKids : MonoBehaviour {
         GUIControl.S.InitGUI();
 
         //initialize game
-        ArtAssets.S.tileContainer.SetActive(true);
-        if (firstRun == true) {
-            firstRun = false;
-            LocationControl.S.CreateLocations();
-        }        
+        ArtAssets.S.worldContainer.SetActive(true);       
         Acts.S.InitializeAct(Player.S.currAct);
         Invoke("StartCoroutine(GeneralCanvas.S.TransitionActCanvas(0))", 1f);
 
     }
 
     public void BuildDictionaries() {
-
-        //build location dictionary---------------//
-        LOC_DEFS = new Dictionary<LocationType, LocationDefinition>();
-        foreach (LocationDefinition loc in LocationControl.S.locationDefinitions) {
-            LOC_DEFS[loc.type] = loc;
-        }
 
         //build challenge dictionary---------------//
         CHAL_DEFS = new Dictionary<ChallengeType, ChallengeDefinition>();
@@ -121,14 +109,7 @@ public class ParachuteKids : MonoBehaviour {
         foreach (CollegeDefinition c in EndGame.S.collegeDefinitions) {
             COL_DEFS[c.type] = c;
         }
-    }
-
-    public LocationDefinition GetLocationDefinition(LocationType loc) {
-        if (LOC_DEFS.ContainsKey(loc)) {
-            return (LOC_DEFS[loc]);
-        }
-        return (new LocationDefinition());
-    }
+    }    
 
     public ChallengeDefinition GetChallengeDefinition(ChallengeType ct) {
         if (CHAL_DEFS.ContainsKey(ct)) {

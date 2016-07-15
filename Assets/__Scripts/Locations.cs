@@ -2,25 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Locations : MonoBehaviour {
-    public static List<Locations> locationObjects;
+public class Locations : MonoBehaviour {    
 
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
-    public LocationType type;
     public string locationType;
-    public bool clickableLocation;
-    Vector3 pos;
-    Vector3 scale;
+    public bool clickableLocation; 
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
-    void Awake() {
-        if (locationObjects == null) {
-            locationObjects = new List<Locations>();
-        }
-        locationObjects.Add(this);
-    }    
 
     void OnMouseUp() {
         //lets grab the challenge
@@ -29,7 +19,8 @@ public class Locations : MonoBehaviour {
 
             //restore default location
             clickableLocation = false;
-            gameObject.GetComponent<Renderer>().material.color = Color.white;
+            Animator ani = GetComponent<Animator>();
+            ani.SetBool("active", false);
         }
     }
 

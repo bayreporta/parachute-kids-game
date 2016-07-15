@@ -42,16 +42,16 @@ public class Acts : MonoBehaviour {
             chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)i);
 
             if (chal.actFlag == act) {
-                Locations go = Locations.locationObjects[chal.locationFlag];
+                GameObject go = LocationControl.S.locationObjects[chal.locationFlag];
 
                 //update GUI
                 //GUIControl.S.ChangeActGUI(act);                   
 
                 //location highlight
-                go.GetComponent<Renderer>().material.color = activeLocation;
+                go.GetComponent<Animator>().SetBool("active", true);
 
                 //location activate
-                go.clickableLocation = true;
+                go.GetComponent<Locations>().clickableLocation = true;
 
                 //add to total active challenges for act
                 challengeThisAct += 1;
@@ -64,9 +64,9 @@ public class Acts : MonoBehaviour {
                         if (chal.challengeID == 10) chal.allowedFlag = false;
                         if (chal.challengeID == 11) chal.allowedFlag = false;
 
-                        go.clickableLocation = false;
+                        go.GetComponent<Locations>().clickableLocation = false;
 						challengeThisAct -= 1;
-                        go.GetComponent<Renderer>().material.color = Color.white;
+                        go.GetComponent<Animator>().SetBool("active", false);
                     }                    
                 }
             }
