@@ -2,13 +2,14 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Intro : MonoBehaviour {
 
     public static Intro S;
     public GameObject introCanvas;
     public CanvasGroup introGroup;
-    public RawImage introImage;
+    public List<GameObject> introImages;
     public Text introText;
     public Button introButton;
     public Button introPlayButton;

@@ -39,13 +39,11 @@ public class GameResources : MonoBehaviour {
 		if (Player.S.wellbeing == 0) {
 			
 			//activate Results panel
-			GeneralCanvas.S.generalCanvas.SetActive(true);
-			GeneralCanvas.S.generalActPanel.SetActive(false);
-			GeneralCanvas.S.generalResultsPanel.SetActive(true);
-			StartCoroutine(GeneralCanvas.S.TransitionActCanvas(1));
+			GeneralCanvas.S.generalCanvas.SetActive(false);
+			GeneralCanvas.S.generalActPanel.SetActive(false);	
 
 			//fire game over
-			ParachuteKids.S.GameOver (-1);	
+			EndGame.S.PopulateEnding(0);	
 		}
 
         //GUI warning regarding wellbeing

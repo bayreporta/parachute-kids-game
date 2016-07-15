@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +35,15 @@ public class EndGame : MonoBehaviour {
     public List<CollegeDefinition> collegeDefinitions;
     public List<CollegeType> collegeTypes;
 
+    //Game Over Canvas
+    public List<GameObject> ggImages;
+    public CanvasGroup ggGroup;
+    public Text ggText;
+    public Text ggTitle;
+    public GameObject ggCanvas;
+    public Button playAgain;
+
+
     //SAT Test
     public int maxSATScoreOverall = 2400;
     public int excellentSATScore = 1800;
@@ -42,12 +53,22 @@ public class EndGame : MonoBehaviour {
     public int maxSATScoreTest = 800;
     public int readingSATScore;
     public int mathSATScore;
-    public int writingSATScore;  
+    public int writingSATScore;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
-        S = this;
+        S = this;        
+    }
+
+    public void ConfigureGGCanvas() {
+        //configure Game Over
+        ggGroup = ggCanvas.GetComponent<CanvasGroup>();
+        playAgain.onClick.RemoveAllListeners();
+        playAgain.onClick.AddListener(ParachuteKids.S.GameOver);
+
+        EndGame.S.ggGroup.alpha = 0;
+        EndGame.S.ggCanvas.SetActive(false);
     }
 
     public void GetCollegeDefinitions() {
@@ -71,7 +92,7 @@ public class EndGame : MonoBehaviour {
             college.readingReq = int.Parse(collegeData[0][i]["satreadingavg"].ToString());
             college.mathReq = int.Parse(collegeData[0][i]["satmathavg"].ToString());
             college.writingReq = int.Parse(collegeData[0][i]["satwritingavg"].ToString());
-        
+
             collegeDefinitions.Add(college);
         }
     }
@@ -88,7 +109,7 @@ public class EndGame : MonoBehaviour {
         }
 
         //simulate language SAT tests
-        int rand = (int)Math.Round(UnityEngine.Random.Range(minScore, maxScore),0);
+        int rand = (int)Math.Round(UnityEngine.Random.Range(minScore, maxScore), 0);
         if (rand > 800) rand = 800;
         readingSATScore = rand;
 
@@ -104,14 +125,13 @@ public class EndGame : MonoBehaviour {
     public bool DetermineCollegeAdmittance() {
         CollegeDefinition college = ParachuteKids.S.GetCollegeDefinition((CollegeType)Player.S.collegeChoice);
         float rand = 0f;
-        bool ret = false;     
+        bool ret = false;
 
         switch (college.name) {
             case "UC Berkeley":
             case "UC Irvine":
 
-                if (Player.S.gpa >= college.gpaReq) { rand += .7f; } 
-                else if (Player.S.gpa >= 3.5) { rand += .2f; } 
+                if (Player.S.gpa >= college.gpaReq) { rand += .7f; } else if (Player.S.gpa >= 3.5) { rand += .2f; }
 
                 if (EndGame.S.readingSATScore >= college.readingReq) rand += .1f;
                 if (EndGame.S.mathSATScore >= college.mathReq) rand += .1f;
@@ -120,14 +140,10 @@ public class EndGame : MonoBehaviour {
                 //did you get in?
                 if (UnityEngine.Random.Range(0f, 1f) <= rand) ret = true;
                 break;
-			case "CSU Long Beach":
-				float score = (Player.S.gpa * 800) + (EndGame.S.readingSATScore + EndGame.S.mathSATScore);
+            case "CSU Long Beach":
+                float score = (Player.S.gpa * 800) + (EndGame.S.readingSATScore + EndGame.S.mathSATScore);
 
-				if (score >= 4000) {rand = 1f;}	
-				else if (score >= 3750) {rand = .75f;}
-                else if (score >= 3500) { rand = .5f; }
-                else if (score >= 3200) { rand = .25f; }
-                else { rand = 0f; }
+                if (score >= 4000) { rand = 1f; } else if (score >= 3750) { rand = .75f; } else if (score >= 3500) { rand = .5f; } else if (score >= 3200) { rand = .25f; } else { rand = 0f; }
 
                 //did you get in?
                 if (UnityEngine.Random.Range(0f, 1f) <= rand) ret = true;
@@ -140,15 +156,67 @@ public class EndGame : MonoBehaviour {
     }
 
     public void FinalResults() {
-        int ending = -1;
 
         //disable challenge canvas
         ChallengeCanvas.S.challengeCanvas.SetActive(true);
         StartCoroutine(ChallengeCanvas.S.TransitionChallengeCanvas(0));
 
         //turn on results panel
-       GeneralCanvas.S.UpdateSATResultsPanel();
-        
+        GeneralCanvas.S.UpdateSATResultsPanel();
+
     }
 
+    public IEnumerator TransitionToTheEnd(int i) {
+        switch (i) {
+            case 0:
+                while (ggGroup.alpha > 0) {
+                    ggGroup.alpha -= Time.deltaTime * 2;
+                    yield return null;
+                }
+                //background
+                ArtAssets.S.ControlBackground(0);
+                GUIControl.S.GUICanvas.SetActive(true);
+
+                ggGroup.interactable = false;
+                ggCanvas.SetActive(false);
+                break;
+            case 1:
+                //background
+                ArtAssets.S.ControlBackground(1);
+                GUIControl.S.GUICanvas.SetActive(false);
+                ggCanvas.SetActive(true);
+
+                while (ggGroup.alpha < 1) {
+                    ggGroup.alpha += Time.deltaTime * 2;
+                    yield return null;
+                }
+                ggGroup.interactable = true;
+                break;
+        }
+    }
+
+    public void PopulateEnding(int ending) {
+        //reset gg images in gamespace
+        for (int i=0; i < ggImages.Count; i++) { ggImages[i].SetActive(false); }
+
+        switch (ending) {
+            case 0:
+                ggTitle.text = "HOMEWARD BOUND";
+                ggText.text = "The stress of living in a foreign land is too much for your young mind. Living by yourself has been especially difficult when coupled with the struggles of grasping a new language like English, navigating the sometimes harsh social circles of high school and living up to the expectations of your family. Although your parents are disappointed in your decision to return, you hope that your time in America has prepared you for the future. Maybe you’ll even come back one day and give it another go.";
+                ggImages[ending].SetActive(true);
+                break;
+            case 1:
+                ggTitle.text = "YOU ARE THE CHAMPION!";
+                ggText.text = "You had incredibly high and, at times, impossible goals for yourself: live alone in a foreign land and overcome the barriers of language, culture and family connection to not only graduate high school, but to be admitted into the school of your choice. It’s an incredible victory for a young immigrant who knew little English before coming here, and it’s safe to say, proudly, that you made your family proud with your achievement!";
+                ggImages[ending].SetActive(true);
+                break;
+            case 2:
+                ggTitle.text = "BITTERSWEET VICTORY";
+                ggText.text = "Although you didn’t get into the school you wanted, you thankfully have a backup plan in community college. With no overbearing requirements to take classes there, you can still continue on your goal of getting into a top tier college or university after taking at least two years of classes at Pasadena City College. This setback doesn’t dismiss the fact that you overcame incredible obstacles of language, culture and at times loneliness to start taking classes at an American college.";
+                ggImages[ending].SetActive(true);
+                break;
+        }
+
+        StartCoroutine(TransitionToTheEnd(1));
+    }
 }

@@ -40,6 +40,7 @@ public class ParachuteKids : MonoBehaviour {
         ChallengeCanvas.S.FindChallengeCanvasElems();
         GeneralCanvas.S.FindGeneralCanvasElems();
         CollegeCanvas.S.FindCollegeCanvasElems();
+        EndGame.S.ConfigureGGCanvas();        
         GUIControl.S.GUICanvas.SetActive(false);
         Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
         Tutorial.S.tutorialCanvas.SetActive(false);
@@ -80,10 +81,16 @@ public class ParachuteKids : MonoBehaviour {
         //reset other canvases
         ChallengeCanvas.S.challengeCanvas.SetActive(false);
         ChallengeCanvas.S.challengeGroup.alpha = 0;
+
         CollegeCanvas.S.collegeCanvas.SetActive(false);
         CollegeCanvas.S.collegeGroup.alpha = 0;
+
         Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
         Tutorial.S.tutorialCanvas.SetActive(false);
+
+        EndGame.S.ggGroup.alpha = 0;
+        EndGame.S.ggCanvas.SetActive(false);
+
         GUIControl.S.InitGUI();
 
         //initialize game
@@ -148,24 +155,17 @@ public class ParachuteKids : MonoBehaviour {
         return (new CollegeDefinition());
     }
 
-    public void GameOver(int ending) {
+    public void GameOver() {
         //toggle elems on canvas
-        GeneralCanvas.S.resultsFlavor.SetActive(true);
+        GeneralCanvas.S.resultsFlavor.SetActive(false);
         GeneralCanvas.S.readingResults.SetActive(false);
         GeneralCanvas.S.mathResults.SetActive(false);
         GeneralCanvas.S.writingResults.SetActive(false);
         GeneralCanvas.S.totalResults.SetActive(false);
         GeneralCanvas.S.collegeResults.SetActive(false);
-
-        //modify canvas
-        Text flavorText = GeneralCanvas.S.resultsFlavorText.GetComponent<Text>();
-        Text titleText = GeneralCanvas.S.resultsTitleText.GetComponent<Text>();
-        Text buttonText = GeneralCanvas.S.resultsButtonText.GetComponent<Text>();
-        titleText.text = "Game End Screen";
-        buttonText.text = "Play again";
-
-        GeneralCanvas.S.resultsButton.onClick.RemoveAllListeners();
-        GeneralCanvas.S.resultsButton.onClick.AddListener(delegate { StartGame(); });
+        EndGame.S.ggCanvas.SetActive(false);
+        
+        StartGame();
     }
 
   

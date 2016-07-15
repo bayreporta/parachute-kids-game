@@ -165,12 +165,16 @@ public class GeneralCanvas : MonoBehaviour {
             admittedText.text = college.name + " has accepted your application!";
             resultsText.text = "My family will be proud";
             college.admitted = true;
+            ending = 1;
         }
-        else if (admittance == false) {admittedText.text = "You have not been accepted into " + college.name;}
+        else if (admittance == false) {
+            admittedText.text = "You have not been accepted into " + college.name;
+            ending = 2;
+        }
 
         resultsButton.onClick.RemoveAllListeners();
-        resultsButton.onClick.AddListener(delegate { ParachuteKids.S.GameOver(ending); });
-
+        resultsButton.onClick.AddListener(delegate { StartCoroutine(TransitionActCanvas(0)); });
+        resultsButton.onClick.AddListener(delegate { EndGame.S.PopulateEnding(ending); });
     }
 
 }
