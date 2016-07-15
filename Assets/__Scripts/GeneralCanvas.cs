@@ -57,7 +57,8 @@ public class GeneralCanvas : MonoBehaviour {
                 while (generalGroup.alpha > 0) {
                     generalGroup.alpha -= Time.deltaTime / 1;
                     yield return null;
-                }
+                }      
+
                 generalGroup.interactable = false;
                 generalCanvas.SetActive(false);
                 break;
@@ -66,6 +67,7 @@ public class GeneralCanvas : MonoBehaviour {
                     generalGroup.alpha += Time.deltaTime / 1;
                     yield return null;
                 }*/
+      
                 generalGroup.alpha = 1;
                 generalGroup.interactable = true;
                 break;

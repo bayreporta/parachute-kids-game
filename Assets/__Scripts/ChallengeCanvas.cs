@@ -67,7 +67,7 @@ public class ChallengeCanvas : MonoBehaviour {
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
         bool hideOption;
 
-		//Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
+		Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
 
         //grab vital data
         int challengeID = chal.challengeID;
@@ -160,10 +160,18 @@ public class ChallengeCanvas : MonoBehaviour {
                     challengeGroup.alpha -= Time.deltaTime * 2;
                     yield return null;
                 }
+                //background
+                ArtAssets.S.ControlBackground(0);
+                GUIControl.S.GUICanvas.SetActive(true);
+
                 challengeGroup.interactable = false;
                 challengeCanvas.SetActive(false);
                 break;
-            case 1:                
+            case 1:
+                //background
+                ArtAssets.S.ControlBackground(1);
+                GUIControl.S.GUICanvas.SetActive(false);
+
                 while (challengeGroup.alpha < 1) {
                     challengeGroup.alpha += Time.deltaTime * 2;
                     yield return null;

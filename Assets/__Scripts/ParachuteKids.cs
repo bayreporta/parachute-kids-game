@@ -43,10 +43,15 @@ public class ParachuteKids : MonoBehaviour {
         GUIControl.S.GUICanvas.SetActive(false);
         Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
         Tutorial.S.tutorialCanvas.SetActive(false);
+
+        //background
+        ArtAssets.S.ControlBackground(0);
     }
 
-    public void StartGame() {        
-       
+    public void StartGame() {
+        //background
+        ArtAssets.S.ControlBackground(0);
+
         //reset character        
         Player.S.gpa = 2.0f;
         Player.S.wellbeing = 50;

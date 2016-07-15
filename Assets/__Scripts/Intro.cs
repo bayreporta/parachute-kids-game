@@ -61,9 +61,7 @@ public class Intro : MonoBehaviour {
                 //introImage = ; 
                 break;
 
-        }
-
-           
+        }                 
 
     }
 
@@ -77,13 +75,20 @@ public class Intro : MonoBehaviour {
                 introGroup.interactable = false;
                 introCanvas.SetActive(false);
 
+                //background
+                ArtAssets.S.ControlBackground(0);
+
                 ParachuteKids.S.StartGame();
                 break;
             case 1:
+                //background
+                ArtAssets.S.ControlBackground(1);
+
                 while (introGroup.alpha < 1) {
                     introGroup.alpha += Time.deltaTime * 2;
                     yield return null;
-                }
+                }            
+
                 introGroup.interactable = true;
                 break;
         }

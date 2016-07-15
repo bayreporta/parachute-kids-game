@@ -7,12 +7,7 @@ using System.Collections.Generic;
 
 public class ArtAssets : MonoBehaviour {
 	public static ArtAssets S;
-
-    //screen dimensions
-    Vector3 bottomLeft;
-    Vector3 bottomRight;
-    Vector3 topLeft;
-    Vector3 topRight;
+    public GameObject background;
 
     //tile vars
     public GameObject worldContainer;
@@ -21,6 +16,15 @@ public class ArtAssets : MonoBehaviour {
 
 	//challenge images
     public List<GameObject> challengeImages;
+
+    public void ControlBackground(int i) {
+        if (i == 0) {
+            background.SetActive(false);
+        }
+        else if (i == 1) {
+            background.SetActive(true);
+        }
+    }
 
     void Awake() {
         S = this;
@@ -33,15 +37,14 @@ public class ArtAssets : MonoBehaviour {
         worldContainer = GameObject.Find("_World");
         worldContainer.SetActive(false);
 
-        //grab screen dims
-        CalculateScreenDimensions();
+     
     }
 
-    public void CalculateScreenDimensions() {
+    /*public void CalculateScreenDimensions() {
         var cam = Camera.main;
         bottomLeft = cam.ViewportToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
         bottomRight = cam.ViewportToWorldPoint(new Vector3(1, 0, cam.nearClipPlane));
         topRight = cam.ViewportToWorldPoint(new Vector3(1, 1, cam.nearClipPlane));       
         topLeft = cam.ViewportToWorldPoint(new Vector3(0, 1, cam.nearClipPlane));
-    }
+    }*/
 }

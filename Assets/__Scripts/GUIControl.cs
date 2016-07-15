@@ -18,6 +18,7 @@ public class GUIControl : MonoBehaviour {
     //buttons top right
     public Button tutorialButton;
     public Button restartButton;
+    public Button skiper;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -42,9 +43,16 @@ public class GUIControl : MonoBehaviour {
         // configure buttons
         tutorialButton.onClick.RemoveAllListeners();
         restartButton.onClick.RemoveAllListeners();
+        skiper.onClick.RemoveAllListeners();
 
         tutorialButton.onClick.AddListener(delegate { StartCoroutine(Tutorial.S.TransitionToTutorial(1)); });
         restartButton.onClick.AddListener(ParachuteKids.S.StartGame);
+
+        // Skip ahead to End Game
+        skiper.onClick.AddListener(delegate {
+            Player.S.currAct = 4;
+            Acts.S.InitializeAct(Player.S.currAct);
+        });
     }
     
     public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {
