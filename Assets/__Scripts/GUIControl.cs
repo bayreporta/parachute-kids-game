@@ -43,7 +43,7 @@ public class GUIControl : MonoBehaviour {
         tutorialButton.onClick.RemoveAllListeners();
         restartButton.onClick.RemoveAllListeners();
 
-        //tutorialButton.onClick.AddListener();
+        tutorialButton.onClick.AddListener(delegate { StartCoroutine(Tutorial.S.TransitionToTutorial(1)); });
         restartButton.onClick.AddListener(ParachuteKids.S.StartGame);
     }
     

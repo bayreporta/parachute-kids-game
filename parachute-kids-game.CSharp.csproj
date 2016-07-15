@@ -198,6 +198,7 @@
     <Compile Include="Assets\__Scripts\ParachuteKids.cs" />
     <Compile Include="Assets\__Scripts\Player.cs" />
     <Compile Include="Assets\__Scripts\Results.cs" />
+    <Compile Include="Assets\__Scripts\Tutorial.cs" />
     <Compile Include="Assets\__Scripts\Utils.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -41,6 +41,8 @@ public class ParachuteKids : MonoBehaviour {
         GeneralCanvas.S.FindGeneralCanvasElems();
         CollegeCanvas.S.FindCollegeCanvasElems();
         GUIControl.S.GUICanvas.SetActive(false);
+        Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
+        Tutorial.S.tutorialCanvas.SetActive(false);
     }
 
     public void StartGame() {        
@@ -75,6 +77,8 @@ public class ParachuteKids : MonoBehaviour {
         ChallengeCanvas.S.challengeGroup.alpha = 0;
         CollegeCanvas.S.collegeCanvas.SetActive(false);
         CollegeCanvas.S.collegeGroup.alpha = 0;
+        Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
+        Tutorial.S.tutorialCanvas.SetActive(false);
         GUIControl.S.InitGUI();
 
         //initialize game
