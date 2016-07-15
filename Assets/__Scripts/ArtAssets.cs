@@ -9,6 +9,9 @@ public class ArtAssets : MonoBehaviour {
 	public static ArtAssets S;
     public GameObject background;
 
+    //character assets
+    public List<GameObject> maleCharacterImages;
+
     //tile vars
     public GameObject worldContainer;
     public GameObject gameTitle;

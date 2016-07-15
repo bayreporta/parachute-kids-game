@@ -33,6 +33,7 @@ public class GUIControl : MonoBehaviour {
         wellbeingVal.text = "50%";
         languageVal.text = "Pending";
         gpaVal.text = "2.0";
+        ArtAssets.S.maleCharacterImages[1].SetActive(true);
         wellbeingWarning.SetActive(false);
 
         //colors
@@ -68,6 +69,12 @@ public class GUIControl : MonoBehaviour {
 
         //Convert gpa value
         gpaVal.text = ConvertGPAValue(gpa);
+
+        //update GUI image
+        for (int i = 0; i < ArtAssets.S.maleCharacterImages.Count; i++) { ArtAssets.S.maleCharacterImages[i].SetActive(false); }
+        if (wb <= 30) { ArtAssets.S.maleCharacterImages[0].SetActive(true); }
+        else if (wb > 30 && wb < 70) { ArtAssets.S.maleCharacterImages[1].SetActive(true); }
+        else if (wb >= 70) { ArtAssets.S.maleCharacterImages[2].SetActive(true); }
     }
 
     public void ChangeGUIColor(Text gui, float i) {

@@ -135,6 +135,10 @@ public class GeneralCanvas : MonoBehaviour {
     }
 
     public void UpdateSATResultsPanel() {
+        //backgrounding
+        ArtAssets.S.background.SetActive(true);
+        GUIControl.S.GUICanvas.SetActive(false);
+
         CollegeDefinition college = ParachuteKids.S.GetCollegeDefinition((CollegeType)Player.S.collegeChoice);
         Text readingScore = readingResultsText.GetComponent<Text>();
         Text mathScore = mathResultsText.GetComponent<Text>();
