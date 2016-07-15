@@ -44,14 +44,11 @@ public class Acts : MonoBehaviour {
             if (chal.actFlag == act) {
                 Locations go = Locations.locationObjects[chal.locationFlag];
 
-                //in here we need to check prereqs and determine which challenges appear and which do not
-
                 //update GUI
                 //GUIControl.S.ChangeActGUI(act);                   
 
                 //location highlight
                 go.GetComponent<Renderer>().material.color = activeLocation;
-                Debug.Log(go.name);
 
                 //location activate
                 go.clickableLocation = true;

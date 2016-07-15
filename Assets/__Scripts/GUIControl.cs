@@ -15,6 +15,10 @@ public class GUIControl : MonoBehaviour {
     public Text gpaVal;
     public GameObject wellbeingWarning;
 
+    //buttons top right
+    public Button tutorialButton;
+    public Button restartButton;
+
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
@@ -23,10 +27,24 @@ public class GUIControl : MonoBehaviour {
 
     public void InitGUI() {
         GUICanvas.SetActive(true);
+
+        // configure main vals
         wellbeingVal.text = "50%";
         languageVal.text = "Pending";
         gpaVal.text = "2.0";
-        wellbeingWarning.SetActive(false);        
+        wellbeingWarning.SetActive(false);
+
+        //colors
+        ChangeGUIColor(wellbeingVal, 0);
+        ChangeGUIColor(languageVal, 0);
+        ChangeGUIColor(gpaVal, 0);
+
+        // configure buttons
+        tutorialButton.onClick.RemoveAllListeners();
+        restartButton.onClick.RemoveAllListeners();
+
+        //tutorialButton.onClick.AddListener();
+        restartButton.onClick.AddListener(ParachuteKids.S.StartGame);
     }
     
     public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {

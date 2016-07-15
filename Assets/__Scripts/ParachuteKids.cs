@@ -46,8 +46,7 @@ public class ParachuteKids : MonoBehaviour {
     }
 
     public void StartGame() {        
-        Locations.locationObjects = null;
-        
+       
         //reset character        
         Player.S.gpa = 2.0f;
         Player.S.wellbeing = 50;
