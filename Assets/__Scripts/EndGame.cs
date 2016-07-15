@@ -109,11 +109,13 @@ public class EndGame : MonoBehaviour {
         switch (college.name) {
             case "UC Berkeley":
             case "UC Irvine":
-				//as long as your 3.5 gpa? is the min u have like a 10% of getting in
-                if (Player.S.gpa >= college.gpaReq) rand += .55f;
-                if (EndGame.S.readingSATScore >= college.readingReq) rand += .15f;
-                if (EndGame.S.mathSATScore >= college.mathReq) rand += .15f;
-                if (EndGame.S.writingSATScore >= college.writingReq) rand += .15f;
+
+                if (Player.S.gpa >= college.gpaReq) { rand += .7f; } 
+                else if (Player.S.gpa >= 3.5) { rand += .2f; } 
+
+                if (EndGame.S.readingSATScore >= college.readingReq) rand += .1f;
+                if (EndGame.S.mathSATScore >= college.mathReq) rand += .1f;
+                if (EndGame.S.writingSATScore >= college.writingReq) rand += .1f;
 
                 //did you get in?
                 if (UnityEngine.Random.Range(0f, 1f) <= rand) ret = true;

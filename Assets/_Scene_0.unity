@@ -246,7 +246,7 @@ RectTransform:
   - {fileID: 1759584945}
   - {fileID: 1561979399}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16868511, g: 0.7930138, b: 0.9558824, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1251,10 +1251,10 @@ RectTransform:
   - {fileID: 527855040}
   m_Father: {fileID: 327935249}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 85}
+  m_SizeDelta: {x: 500, y: 271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154098291
 MonoBehaviour:
@@ -2022,7 +2022,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2920,9 +2920,9 @@ RectTransform:
   - {fileID: 2054853556}
   m_Father: {fileID: 1781273215}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -309}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 538, y: 598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327935250
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327935248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1297475563, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -3053,7 +3053,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 07bd00bab23da1345bf8d3bc0d6013e5, type: 3}
-    m_FontSize: 20
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3804,7 +3804,7 @@ RectTransform:
   - {fileID: 1307437623}
   - {fileID: 1445797602}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4530,8 +4530,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 0.0006942749}
-  m_SizeDelta: {x: 502, y: 244.67}
+  m_AnchoredPosition: {x: 1, y: 0.00015258789}
+  m_SizeDelta: {x: 502, y: 248.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527855041
 MonoBehaviour:
@@ -4554,22 +4554,22 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 07bd00bab23da1345bf8d3bc0d6013e5, type: 3}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book. It has survived not only five centuries, but also the leap into
-    electronic typesetting, remaining essentially unchanged. \n\r\n"
+  m_Text: "You\u2019re nearing graduation day, so the time has come to apply to a
+    college or university to continue your education. Everything has been leading
+    to this moment. Now you have to make a choice. Depending on your GPA and Language,
+    you may be able to get into a top-tier university, but at the least, you can always
+    get into community college as there are no GPA requirements."
 --- !u!222 &527855042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5112,6 +5112,82 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.85, y: 0.90000004, z: 0}
   m_Center: {x: 0, y: 0.00000071525574, z: 0}
+--- !u!1 &584171095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 584171099}
+  - 33: {fileID: 584171098}
+  - 64: {fileID: 584171097}
+  - 23: {fileID: 584171096}
+  m_Layer: 0
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &584171096
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584171095}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!64 &584171097
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584171095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &584171098
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584171095}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &584171099
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584171095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -413, y: 239, z: -0.5}
+  m_LocalScale: {x: 509.2844, y: 509.2844, z: 5.092844}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &590388312
 GameObject:
   m_ObjectHideFlags: 0
@@ -6109,7 +6185,7 @@ RectTransform:
   m_Children:
   - {fileID: 737328517}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -6531,10 +6607,10 @@ RectTransform:
   - {fileID: 78481014}
   m_Father: {fileID: 327935249}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 275, y: -28}
+  m_SizeDelta: {x: 500, y: 56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719616602
 MonoBehaviour:
@@ -8463,7 +8539,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035052370}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8536,7 +8612,7 @@ RectTransform:
   m_Children:
   - {fileID: 1415587813}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -13514,11 +13590,11 @@ Transform:
   - {fileID: 434611305}
   - {fileID: 891771962}
   - {fileID: 281538512}
-  - {fileID: 1035052375}
   - {fileID: 45295908}
   - {fileID: 685023218}
   - {fileID: 374529337}
   - {fileID: 1770006637}
+  - {fileID: 1035052375}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &1759584944
@@ -13833,7 +13909,7 @@ RectTransform:
   m_Children:
   - {fileID: 497370974}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -15329,10 +15405,10 @@ RectTransform:
   - {fileID: 1396878411}
   m_Father: {fileID: 327935249}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 118}
+  m_SizeDelta: {x: 538, y: 210.33331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054853557
 MonoBehaviour:

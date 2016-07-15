@@ -36,11 +36,11 @@ public class Intro : MonoBehaviour {
     }
 
     public void TransitionIntro() {
-        if (introSlide == 0) {
+        if (introSlide != 2) {
             introSlide += 1;
         } else {
             introButton.gameObject.SetActive(false);
-            introSlide = 2;
+            introSlide = 3;
         }
 
         switch (introSlide) { 
@@ -53,7 +53,11 @@ public class Intro : MonoBehaviour {
                 //introImage = ; 
                 break;
             case 2:
-                introText.text = "A week later, you land in Southern California. You settle into your cramped rental room where your mother says you'll stay until you graduate from high school and move into a college dorm – that’s the goal, she says, to be accepted into a four-year university in the U.S. Your mother is around for a few weeks. You can't imagine what life will be like without her soon...but onwards you must go!";
+                introText.text = "A week later, you land in Southern California. You were able to enter the country with a Green Card with the sponsorship of your father, who is an American citizen. You settle into your cramped rental room where your mother says you'll stay until you graduate from public high school and move into a college dorm – that’s the goal, she says, to be accepted into a four-year university in the U.S.";
+                //introImage = ; 
+                break;
+            case 3:
+                introText.text = "Your mother is only around for a few weeks, and since both your parents can’t afford not to continue working abroad, you’ll have to take care of yourself. You can't imagine what life will be like without her soon...but onwards you must go!";
                 //introImage = ; 
                 break;
 
