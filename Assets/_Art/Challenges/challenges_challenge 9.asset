@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!43 &4361408
+--- !u!43 &4378144
 Mesh:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -139,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35648741dd5b14baa82bec08abfe7457, type: 3}
   m_Name: challenges_challenge 9
   m_EditorClassIdentifier: 
-  _lastTimeModified: 636041354852448418
-  _documentAsset: {fileID: 11458948}
-  _sharedMesh: {fileID: 4361408}
+  _lastTimeModified: 636041996266545206
+  _documentAsset: {fileID: 11405362}
+  _sharedMesh: {fileID: 4378144}
   _antialiasing: 0
   _antialiasingWidth: 0
   _generateCollider: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
     width: 5
     height: 2.5
   _layers: []
---- !u!114 &11458948
+--- !u!114 &11405362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
