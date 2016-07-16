@@ -56,10 +56,9 @@ public class Acts : MonoBehaviour {
                 //add to total active challenges for act
                 challengeThisAct += 1;
 
-                Debug.Log("challenge: " + i + " for location " + go.name);
 
                 //Act 3 special
-                if (Player.S.currAct == 3) {
+                /*if (Player.S.currAct == 3) {
 					//adjust gamespace and variables based on whether certain challenges are omitted off the bat
                     if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language < 40) {
                         //disable challenge
@@ -70,7 +69,7 @@ public class Acts : MonoBehaviour {
 						challengeThisAct -= 1;
                         go.GetComponent<Animator>().SetBool("active", false);
                     }                    
-                }
+                }*/
             }
         }
 
@@ -82,8 +81,9 @@ public class Acts : MonoBehaviour {
        }
        else if (Player.S.currAct == 4) {
             CollegeCanvas.S.collegeCanvas.SetActive(true);
-            StartCoroutine(CollegeCanvas.S.TransitionCollegeCanvas(1)); //transition canvas in
-            
+            GUIControl.S.GUICanvas.SetActive(false);
+            ArtAssets.S.ControlBackground(1);
+            StartCoroutine(CollegeCanvas.S.TransitionCollegeCanvas(1)); //transition canvas in            
        }
 
        //start Act Canvas transition

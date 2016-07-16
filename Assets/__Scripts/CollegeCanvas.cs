@@ -44,7 +44,7 @@ public class CollegeCanvas : MonoBehaviour {
         switch (i) {
             case 0:
                 while (collegeGroup.alpha > 0) {
-                    collegeGroup.alpha -= Time.deltaTime / 1;
+                    collegeGroup.alpha -= Time.deltaTime * 4;
                     yield return null;
                 }
                 //background
@@ -55,15 +55,12 @@ public class CollegeCanvas : MonoBehaviour {
                 collegeCanvas.SetActive(false);
                 break;
             case 1:
-                //background
-                ArtAssets.S.ControlBackground(1);
-                GUIControl.S.GUICanvas.SetActive(false);
-                Debug.Log("ascsacsac");
-                collegeCanvas.SetActive(true);
+                //background                   
                 while (collegeGroup.alpha < 1) {
-                    collegeGroup.alpha += Time.deltaTime / 1;
+                    collegeGroup.alpha += Time.deltaTime * 4;
                     yield return null;
-                }
+                }              
+                
                 collegeGroup.interactable = true;
                 ConfigureCollegeCanvas();
                 break;

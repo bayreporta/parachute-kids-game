@@ -141,7 +141,7 @@ public class ChallengeCanvas : MonoBehaviour {
 
     public void CloseChallengeCanvas() {
         //check if wellbeing is low enough for run away
-        if (Player.S.currAct == 3) LocationControl.S.ActivateLocation();
+        //if (Player.S.currAct == 3) LocationControl.S.ActivateLocation();
 
         Acts.S.challengesDoneForAct += 1;
 
@@ -153,17 +153,17 @@ public class ChallengeCanvas : MonoBehaviour {
 
     }
 
-    public IEnumerator TransitionChallengeCanvas(int i) {
+    public IEnumerator TransitionChallengeCanvas(int i) { 
+
         switch (i) {
             case 0:
-                while (challengeGroup.alpha > 0) {
-                    challengeGroup.alpha -= Time.deltaTime * 2;
-                    yield return null;
-                }
-                //background
                 ArtAssets.S.ControlBackground(0);
                 GUIControl.S.GUICanvas.SetActive(true);
 
+                while (challengeGroup.alpha > 0) {
+                    challengeGroup.alpha -= Time.deltaTime * 2;
+                    yield return null;
+                }               
                 challengeGroup.interactable = false;
                 challengeCanvas.SetActive(false);
                 break;
@@ -176,6 +176,7 @@ public class ChallengeCanvas : MonoBehaviour {
                     challengeGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }
+                
                 challengeGroup.interactable = true;
                 break;
         }

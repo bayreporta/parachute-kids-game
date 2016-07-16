@@ -54,6 +54,7 @@ public class GUIControl : MonoBehaviour {
             Player.S.currAct = 4;
             Acts.S.InitializeAct(Player.S.currAct);
         });
+        //skiper.gameObject.SetActive(false);
     }
     
     public void UpdateGUI(int wb, int lang, float gpa, int wbR, int langR, float gpaR) {

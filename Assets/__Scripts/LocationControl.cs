@@ -18,7 +18,7 @@ public class LocationControl : MonoBehaviour {
     void Awake() {
         S = this;
     }
-
+    /*
     public void ActivateLocation() {
         if (Player.S.wellbeing <= 30) {
             ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)10);
@@ -80,5 +80,5 @@ public class LocationControl : MonoBehaviour {
 
         }
     }
-
+    */
 }

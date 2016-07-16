@@ -23,8 +23,10 @@ public class ArtAssets : MonoBehaviour {
     public void ControlBackground(int i) {
         if (i == 0) {
             background.SetActive(false);
+            Debug.Log("off");
         }
         else if (i == 1) {
+            Debug.Log("on");
             background.SetActive(true);
         }
     }
