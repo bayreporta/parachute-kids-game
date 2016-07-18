@@ -207,12 +207,12 @@ public class EndGame : MonoBehaviour {
                 break;
             case 1:
                 ggTitle.text = "YOU ARE THE CHAMPION!";
-                ggText.text = "You had incredibly high and, at times, impossible goals for yourself: live alone in a foreign land and overcome the barriers of language, culture and family connection to not only graduate high school, but to be admitted into the school of your choice. It’s an incredible victory for a young immigrant who knew little English before coming here, and it’s safe to say, proudly, that you made your family proud with your achievement!";
+                ggText.text = "You had incredibly high goals for yourself: live alone in a foreign land and overcome the barriers of language, culture and family connection to not only graduate high school, but to be admitted into the school of your choice. It’s an incredible victory for a young immigrant who knew little English before coming here, and it’s safe to say that you made your family proud with your achievement!";
                 ggImages[ending].SetActive(true);
                 break;
             case 2:
                 ggTitle.text = "BITTERSWEET VICTORY";
-                ggText.text = "Although you didn’t get into the school you wanted, you thankfully have a backup plan in community college. With no overbearing requirements to take classes there, you can still continue on your goal of getting into a top tier college or university after taking at least two years of classes at Pasadena City College. This setback doesn’t dismiss the fact that you overcame incredible obstacles of language, culture and at times loneliness to start taking classes at an American college.";
+                ggText.text = "Although you didn’t get into the school you wanted, you thankfully have a backup plan in community college. With no overbearing requirements to take classes there, you can still continue on your goal of getting into a top tier college or university after taking classes at Pasadena City College. This setback doesn’t dismiss the fact that you overcame incredible obstacles of language, culture and at times loneliness to start taking classes at an American college.";
                 ggImages[ending].SetActive(true);
                 break;
         }
