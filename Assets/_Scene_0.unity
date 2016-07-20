@@ -668,7 +668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tracks your process toward English proficiency. There are five levels of
+  m_Text: 'Tracks your progess toward English proficiency. There are five levels of
     ESL before gaining proficiency. '
 --- !u!222 &73135144
 CanvasRenderer:
