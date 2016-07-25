@@ -36,6 +36,10 @@ public class ChallengeDefinition {
     public string optionTwoText;
     public string optionOneResults;
     public string optionTwoResults;
+    public string optionOnePopupA;
+    public string optionOnePopupB;
+    public string optionTwoPopupA;
+    public string optionTwoPopupB;
     public int prereqChallenge;
     public string prereqResult;
     public string prereqWellbeing;
@@ -100,6 +104,10 @@ public class Challenges : MonoBehaviour {
             chal.optionTwoText = challengeData[0][i]["option2txt"].ToString();
             chal.optionOneResults = challengeData[0][i]["option1results"].ToString();
             chal.optionTwoResults = challengeData[0][i]["option2results"].ToString();
+            chal.optionOnePopupA = challengeData[0][i]["option1popupa"].ToString();
+            chal.optionOnePopupB = challengeData[0][i]["option1popupb"].ToString();
+            chal.optionTwoPopupA = challengeData[0][i]["option2popupa"].ToString();
+            chal.optionTwoPopupB = challengeData[0][i]["option2popupb"].ToString();
 
             challengeDefinitions.Add(chal);
         }

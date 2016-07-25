@@ -28,9 +28,9 @@ public class ChallengeCanvas : MonoBehaviour {
 
     //effect canvas
     public GameObject challengePopup;
-    public Text wellbeingEffect;
-    public Text gpaEffect;
-    public Text languageEffect;
+    public Text effectOne;
+    public Text effectTwo;
+    public bool popup = false;
 
     
     private readonly ChallengeType JohnDoe_Act3_BusStop;
@@ -46,15 +46,36 @@ public class ChallengeCanvas : MonoBehaviour {
         S = this;          
     }
 
-    public void UpdateResultEffect(int i) {
-        switch (i) {
-            case 0:
-                challengePopup.SetActive(false);
-                break;
-            case 1:
-                challengePopup.SetActive(true);
-                break;
+    public void UpdateResultEffect(int option) {
+        ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)challengeID);
+
+        if (popup == true) {
+            popup = false;
+            challengePopup.SetActive(false);
+            effectTwo.gameObject.SetActive(true);
         }
+        else if (popup == false) {
+            challengePopup.SetActive(true);
+            popup = true;
+            switch (option) {
+                case 0:
+                    effectOne.text = "* " + chal.optionOnePopupA;
+
+                    if (chal.optionOnePopupB != "none") {
+                        effectTwo.text = "* " + chal.optionOnePopupB;
+                    }
+                    else { effectTwo.gameObject.SetActive(false); }
+                    
+                    break;
+                case 1:
+                    effectOne.text = "* " + chal.optionTwoPopupA;
+
+                    if (chal.optionTwoPopupB != "none") {
+                        effectTwo.text = "* " + chal.optionTwoPopupB;
+                    } else { effectTwo.gameObject.SetActive(false); }                    
+                    break;
+            }
+        }       
     }
 
     public void FindChallengeCanvasElems() {
