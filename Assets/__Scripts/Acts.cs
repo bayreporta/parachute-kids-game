@@ -37,6 +37,12 @@ public class Acts : MonoBehaviour {
         challengesDoneForAct = 0;
         challengeThisAct = 0;
 
+        //hide all locations
+        for (int i = 0; i < LocationControl.S.locationObjects.Count; i++) {
+            LocationControl.S.locationObjects[i].SetActive(false);
+        }
+
+        //cycle through challenges and activate location if applicable
         for (int i=0; i < Challenges.S.totChallenges; i++) {
             ChallengeDefinition chal = new ChallengeDefinition();
             chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)i);
@@ -44,8 +50,8 @@ public class Acts : MonoBehaviour {
             if (chal.actFlag == act) {
                 GameObject go = LocationControl.S.locationObjects[chal.locationFlag];
 
-                //update GUI
-                //GUIControl.S.ChangeActGUI(act);                   
+                //activate location
+                go.SetActive(true);
 
                 //location highlight
                 go.GetComponent<Animator>().SetBool("active", true);
