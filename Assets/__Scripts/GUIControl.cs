@@ -63,7 +63,7 @@ public class GUIControl : MonoBehaviour {
         ChangeGUIColor(languageVal, langR);
         ChangeGUIColor(gpaVal, gpaR);
 
-        wellbeingVal.text = wb.ToString();
+        wellbeingVal.text = wb.ToString() + "%";
 
         //convert language number into text indicator
         languageVal.text = ConvertLanguageValue(lang);
