@@ -7,7 +7,8 @@ public class Locations : MonoBehaviour {
     /* CLASS VARIABLES
     ---------------------------------------------------------------*/
     public string locationType;
-    public bool clickableLocation; 
+    public bool clickableLocation;
+    public string locationName;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
@@ -22,6 +23,14 @@ public class Locations : MonoBehaviour {
             Animator ani = GetComponent<Animator>();
             ani.SetBool("active", false);
         }
+    }
+
+    void OnMouseEnter() {
+        LocationControl.S.UpdateLocationCanvas(locationName);
+    }
+
+    void OnMouseExit() {
+        LocationControl.S.locationCanvas.SetActive(false);
     }
 
 }

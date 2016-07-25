@@ -44,7 +44,7 @@ public class ParachuteKids : MonoBehaviour {
         GUIControl.S.GUICanvas.SetActive(false);
         Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
         Tutorial.S.tutorialCanvas.SetActive(false);
-
+        
         //background
         ArtAssets.S.ControlBackground(0);
     }
@@ -65,6 +65,7 @@ public class ParachuteKids : MonoBehaviour {
         GeneralCanvas.S.generalResultsPanel.SetActive(false);
         GeneralCanvas.S.generalActPanel.SetActive(true);
         GeneralCanvas.S.UpdateActCanvas(1);
+        LocationControl.S.locationCanvas.SetActive(false);
 
         //reset Challenges
         for (int i = 0; i < Challenges.S.totChallenges; i++) {
