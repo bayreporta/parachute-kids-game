@@ -26,20 +26,36 @@ public class ChallengeCanvas : MonoBehaviour {
     public Button challengeOptionTwo;
     public Transform challengeOptionTwoText;
 
-    int challengeID;
-    string[] optionsOne;
-    string[] optionsTwo;
+    //effect canvas
+    public GameObject challengePopup;
+    public Text wellbeingEffect;
+    public Text gpaEffect;
+    public Text languageEffect;
+
+    
     private readonly ChallengeType JohnDoe_Act3_BusStop;
 
-
-
+    //this is for the effects popup
+    public int challengeID;
+    public string[] optionsOne;
+    public string[] optionsTwo;
 
     /* FUNCTIONS
     ---------------------------------------------------------------*/
     void Awake() {
-        S = this;               
+        S = this;          
     }
 
+    public void UpdateResultEffect(int i) {
+        switch (i) {
+            case 0:
+                challengePopup.SetActive(false);
+                break;
+            case 1:
+                challengePopup.SetActive(true);
+                break;
+        }
+    }
 
     public void FindChallengeCanvasElems() {
         //grab Challenge Canvas GO and deactivate it. Also grab children
@@ -67,12 +83,12 @@ public class ChallengeCanvas : MonoBehaviour {
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
         bool hideOption;
 
-		Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
+		//Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
 
         //grab vital data
-        int challengeID = chal.challengeID;
-        string[] optionsOne = chal.optionOneResults.Split(',');
-        string[] optionsTwo = chal.optionTwoResults.Split(',');
+        challengeID = chal.challengeID;
+        optionsOne = chal.optionOneResults.Split(',');
+        optionsTwo = chal.optionTwoResults.Split(',');
 
         //turn on all buttons
         challengeOptionOne.gameObject.SetActive(true);
@@ -95,17 +111,32 @@ public class ChallengeCanvas : MonoBehaviour {
         for (int i=0; i < Challenges.S.totChallenges; i++) { ArtAssets.S.challengeImages[i].SetActive(false); }
         ArtAssets.S.challengeImages[chal.challengeID].SetActive(true);
 
+        //reset effects popup
+        challengePopup.GetComponent<CanvasGroup>().alpha = 1;
+
         //add event listeners
         challengeOptionOne.onClick.RemoveAllListeners();
         challengeOptionTwo.onClick.RemoveAllListeners();
-        if (chal.challengeID != 15) challengeOptionOne.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsOne); });
+        if (chal.challengeID != 15) {
+            challengeOptionOne.onClick.AddListener(delegate {
+                challengePopup.GetComponent<CanvasGroup>().alpha = 0;
+                challengePopup.SetActive(false);
+                Results.S.RetrieveResult(challengeID, optionsOne);
+            });
+        }
 
         //check prereqs for challenge and options
         hideOption = Results.S.ResultPrereqCheck(chal.challengeID, 0);
 
         //check to see if second button is hidden
         if (chal.optionTwoText == "none" || hideOption == true) { challengeOptionTwo.gameObject.SetActive(false); }
-        else {challengeOptionTwo.onClick.AddListener(delegate { Results.S.RetrieveResult(challengeID, optionsTwo); }); }
+        else {
+            challengeOptionTwo.onClick.AddListener(delegate {
+                challengePopup.GetComponent<CanvasGroup>().alpha = 0;
+                challengePopup.SetActive(false);
+                Results.S.RetrieveResult(challengeID, optionsTwo);
+            });
+        }
 
         //activate canvas
         chal.clickedFlag = true;
