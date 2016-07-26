@@ -20,8 +20,11 @@ public class Locations : MonoBehaviour {
 
             //restore default location
             clickableLocation = false;
+            gameObject.SetActive(false);
             Animator ani = GetComponent<Animator>();
             ani.SetBool("active", false);
+            LocationControl.S.locationCanvas.SetActive(false);
+
         }
     }
 

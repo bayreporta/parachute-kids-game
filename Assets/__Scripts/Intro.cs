@@ -76,9 +76,6 @@ public class Intro : MonoBehaviour {
                 introGroup.interactable = false;
                 introCanvas.SetActive(false);
 
-                //background
-                ArtAssets.S.ControlBackground(0);
-
                 ParachuteKids.S.StartGame();
                 break;
             case 1:

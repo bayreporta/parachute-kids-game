@@ -51,16 +51,20 @@ public class GeneralCanvas : MonoBehaviour {
         S = this;
 	}
 
-    public IEnumerator TransitionActCanvas(int i) {
+    public IEnumerator TransitionActCanvas(int i) {   
+
         switch (i) {
             case 0:
+                GUIControl.S.GUICanvas.SetActive(true);
+
                 while (generalGroup.alpha > 0) {
                     generalGroup.alpha -= Time.deltaTime / 1;
                     yield return null;
                 }      
 
                 generalGroup.interactable = false;
-                generalCanvas.SetActive(false);
+                generalCanvas.SetActive(false);              
+                
                 break;
             case 1:
                 /*while (generalGroup.alpha < 1) {
