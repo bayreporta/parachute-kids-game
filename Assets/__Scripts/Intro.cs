@@ -14,6 +14,7 @@ public class Intro : MonoBehaviour {
     public Button introButton;
     public Text introButtonText;
     public Button introPlayButton;
+    public Text introPlayButtonText;
     public int introSlide = 0;
 
     void Awake() {
@@ -38,14 +39,8 @@ public class Intro : MonoBehaviour {
     }
 
     public void TransitionIntro() {
-        if (introSlide == 0) {
-            introSlide += 1;
-        } else {
-            introButton.gameObject.SetActive(false);
-            introButtonText.text = "Play Game!";
-            introSlide = 2;
-        }
-
+        introSlide += 1;
+     
         for (int i = 0; i < introImages.Count; i++) { introImages[i].SetActive(false); }
 
         switch (introSlide) {            
@@ -59,9 +54,12 @@ public class Intro : MonoBehaviour {
                 break;
             case 2:
                 introText.text = "Your mother is only around for a few weeks, and since both your parents can’t afford not to continue working abroad, you’ll have to take care of yourself. You can't imagine what life will be like without her soon...but onwards you must go!";
+                introButtonText.text = "Tutorial";
+                introPlayButtonText.text = "Play Game!";
+                introButton.onClick.RemoveListener(TransitionIntro);
+                introButton.onClick.AddListener(delegate { StartCoroutine(Tutorial.S.TransitionToTutorial(1)); });
                 introImages[introSlide].SetActive(true);
                 break;
-
         }                 
 
     }

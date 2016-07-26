@@ -710,8 +710,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -80.4}
-  m_SizeDelta: {x: 638, y: 58.8}
+  m_AnchoredPosition: {x: -70, y: -98}
+  m_SizeDelta: {x: 780, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73135143
 MonoBehaviour:
@@ -1720,7 +1720,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How to Play
+  m_Text: How to Play and Win
 --- !u!222 &211525134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2602,7 +2602,7 @@ RectTransform:
   m_Children:
   - {fileID: 1445725894}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3053,8 +3053,8 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -151.1}
-  m_SizeDelta: {x: 638, y: 38.5}
+  m_AnchoredPosition: {x: -70, y: -166}
+  m_SizeDelta: {x: 780, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306364307
 MonoBehaviour:
@@ -4174,7 +4174,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 680, y: 620}
+  m_SizeDelta: {x: 959, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385714063
 MonoBehaviour:
@@ -4631,8 +4631,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.000061, y: 213}
-  m_SizeDelta: {x: 638, y: 62}
+  m_AnchoredPosition: {x: 6, y: 195}
+  m_SizeDelta: {x: 925, y: 99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499900394
 MonoBehaviour:
@@ -4666,8 +4666,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The goal of the game is to get accepted into your college or university
-    of choice while attempting to adapt to living in a foreign place. '
+  m_Text: "The goal of the game is to get accepted into the school of your choice.
+    There are three different outcomes in the game: you get accepted into the school
+    you picked, you don\u2019t get accepted but graduate from high school anyway or
+    you return to China. One of these three outcomes happen based on the choices you
+    make during your journey through high school.\r"
 --- !u!222 &499900395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5710,7 +5713,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -40}
+  m_AnchoredPosition: {x: -141, y: -73}
   m_SizeDelta: {x: 638, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &590388314
@@ -6590,7 +6593,7 @@ RectTransform:
   m_Children:
   - {fileID: 737328517}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -7085,8 +7088,8 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -204}
-  m_SizeDelta: {x: 638, y: 80}
+  m_AnchoredPosition: {x: -0.75, y: -215.2}
+  m_SizeDelta: {x: 918.5, y: 48.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759418097
 MonoBehaviour:
@@ -8326,7 +8329,7 @@ RectTransform:
   m_Children:
   - {fileID: 1561498919}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -8895,8 +8898,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 116.99999}
-  m_SizeDelta: {x: 638, y: 130}
+  m_AnchoredPosition: {x: 6, y: 80}
+  m_SizeDelta: {x: 925, y: 97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977159853
 MonoBehaviour:
@@ -9393,7 +9396,7 @@ RectTransform:
   m_Children:
   - {fileID: 1415587813}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -10235,7 +10238,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -120.8}
+  m_AnchoredPosition: {x: -141, y: -139}
   m_SizeDelta: {x: 638, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215055949
@@ -10724,8 +10727,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 0.5}
-  m_SizeDelta: {x: 638, y: 59.05}
+  m_AnchoredPosition: {x: -67, y: -32}
+  m_SizeDelta: {x: 779, y: 30.025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268472651
 MonoBehaviour:
@@ -11879,7 +11882,7 @@ RectTransform:
   m_Children:
   - {fileID: 1251634085}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -13850,6 +13853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   challengesDoneForAct: 0
   challengeThisAct: 0
+  busStopChal: 1
+  apChal: 1
 --- !u!114 &1546406681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13951,8 +13956,9 @@ MonoBehaviour:
   - {fileID: 1468239775}
   introText: {fileID: 279828407}
   introButton: {fileID: 2001713538}
-  introButtonText: {fileID: 1774880241}
+  introButtonText: {fileID: 125024378}
   introPlayButton: {fileID: 1065313777}
+  introPlayButtonText: {fileID: 1774880241}
   introSlide: 0
 --- !u!114 &1546406686
 MonoBehaviour:
@@ -14174,7 +14180,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 41}
+  m_AnchoredPosition: {x: -138, y: -6}
   m_SizeDelta: {x: 638, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637842019
@@ -14621,7 +14627,7 @@ RectTransform:
   m_Children:
   - {fileID: 252766771}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -15107,13 +15113,13 @@ Transform:
   - {fileID: 434611305}
   - {fileID: 45295908}
   - {fileID: 374529337}
-  - {fileID: 1770006637}
   - {fileID: 1035052375}
   - {fileID: 1383327677}
   - {fileID: 685023218}
   - {fileID: 1718709103}
   - {fileID: 891771962}
   - {fileID: 281538512}
+  - {fileID: 1770006637}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &1759584944
@@ -15498,7 +15504,7 @@ RectTransform:
   m_Children:
   - {fileID: 497370974}
   m_Father: {fileID: 1752174845}
-  m_RootOrder: 5
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
