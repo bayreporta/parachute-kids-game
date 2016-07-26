@@ -9,6 +9,8 @@ public class Acts : MonoBehaviour {
     static public Acts S;
     public int challengesDoneForAct = 0;
     public int challengeThisAct = 0;
+    public bool busStopChal = true;
+    public bool apChal = true;
 
     //private----------------------------//
 
@@ -64,23 +66,25 @@ public class Acts : MonoBehaviour {
 
 
                 //Act 3 special
-                /*if (Player.S.currAct == 3) {
+                if (Player.S.currAct == 3) {
 					//adjust gamespace and variables based on whether certain challenges are omitted off the bat
-                    if (Player.S.wellbeing > 30 && chal.challengeID == 10 || chal.challengeID == 11 && Player.S.language < 40) {
-                        //disable challenge
-                        if (chal.challengeID == 10) chal.allowedFlag = false;
-                        if (chal.challengeID == 11) chal.allowedFlag = false;
-
-                        go.GetComponent<Locations>().clickableLocation = false;
-						challengeThisAct -= 1;
-                        go.GetComponent<Animator>().SetBool("active", false);
-                    }                    
-                }*/
+                    if (Player.S.wellbeing > 30 && chal.challengeID == 10) {
+                        busStopChal = false;
+                        go.SetActive(false);
+                        challengeThisAct -= 1;
+                    }             
+                    else if (chal.challengeID == 11 && Player.S.language < 40) {
+                        apChal = false;
+                        go.SetActive(false);
+                        challengeThisAct -= 1;
+                    }       
+                }             
             }
+            
         }
+        Debug.Log("Starting with " + challengeThisAct);
 
-       
-       if (Player.S.currAct == 2 || Player.S.currAct == 3) {
+        if (Player.S.currAct == 2 || Player.S.currAct == 3) {
             GeneralCanvas.S.UpdateActCanvas(Player.S.currAct); //update canvas text
             GeneralCanvas.S.generalCanvas.SetActive(true);
             StartCoroutine(GeneralCanvas.S.TransitionActCanvas(1)); //transition canvas in
@@ -94,6 +98,41 @@ public class Acts : MonoBehaviour {
 
        //start Act Canvas transition
        Invoke("FireActTransition", 3f);
+    }
+
+    public void ReevaluateActThree() {
+        Debug.Log("entering Reeval with " + challengeThisAct);
+
+        //AP Check
+        if (Player.S.language >= 40 && LocationControl.S.locationObjects[1].gameObject.GetComponent<Locations>().clickableLocation == true && apChal == false) {
+            LocationControl.S.locationObjects[1].gameObject.SetActive(true);
+            LocationControl.S.locationObjects[1].GetComponent<Animator>().SetBool("active", true);
+            challengeThisAct += 1;
+            apChal = true;
+            Debug.Log("AP ON");
+        }
+        else if (Player.S.language < 40 && LocationControl.S.locationObjects[1].gameObject.GetComponent<Locations>().clickableLocation == true && apChal == true) {
+            LocationControl.S.locationObjects[1].gameObject.SetActive(false);
+            challengeThisAct -= 1;
+            apChal = false;
+            Debug.Log("AP OFF");
+        }
+
+        //Bus Stop Check
+        if (Player.S.wellbeing <= 30 && LocationControl.S.locationObjects[9].gameObject.GetComponent<Locations>().clickableLocation == true && busStopChal == false) {
+            LocationControl.S.locationObjects[9].gameObject.SetActive(true);
+            LocationControl.S.locationObjects[9].GetComponent<Animator>().SetBool("active", true);
+            challengeThisAct += 1;
+            busStopChal = true;            
+            Debug.Log("BUS ON");
+        } else if (Player.S.wellbeing > 30 && LocationControl.S.locationObjects[9].gameObject.GetComponent<Locations>().clickableLocation == true && busStopChal == true) {
+            LocationControl.S.locationObjects[9].gameObject.SetActive(false);
+            challengeThisAct -= 1;
+            busStopChal = false;
+            Debug.Log("BUS OFF");
+        }
+
+        Debug.Log("leaving Reeval with " + challengeThisAct);
     }
 
     public void FireActTransition() {

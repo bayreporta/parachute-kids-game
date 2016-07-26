@@ -51,7 +51,6 @@ public class ChallengeCanvas : MonoBehaviour {
 
     public void UpdateResultEffect(int option) {
         ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)challengeID);
-        Debug.Log(popup);
         if (popup == true) {
             popup = false;
             challengePopup.SetActive(false);
@@ -108,7 +107,6 @@ public class ChallengeCanvas : MonoBehaviour {
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
         bool hideOption;
-        //Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
 
         //hide OptionButton 3
         challengeOptionThree.gameObject.SetActive(false);
@@ -196,15 +194,18 @@ public class ChallengeCanvas : MonoBehaviour {
         optionThree.text = "Continue.";
 
         challengeOptionThree.onClick.RemoveAllListeners();
-		challengeOptionThree.onClick.AddListener(CloseChallengeCanvas);
         challengeOptionThree.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
+        challengeOptionThree.onClick.AddListener(CloseChallengeCanvas);
+        
     }
 
     public void CloseChallengeCanvas() {
         //check if wellbeing is low enough for run away
-        //if (Player.S.currAct == 3) LocationControl.S.ActivateLocation();
+        if (Player.S.currAct == 3) Acts.S.ReevaluateActThree();
 
         Acts.S.challengesDoneForAct += 1;
+
+        Debug.Log("finished " + Acts.S.challengesDoneForAct + "of " + Acts.S.challengeThisAct);
 
         //hide and disable canvas
         StartCoroutine(TransitionChallengeCanvas(0));
