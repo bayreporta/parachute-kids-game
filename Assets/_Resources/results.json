@@ -206,7 +206,7 @@
         "prereqchallenge": 0,
         "prereqresult": 0,
         "challengeflag": 5,
-        "resultschance": 2,
+        "resultschance": 0.5,
         "resultwellbeing": 10,
         "resultlanguage": 0,
         "resultgpa": 0
@@ -220,7 +220,7 @@
         "prereqchallenge": 0,
         "prereqresult": 0,
         "challengeflag": 5,
-        "resultschance": 2,
+        "resultschance": 0.5,
         "resultwellbeing": -10,
         "resultlanguage": 0,
         "resultgpa": -0.5
@@ -388,7 +388,7 @@
         "prereqchallenge": 0,
         "prereqresult": 0,
         "challengeflag": 11,
-        "resultschance": 3,
+        "resultschance": 0.5,
         "resultwellbeing": -10,
         "resultlanguage": 10,
         "resultgpa": 0.5
@@ -402,7 +402,7 @@
         "prereqchallenge": 0,
         "prereqresult": 0,
         "challengeflag": 11,
-        "resultschance": 3,
+        "resultschance": 0.5,
         "resultwellbeing": -5,
         "resultlanguage": 5,
         "resultgpa": 0.25
@@ -458,7 +458,7 @@
         "prereqchallenge": 0,
         "prereqresult": 0,
         "challengeflag": 13,
-        "resultschance": 3,
+        "resultschance": 1,
         "resultwellbeing": 15,
         "resultlanguage": 0,
         "resultgpa": -1

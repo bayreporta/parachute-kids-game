@@ -21,10 +21,13 @@ public class ChallengeCanvas : MonoBehaviour {
     public Transform challengeTitleText;
     public GameObject challengeFlavor;
     public Transform challengeFlavorText;
+
     public Button challengeOptionOne;
     public Transform challengeOptionOneText;
     public Button challengeOptionTwo;
     public Transform challengeOptionTwoText;
+    public Button challengeOptionThree;
+    public Transform challengeOptionThreeText;
 
     //effect canvas
     public GameObject challengePopup;
@@ -48,7 +51,7 @@ public class ChallengeCanvas : MonoBehaviour {
 
     public void UpdateResultEffect(int option) {
         ChallengeDefinition chal = ParachuteKids.S.GetChallengeDefinition((ChallengeType)challengeID);
-
+        Debug.Log(popup);
         if (popup == true) {
             popup = false;
             challengePopup.SetActive(false);
@@ -98,13 +101,17 @@ public class ChallengeCanvas : MonoBehaviour {
         challengeOptionTwo = GameObject.Find("OptionTwo").GetComponent<Button>();
         challengeOptionTwoText = challengeOptionTwo.transform.GetChild(0);
 
+        challengeOptionThreeText = challengeOptionThree.transform.GetChild(0);
+
         challengeCanvas.SetActive(false);
     }
 
     public void UpdateChallengeCanvas(ChallengeDefinition chal) {
         bool hideOption;
+        //Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
 
-		//Debug.Log (Acts.S.challengeThisAct + " done: " + Acts.S.challengesDoneForAct);
+        //hide OptionButton 3
+        challengeOptionThree.gameObject.SetActive(false);
 
         //grab vital data
         challengeID = chal.challengeID;
@@ -175,20 +182,22 @@ public class ChallengeCanvas : MonoBehaviour {
         //grab text
         Text title = challengeTitleText.GetComponent<Text>();
         Text flavor = challengeFlavorText.GetComponent<Text>();
-        Text optionTwo = challengeOptionTwoText.GetComponent<Text>();
+        Text optionThree = challengeOptionThreeText.GetComponent<Text>();
 
         //hide first button
         challengeOptionOne.gameObject.SetActive(false);
-        challengeOptionTwo.gameObject.SetActive(true);
+        challengeOptionTwo.gameObject.SetActive(false);
+        challengeOptionThree.gameObject.SetActive(true);
+
 
         //change text
         title.text = r.resultTitle;
         flavor.text = r.resultFlavor;
-        optionTwo.text = "Continue.";
+        optionThree.text = "Continue.";
 
-        challengeOptionTwo.onClick.RemoveAllListeners();
-		challengeOptionTwo.onClick.AddListener(CloseChallengeCanvas);
-        challengeOptionTwo.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
+        challengeOptionThree.onClick.RemoveAllListeners();
+		challengeOptionThree.onClick.AddListener(CloseChallengeCanvas);
+        challengeOptionThree.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
     }
 
     public void CloseChallengeCanvas() {
@@ -203,6 +212,9 @@ public class ChallengeCanvas : MonoBehaviour {
         //check if act is finished
         Acts.S.CheckActStatus();
 
+        //disable Popup
+        popup = false;
+        
     }
 
     public IEnumerator TransitionChallengeCanvas(int i) { 
