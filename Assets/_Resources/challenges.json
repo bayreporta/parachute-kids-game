@@ -111,8 +111,8 @@
         "option2txt": "Daze off",
         "option1popupa": "Affects future decisions",
         "option1popupb": "none",
-        "option2popupa": "Affects future decisions",
-        "option2popupb": "none",
+        "option2popupa": "Results in +5% Wellbeing",
+        "option2popupb": "Affects future decisions",
         "option1results": "a",
         "option2results": "b"
     },
@@ -203,7 +203,7 @@
         "option2txt": "Find an alternative way to decompress",
         "option1popupa": "Results in +5% Wellbeing and increased Language",
         "option1popupb": "none",
-        "option2popupa": "Results in +10 Wellbeing and -0.50 GPA",
+        "option2popupa": "Results in +10% Wellbeing and -0.50 GPA",
         "option2popupb": "none",
         "option1results": "a",
         "option2results": "b"
@@ -272,7 +272,7 @@
         "option2txt": "Stay with regular classes",
         "option1popupa": "50% chance for -10% Wellbeing, +0.50 GPA and increased Language",
         "option1popupb": "50% chance for -5% Wellbeing, +0.25 GPA and increased Language",
-        "option2popupa": "Results in +0.25 and increased Language",
+        "option2popupa": "Results in +0.25 GPA and increased Language",
         "option2popupb": "none",
         "option1results": "aa,ab",
         "option2results": "b"

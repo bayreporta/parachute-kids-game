@@ -53,6 +53,7 @@ public class Menus : MonoBehaviour {
 
         //load intro
         Intro.S.introCanvas.SetActive(true);
+        Intro.S.TransitionIntro();
         StartCoroutine(Intro.S.TransitionIntroCanvas(1));
     }
 

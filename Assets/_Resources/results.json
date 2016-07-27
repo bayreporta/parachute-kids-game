@@ -179,7 +179,7 @@
         "prereqresult": 0,
         "challengeflag": 4,
         "resultschance": 1,
-        "resultwellbeing": 0,
+        "resultwellbeing": 5,
         "resultlanguage": 0,
         "resultgpa": 0
     },

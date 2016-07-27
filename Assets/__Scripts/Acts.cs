@@ -82,7 +82,6 @@ public class Acts : MonoBehaviour {
             }
             
         }
-        Debug.Log("Starting with " + challengeThisAct);
 
         if (Player.S.currAct == 2 || Player.S.currAct == 3) {
             GeneralCanvas.S.UpdateActCanvas(Player.S.currAct); //update canvas text

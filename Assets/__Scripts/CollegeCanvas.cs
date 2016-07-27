@@ -44,7 +44,7 @@ public class CollegeCanvas : MonoBehaviour {
         switch (i) {
             case 0:
                 while (collegeGroup.alpha > 0) {
-                    collegeGroup.alpha -= Time.deltaTime * 4;
+                    collegeGroup.alpha -= Time.deltaTime * 2;
                     yield return null;
                 }
                 //background
@@ -57,7 +57,7 @@ public class CollegeCanvas : MonoBehaviour {
             case 1:
                 //background                   
                 while (collegeGroup.alpha < 1) {
-                    collegeGroup.alpha += Time.deltaTime * 4;
+                    collegeGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }              
                 

@@ -219,29 +219,27 @@ public class ChallengeCanvas : MonoBehaviour {
     }
 
     public IEnumerator TransitionChallengeCanvas(int i) { 
-
         switch (i) {
             case 0:
                 ArtAssets.S.ControlBackground(0);
                 GUIControl.S.GUICanvas.SetActive(true);
-
                 while (challengeGroup.alpha > 0) {
                     challengeGroup.alpha -= Time.deltaTime * 2;
+                    GUIControl.S.GUIAlpha.alpha += Time.deltaTime * 2;
                     yield return null;
                 }               
-                challengeGroup.interactable = false;
-                challengeCanvas.SetActive(false);
+                challengeGroup.interactable = false;                
                 break;
             case 1:
                 //background
                 ArtAssets.S.ControlBackground(1);
+                GUIControl.S.GUIAlpha.alpha = 0;
                 GUIControl.S.GUICanvas.SetActive(false);
 
                 while (challengeGroup.alpha < 1) {
                     challengeGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }
-                
                 challengeGroup.interactable = true;
                 break;
         }

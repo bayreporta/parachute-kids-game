@@ -10,6 +10,7 @@ public class GUIControl : MonoBehaviour {
 
     //GUI Elements
     public GameObject GUICanvas;
+    public CanvasGroup GUIAlpha;
     public Text wellbeingVal;
     public Text languageVal;
     public Text gpaVal;
@@ -27,7 +28,7 @@ public class GUIControl : MonoBehaviour {
     }
 
     public void InitGUI() {
-        //GUICanvas.SetActive(true);
+        GUIAlpha = GUICanvas.GetComponent<CanvasGroup>();
 
         // configure main vals
         wellbeingVal.text = "50%";
@@ -118,5 +119,24 @@ public class GUIControl : MonoBehaviour {
         else { ret = gpa.ToString(); }
 
         return ret;
+    }
+
+    public IEnumerator TransitionGUI(int i) {
+        switch (i) {
+            case 0:         
+                while (GUIAlpha.alpha > 0) {
+                    GUIAlpha.alpha -= Time.deltaTime * 2;
+                    yield return null;
+                }
+                GUIAlpha.interactable = false;
+                break;
+            case 1:            
+                while (GUIAlpha.alpha < 1) {
+                    GUIAlpha.alpha += Time.deltaTime * 2;
+                    yield return null;
+                }
+                GUIAlpha.interactable = true;
+                break;
+        }
     }
 }

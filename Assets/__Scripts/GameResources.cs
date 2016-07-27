@@ -40,10 +40,10 @@ public class GameResources : MonoBehaviour {
 			
 			//activate Results panel
 			GeneralCanvas.S.generalCanvas.SetActive(false);
-			GeneralCanvas.S.generalActPanel.SetActive(false);	
+			GeneralCanvas.S.generalActPanel.SetActive(false);            
 
-			//fire game over
-			EndGame.S.PopulateEnding(0);	
+            //fire game over
+            EndGame.S.PopulateEnding(0);	
 		}
 
         //GUI warning regarding wellbeing

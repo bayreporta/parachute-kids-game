@@ -199,11 +199,16 @@ public class EndGame : MonoBehaviour {
         //reset gg images in gamespace
         for (int i=0; i < ggImages.Count; i++) { ggImages[i].SetActive(false); }
 
+        //cmon canvas
+        GUIControl.S.GUIAlpha.alpha = 0;
+        ArtAssets.S.background.SetActive(true);
+
         switch (ending) {
             case 0:
                 ggTitle.text = "HOMEWARD BOUND";
                 ggText.text = "The stress of living in a foreign land is too much for your young mind. Living by yourself has been especially difficult when coupled with the struggles of grasping a new language like English, navigating the sometimes harsh social circles of high school and living up to the expectations of your family. Although your parents are disappointed in your decision to return, you hope that your time in America has prepared you for the future. Maybe you’ll even come back one day and give it another go.";
                 ggImages[ending].SetActive(true);
+                
                 break;
             case 1:
                 ggTitle.text = "YOU ARE THE CHAMPION!";
@@ -213,7 +218,7 @@ public class EndGame : MonoBehaviour {
             case 2:
                 ggTitle.text = "BITTERSWEET VICTORY";
                 ggText.text = "Although you didn’t get into the school you wanted, you thankfully have a backup plan in community college. With no overbearing requirements to take classes there, you can still continue on your goal of getting into a top tier college or university after taking classes at Pasadena City College. This setback doesn’t dismiss the fact that you overcame incredible obstacles of language, culture and at times loneliness to start taking classes at an American college.";
-                ggImages[ending].SetActive(true);
+                ggImages[ending].SetActive(true);                
                 break;
         }
 

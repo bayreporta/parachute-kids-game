@@ -59,6 +59,17 @@ public class ParachuteKids : MonoBehaviour {
         Player.S.language = 0;
         Player.S.collegeChoice = -1;
 
+        //reset challenges
+        for (int i=0; i < CHAL_DEFS.Count; i++) {
+            CHAL_DEFS[(ChallengeType)i].clickedFlag = false;
+            CHAL_DEFS[(ChallengeType)i].allowedFlag = true;
+        }
+
+        //reset results
+        for (int i=0; i < RES_DEFS.Count; i++) {
+            RES_DEFS[(ResultType)i].resultPicked = false;
+        }
+
         //reset general canvases        
         GeneralCanvas.S.generalCanvas.SetActive(true);
         GeneralCanvas.S.generalGroup.alpha = 1;
@@ -80,19 +91,17 @@ public class ParachuteKids : MonoBehaviour {
         Acts.S.challengesDoneForAct = 0;
 
         //reset other canvases
+        GUIControl.S.GUICanvas.SetActive(false);
         ChallengeCanvas.S.challengeCanvas.SetActive(false);
         ChallengeCanvas.S.challengeGroup.alpha = 0;
-
         CollegeCanvas.S.collegeCanvas.SetActive(false);
         CollegeCanvas.S.collegeGroup.alpha = 0;
-
         Tutorial.S.tutorialCanvas.GetComponent<CanvasGroup>().alpha = 0;
-        Tutorial.S.tutorialCanvas.SetActive(false);
-
+        Tutorial.S.tutorialCanvas.SetActive(false); 
         EndGame.S.ggGroup.alpha = 0;
         EndGame.S.ggCanvas.SetActive(false);
-
         GUIControl.S.InitGUI();
+        GUIControl.S.GUIAlpha.alpha = 1;
 
         //initialize game
         ArtAssets.S.worldContainer.SetActive(true);       
