@@ -43,7 +43,8 @@ public class GameResources : MonoBehaviour {
 			GeneralCanvas.S.generalActPanel.SetActive(false);            
 
             //fire game over
-            EndGame.S.PopulateEnding(0);	
+            EndGame.S.PopulateEnding(0);
+            return;
 		}
 
         //GUI warning regarding wellbeing

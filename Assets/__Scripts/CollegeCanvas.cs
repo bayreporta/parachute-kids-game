@@ -43,24 +43,25 @@ public class CollegeCanvas : MonoBehaviour {
     public IEnumerator TransitionCollegeCanvas(int i) {
         switch (i) {
             case 0:
-                while (collegeGroup.alpha > 0) {
-                    collegeGroup.alpha -= Time.deltaTime * 2;
-                    yield return null;
-                }
-                //background
                 ArtAssets.S.ControlBackground(0);
                 GUIControl.S.GUICanvas.SetActive(true);
 
+                while (collegeGroup.alpha > 0) {
+                    collegeGroup.alpha -= Time.deltaTime * 2;
+                    GUIControl.S.GUIAlpha.alpha += Time.deltaTime * 2;
+                    yield return null;
+                }       
                 collegeGroup.interactable = false;
                 collegeCanvas.SetActive(false);
                 break;
             case 1:
-                //background                   
+                //background   
+                GUIControl.S.GUICanvas.SetActive(false);
+                GUIControl.S.GUIAlpha.alpha = 0;
                 while (collegeGroup.alpha < 1) {
                     collegeGroup.alpha += Time.deltaTime * 2;
                     yield return null;
-                }              
-                
+                }                 
                 collegeGroup.interactable = true;
                 ConfigureCollegeCanvas();
                 break;

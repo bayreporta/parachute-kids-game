@@ -896,7 +896,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Well, I tried my best
+  m_Text: 
 --- !u!222 &121911837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2653,8 +2653,13 @@ MonoBehaviour:
   writingResultsText: {fileID: 0}
   totalResultsText: {fileID: 0}
   collegeResultsText: {fileID: 0}
-  resultsButton: {fileID: 0}
-  resultsButtonText: {fileID: 0}
+  readingScore: {fileID: 635804722}
+  mathScore: {fileID: 1267666274}
+  writingScore: {fileID: 335711203}
+  totalScore: {fileID: 1789461235}
+  admittedText: {fileID: 1280401712}
+  resultsText: {fileID: 121911836}
+  resultsButton: {fileID: 1048000747}
 --- !u!1 &284202967
 GameObject:
   m_ObjectHideFlags: 0

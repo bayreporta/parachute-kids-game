@@ -39,9 +39,13 @@ public class GeneralCanvas : MonoBehaviour {
     public Transform writingResultsText;
     public Transform totalResultsText;
     public Transform collegeResultsText;
-
+    public Text readingScore;
+    public Text mathScore;
+    public Text writingScore;
+    public Text totalScore;
+    public Text admittedText;
+    public Text resultsText;
     public Button resultsButton;
-    public Transform resultsButtonText;
 
 
 
@@ -109,7 +113,6 @@ public class GeneralCanvas : MonoBehaviour {
         totalResultsText = totalResults.transform.GetChild(0);
         collegeResultsText = collegeResults.transform.GetChild(0);
         resultsButton = GameObject.Find("ResultsButton").GetComponent<Button>();
-        resultsButtonText = resultsButton.transform.GetChild(0);
 
         resultsFlavor.SetActive(false);
         generalResultsPanel.SetActive(false);
@@ -142,15 +145,8 @@ public class GeneralCanvas : MonoBehaviour {
         //backgrounding
         ArtAssets.S.background.SetActive(true);
         GUIControl.S.GUICanvas.SetActive(false);
-
         CollegeDefinition college = ParachuteKids.S.GetCollegeDefinition((CollegeType)Player.S.collegeChoice);
-        Text readingScore = readingResultsText.GetComponent<Text>();
-        Text mathScore = mathResultsText.GetComponent<Text>();
-        Text writingScore = writingResultsText.GetComponent<Text>();
-        Text totalScore = totalResultsText.GetComponent<Text>();
-        Text admittedText = collegeResultsText.GetComponent<Text>();
-        Text resultsText = resultsButtonText.GetComponent<Text>();
-
+        
         int ending = -1; //this will determine the ending of the game
         bool admittance = false;
 
@@ -177,6 +173,7 @@ public class GeneralCanvas : MonoBehaviour {
         }
         else if (admittance == false) {
             admittedText.text = "You have not been accepted into " + college.name;
+            resultsText.text = "Well, I tried my best";
             ending = 2;
         }
 

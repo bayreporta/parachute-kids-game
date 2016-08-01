@@ -166,15 +166,7 @@ public class ParachuteKids : MonoBehaviour {
     }
 
     public void GameOver() {
-        //toggle elems on canvas
-        GeneralCanvas.S.resultsFlavor.SetActive(false);
-        GeneralCanvas.S.readingResults.SetActive(false);
-        GeneralCanvas.S.mathResults.SetActive(false);
-        GeneralCanvas.S.writingResults.SetActive(false);
-        GeneralCanvas.S.totalResults.SetActive(false);
-        GeneralCanvas.S.collegeResults.SetActive(false);
-        EndGame.S.ggCanvas.SetActive(false);
-        
+        EndGame.S.ggCanvas.SetActive(false);        
         StartGame();
     }
 

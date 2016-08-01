@@ -172,24 +172,20 @@ public class EndGame : MonoBehaviour {
                 while (ggGroup.alpha > 0) {
                     ggGroup.alpha -= Time.deltaTime * 2;
                     yield return null;
-                }
-                //background
-                ArtAssets.S.ControlBackground(0);
-                GUIControl.S.GUICanvas.SetActive(true);
-
+                }        
                 ggGroup.interactable = false;
                 ggCanvas.SetActive(false);
                 break;
             case 1:
-                //background
-                ArtAssets.S.ControlBackground(1);
-                GUIControl.S.GUICanvas.SetActive(false);
+                //background                
                 ggCanvas.SetActive(true);
-
                 while (ggGroup.alpha < 1) {
                     ggGroup.alpha += Time.deltaTime * 2;
                     yield return null;
                 }
+                ArtAssets.S.ControlBackground(1);
+                GUIControl.S.GUIAlpha.alpha = 0;
+                GUIControl.S.GUICanvas.SetActive(false);
                 ggGroup.interactable = true;
                 break;
         }

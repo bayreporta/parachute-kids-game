@@ -193,10 +193,10 @@ public class ChallengeCanvas : MonoBehaviour {
         flavor.text = r.resultFlavor;
         optionThree.text = "Continue.";
 
-        challengeOptionThree.onClick.RemoveAllListeners();
-        challengeOptionThree.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
+        challengeOptionThree.onClick.RemoveAllListeners();        
         challengeOptionThree.onClick.AddListener(CloseChallengeCanvas);
-        
+        challengeOptionThree.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
+
     }
 
     public void CloseChallengeCanvas() {
@@ -222,18 +222,20 @@ public class ChallengeCanvas : MonoBehaviour {
         switch (i) {
             case 0:
                 ArtAssets.S.ControlBackground(0);
-                GUIControl.S.GUICanvas.SetActive(true);
+                GUIControl.S.GUICanvas.SetActive(true);                
                 while (challengeGroup.alpha > 0) {
                     challengeGroup.alpha -= Time.deltaTime * 2;
                     GUIControl.S.GUIAlpha.alpha += Time.deltaTime * 2;
                     yield return null;
-                }               
+                }
+                challengeCanvas.SetActive(false);
                 challengeGroup.interactable = false;                
                 break;
             case 1:
                 //background
                 ArtAssets.S.ControlBackground(1);
                 GUIControl.S.GUIAlpha.alpha = 0;
+                challengeCanvas.SetActive(true);
                 GUIControl.S.GUICanvas.SetActive(false);
 
                 while (challengeGroup.alpha < 1) {
