@@ -710,7 +710,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -98}
+  m_AnchoredPosition: {x: -71, y: -40}
   m_SizeDelta: {x: 780, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73135143
@@ -745,8 +745,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tracks your progess toward English proficiency. There are five levels of
-    ESL before gaining proficiency. '
+  m_Text: 'Tracks your progress toward English proficiency. There are five levels
+    of ESL before gaining proficiency.
+
+'
 --- !u!222 &73135144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3061,7 +3063,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -166}
+  m_AnchoredPosition: {x: -71, y: -108}
   m_SizeDelta: {x: 780, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306364307
@@ -3096,7 +3098,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tracks your overall academic progress.
+  m_Text: Tracks your academic progress.
 --- !u!222 &306364308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4674,11 +4676,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The goal of the game is to get accepted into the school of your choice.
-    There are three different outcomes in the game: you get accepted into the school
-    you picked, you don\u2019t get accepted but graduate from high school anyway or
-    you return to China. One of these three outcomes happen based on the choices you
-    make during your journey through high school.\r"
+  m_Text: 'The goal of the game is to get accepted into the college or university
+    of your choice while attempting to adapt to living in America, a foreign place. '
 --- !u!222 &499900395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4953,9 +4952,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "You\u2019re nearing graduation day, so the time has come to apply to a
     college or university to continue your education. Everything has been leading
-    to this moment. Now you have to make a choice. Depending on your GPA and Language,
-    you may be able to get into a top-tier university, but at the least, you can always
-    get into community college as there are no GPA requirements."
+    to this moment. Now you have to make a choice. Depending on your GPA and English
+    scores, you may be able to get into a top-tier university, but if not,  you can
+    always get into community college since there are no GPA requirements."
 --- !u!222 &527855042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5721,7 +5720,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -141, y: -73}
+  m_AnchoredPosition: {x: -142, y: -15}
   m_SizeDelta: {x: 638, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &590388314
@@ -5756,7 +5755,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'LANGUAGE:'
+  m_Text: 'ENGLISH:'
 --- !u!222 &590388315
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6421,7 +6420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Language:'
+  m_Text: 'English: '
 --- !u!222 &636009678
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7096,7 +7095,7 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.75, y: -215.2}
+  m_AnchoredPosition: {x: -2, y: -157}
   m_SizeDelta: {x: 918.5, y: 48.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759418097
@@ -7133,7 +7132,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: After making a choice during a challenge, if any of the above resources
     gained or lost value, the color of the value on the main screen will turn green
-    or red accordingly.
+    (good) or red (bad).
 --- !u!222 &759418098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8906,7 +8905,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 80}
+  m_AnchoredPosition: {x: 5, y: 138}
   m_SizeDelta: {x: 925, y: 97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977159853
@@ -8944,8 +8943,8 @@ MonoBehaviour:
   m_Text: "There are three Acts in the game that cover the last two years of high
     school. During each Act you\u2019ll be faced with challenges that could positively
     or negatively impact one of three important resources that could determine your
-    success or failure. To tackle the challenge, click on one of the icons on the
-    main screen that is green, signifying it is active."
+    success or failure: Well-being, English and GPA. To tackle the challenge, click
+    on one of the icons on the main screen that is green, signifying it is active.\r\n"
 --- !u!222 &977159854
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10246,7 +10245,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -141, y: -139}
+  m_AnchoredPosition: {x: -142, y: -81}
   m_SizeDelta: {x: 638, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215055949
@@ -10735,7 +10734,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -67, y: -32}
+  m_AnchoredPosition: {x: -68, y: 26}
   m_SizeDelta: {x: 779, y: 30.025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268472651
@@ -10770,8 +10769,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tracks your mental and emotional wellbeing. If this drops to zero, you lose
-    the game.
+  m_Text: "Tracks your mental and emotional wellbeing. If this drops to zero, you
+    lose the game.\r"
 --- !u!222 &1268472652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14189,7 +14188,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138, y: -6}
+  m_AnchoredPosition: {x: -139, y: 52}
   m_SizeDelta: {x: 638, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637842019

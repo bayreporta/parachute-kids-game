@@ -202,18 +202,18 @@ public class EndGame : MonoBehaviour {
         switch (ending) {
             case 0:
                 ggTitle.text = "HOMEWARD BOUND";
-                ggText.text = "The stress of living in a foreign land is too much for your young mind. Living by yourself has been especially difficult when coupled with the struggles of grasping a new language like English, navigating the sometimes harsh social circles of high school and living up to the expectations of your family. Although your parents are disappointed in your decision to return, you hope that your time in America has prepared you for the future. Maybe you’ll even come back one day and give it another go.";
+                ggText.text = "The stress of living in a foreign land is too much for you. Living by yourself has been especially difficult coupled with the struggles of grasping English, navigating the sometimes harsh social circles of high school and living up to the expectations of your family. Although your parents are disappointed in your decision to return, you hope that your time in America has prepared you for the future. Maybe you’ll even come back one day and give it another go.";
                 ggImages[ending].SetActive(true);
                 
                 break;
             case 1:
                 ggTitle.text = "YOU ARE THE CHAMPION!";
-                ggText.text = "You had incredibly high goals for yourself: live alone in a foreign land and overcome the barriers of language, culture and family connection to not only graduate high school, but to be admitted into the school of your choice. It’s an incredible victory for a young immigrant who knew little English before coming here, and it’s safe to say that you made your family proud with your achievement!";
+                ggText.text = "You had incredibly high goals for yourself: live alone in a foreign land and overcome the barriers of language, culture and family separation to not graduate high school and be admitted to college. It’s an incredible victory for a young immigrant who knew little English before coming here to get this far, and it’s safe to say that you made your family proud with your achievement!";
                 ggImages[ending].SetActive(true);
                 break;
             case 2:
                 ggTitle.text = "BITTERSWEET VICTORY";
-                ggText.text = "Although you didn’t get into the school you wanted, you thankfully have a backup plan in community college. With no overbearing requirements to take classes there, you can still continue on your goal of getting into a top tier college or university after taking classes at Pasadena City College. This setback doesn’t dismiss the fact that you overcame incredible obstacles of language, culture and at times loneliness to start taking classes at an American college.";
+                ggText.text = "Although you didn’t get into the school you wanted, you thankfully have a backup plan to attend community college. With no overbearing requirements to take classes there, you can still continue towards your goal of getting into a top tier college or university after taking classes at Pasadena City College. This setback doesn’t diminish the fact that you overcame incredible obstacles of language, culture and loneliness to start taking classes at an American college.";
                 ggImages[ending].SetActive(true);                
                 break;
         }
