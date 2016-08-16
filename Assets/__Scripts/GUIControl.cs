@@ -88,13 +88,7 @@ public class GUIControl : MonoBehaviour {
         else if (i > 0) {gui.color = Color.green;}        
     }
 
-    /*public void ChangeActGUI(int act) {
-        if (act == 0) { act = 1; }
-        else if (act == 4) { act = 3; }
-
-        actGUI.text = "Act " + act.ToString();
-    }*/
-
+   
     public string ConvertLanguageValue(int val) {
         string ret = "";
 
