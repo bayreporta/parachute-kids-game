@@ -710,8 +710,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: -40}
-  m_SizeDelta: {x: 780, y: 28}
+  m_AnchoredPosition: {x: 6, y: -40}
+  m_SizeDelta: {x: 934, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73135143
 MonoBehaviour:
@@ -7255,8 +7255,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: After making a choice during a challenge, if any of the above resources
-    gained or lost value, the color of the value on the main screen will turn green
-    (good) or red (bad).
+    gained or lost value, its color on the main screen will turn green (gained value)
+    or red (lost value).
 --- !u!222 &759418098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10923,7 +10923,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 07bd00bab23da1345bf8d3bc0d6013e5, type: 3}
+    m_Font: {fileID: 12800000, guid: 7e0277a256a37984dab1b60e4df843dc, type: 3}
     m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
