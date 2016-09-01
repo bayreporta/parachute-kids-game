@@ -7,11 +7,11 @@ public class Menus : MonoBehaviour {
     public static Menus S;
 
     //title screen UI
+    public GameObject title;
     public GameObject titleCanvas;
     public CanvasGroup titleGroup;
     public Button playButton;
     public Button aboutButton;
-    public Button creditsButton;
 
     void Awake() {
         S = this;
@@ -25,15 +25,18 @@ public class Menus : MonoBehaviour {
         titleGroup = titleCanvas.GetComponent<CanvasGroup>();
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         aboutButton = GameObject.Find("AboutButton").GetComponent<Button>();
-        creditsButton = GameObject.Find("CreditsButton").GetComponent<Button>();
 
         //clear button events
         playButton.onClick.RemoveAllListeners();
         aboutButton.onClick.RemoveAllListeners();
-        creditsButton.onClick.RemoveAllListeners();
 
         //initalize button events
         playButton.onClick.AddListener(TitleTransition);
+        aboutButton.onClick.AddListener(delegate {
+            AboutScr.S.canvas.SetActive(true);
+            ArtAssets.S.background.SetActive(true);
+            title.SetActive(false);
+        });
 
     }
 
@@ -56,18 +59,5 @@ public class Menus : MonoBehaviour {
         Intro.S.TransitionIntro();
         StartCoroutine(Intro.S.TransitionIntroCanvas(1));
     }
-
-    /* public IEnumerator TransitionToAbout() {
-         while (titleGroup.alpha > 0) {
-             titleGroup.alpha -= Time.deltaTime * 2;
-             yield return null;
-         }
-     }
-
-     public IEnumerator TransitionToCredits() {
-         while (titleGroup.alpha > 0) {
-             titleGroup.alpha -= Time.deltaTime * 2;
-             yield return null;
-         }
-     }*/
+  
 }

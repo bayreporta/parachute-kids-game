@@ -52,7 +52,7 @@ public class Intro : MonoBehaviour {
                 Destroy(title, 2);
                 break;
             case 1:
-                introText.text = "A week later, you land in Southern California. You were able to enter the country with a Green Card because your father is an American citizen. You settle into your rented room where your mother says you'll stay until you graduate from public high school and move into a college dorm – that’s the goal, she says, to be accepted into a four-year university in the U.S.";
+                introText.text = "A week later, you land in Southern California. You were able to enter the country with a Green Card because your father is an American citizen. Most Chinese kids like you arrive with a student visa and attend private school, but not you! The Green Card means you can enroll at a public high school for free, so that's the option your parents have chosen. You settle into your rented room where your mother says you'll stay until you graduate from public high school and move into a college dorm – that’s the goal, she says, to be accepted into a four-year university in the U.S.";
                 introImages[introSlide].SetActive(true);
                 break;
             case 2:

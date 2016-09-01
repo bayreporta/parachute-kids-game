@@ -170,6 +170,6 @@ public class ParachuteKids : MonoBehaviour {
         StartGame();
     }
 
-  
+
 
 }
