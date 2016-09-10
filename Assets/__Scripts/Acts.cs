@@ -83,20 +83,21 @@ public class Acts : MonoBehaviour {
             
         }
 
-        if (Player.S.currAct == 2 || Player.S.currAct == 3) {
-            GeneralCanvas.S.UpdateActCanvas(Player.S.currAct); //update canvas text
-            GeneralCanvas.S.generalCanvas.SetActive(true);
-            StartCoroutine(GeneralCanvas.S.TransitionActCanvas(1)); //transition canvas in
-       }
-       else if (Player.S.currAct == 4) {
-            CollegeCanvas.S.collegeCanvas.SetActive(true);
-            GUIControl.S.GUICanvas.SetActive(false);
-            ArtAssets.S.ControlBackground(1);
-            StartCoroutine(CollegeCanvas.S.TransitionCollegeCanvas(1)); //transition canvas in            
-       }
+        if (Player.S.wellbeing != 0) {
+            if (Player.S.currAct == 2 || Player.S.currAct == 3) {
+                GeneralCanvas.S.UpdateActCanvas(Player.S.currAct); //update canvas text
+                GeneralCanvas.S.generalCanvas.SetActive(true);
+                StartCoroutine(GeneralCanvas.S.TransitionActCanvas(1)); //transition canvas in
+            } else if (Player.S.currAct == 4) {
+                CollegeCanvas.S.collegeCanvas.SetActive(true);
+                GUIControl.S.GUICanvas.SetActive(false);
+                ArtAssets.S.ControlBackground(1);
+                StartCoroutine(CollegeCanvas.S.TransitionCollegeCanvas(1)); //transition canvas in            
+            }
 
-       //start Act Canvas transition
-       Invoke("FireActTransition", 3f);
+            //start Act Canvas transition
+            Invoke("FireActTransition", 3f);
+        }     
     }
 
     public void ReevaluateActThree() {

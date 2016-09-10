@@ -43,6 +43,9 @@ public class CollegeCanvas : MonoBehaviour {
     public IEnumerator TransitionCollegeCanvas(int i) {
         switch (i) {
             case 0:
+                //stop guifixer
+                CancelInvoke();
+
                 ArtAssets.S.ControlBackground(0);
                 GUIControl.S.GUICanvas.SetActive(true);
 
@@ -54,18 +57,24 @@ public class CollegeCanvas : MonoBehaviour {
                 collegeGroup.interactable = false;
                 collegeCanvas.SetActive(false);
                 break;
-            case 1:
-                //background   
-                GUIControl.S.GUICanvas.SetActive(false);
-                GUIControl.S.GUIAlpha.alpha = 0;
+            case 1:                      
                 while (collegeGroup.alpha < 1) {
                     collegeGroup.alpha += Time.deltaTime * 2;
                     yield return null;
-                }                 
+                }
+
+                //background 
+                InvokeRepeating("GUIFixer", 2f, .001f);
+
                 collegeGroup.interactable = true;
                 ConfigureCollegeCanvas();
                 break;
         }    
+    }
+
+    public void GUIFixer() {
+        Debug.Log("fixer");
+        GUIControl.S.GUICanvas.SetActive(false);
     }
 
     public void ConfigureCollegeCanvas() {       

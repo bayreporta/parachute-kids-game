@@ -193,9 +193,10 @@ public class ChallengeCanvas : MonoBehaviour {
         flavor.text = r.resultFlavor;
         optionThree.text = "Continue.";
 
-        challengeOptionThree.onClick.RemoveAllListeners();        
-        challengeOptionThree.onClick.AddListener(CloseChallengeCanvas);
+        challengeOptionThree.onClick.RemoveAllListeners();
         challengeOptionThree.onClick.AddListener(delegate { GameResources.S.UpdateResources(r); });
+        challengeOptionThree.onClick.AddListener(CloseChallengeCanvas);
+        
 
     }
 

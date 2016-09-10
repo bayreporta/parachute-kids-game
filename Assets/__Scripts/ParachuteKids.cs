@@ -64,6 +64,8 @@ public class ParachuteKids : MonoBehaviour {
             CHAL_DEFS[(ChallengeType)i].clickedFlag = false;
             CHAL_DEFS[(ChallengeType)i].allowedFlag = true;
         }
+        Acts.S.apChal = true;
+        Acts.S.busStopChal = true;
 
         //reset results
         for (int i=0; i < RES_DEFS.Count; i++) {
@@ -76,14 +78,7 @@ public class ParachuteKids : MonoBehaviour {
         GeneralCanvas.S.generalResultsPanel.SetActive(false);
         GeneralCanvas.S.generalActPanel.SetActive(true);
         GeneralCanvas.S.UpdateActCanvas(1);
-        LocationControl.S.locationCanvas.SetActive(false);
-
-        //reset Challenges
-        for (int i = 0; i < Challenges.S.totChallenges; i++) {
-            ChallengeDefinition chal = GetChallengeDefinition((ChallengeType)i);
-            chal.allowedFlag = true;
-            chal.clickedFlag = false;
-        }
+        LocationControl.S.locationCanvas.SetActive(false);        
 
         //reset acts
         Player.S.currAct = 0;

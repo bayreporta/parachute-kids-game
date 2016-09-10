@@ -155,6 +155,7 @@ public class GeneralCanvas : MonoBehaviour {
         generalActPanel.SetActive(false);
         generalResultsPanel.SetActive(true);
         StartCoroutine(TransitionActCanvas(1));
+        GUIControl.S.GUICanvas.SetActive(false);
 
         //determine if you were admitted into college
         admittance = EndGame.S.DetermineCollegeAdmittance();
