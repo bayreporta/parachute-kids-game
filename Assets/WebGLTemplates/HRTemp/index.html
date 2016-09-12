@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>%UNITY_WEB_NAME%</title>
+    <style>
+      html {background:#000;}
+      canvas {cursor:pointer;margin:0 auto;}
+    </style>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+  </head>
+  <body class="template">
+    <p class="header">%UNITY_WEB_NAME%</p>
+    <div class="template-wrap clear">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="%UNITY_WIDTH%px" height="%UNITY_HEIGHT%px"></canvas>   
+    </div>
+    %UNITY_WEBGL_LOADER_GLUE%
+  </body>
+</html>
